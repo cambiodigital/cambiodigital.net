@@ -8,8 +8,26 @@
    </url>
    <url>
       <loc>https://cambiodigital.net/blog.html</loc>
-      <lastmod>2026-04-10</lastmod>
+      <lastmod>2026-05-01</lastmod>
       <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://cambiodigital.net/blog/rag-vs-fine-tuning-chatbot-atencion-cliente-2026.html</loc>
+      <lastmod>2026-05-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://cambiodigital.net/blog/google-ai-overviews-seo-local-2026.html</loc>
+      <lastmod>2026-04-24</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://cambiodigital.net/blog/agentes-ia-ventas-whatsapp-playbook-2026.html</loc>
+      <lastmod>2026-04-17</lastmod>
+      <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
