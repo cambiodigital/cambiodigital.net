@@ -251,6 +251,66 @@
             ]
         },
         {
+            category: 'erp-gestion',
+            categoryName: 'ERP / Gestión Empresarial',
+            categoryIcon: 'building-2',
+            categoryDescription: 'ERP open source, inventario, producción y reportes. Centraliza tu operación.',
+            services: [
+                {
+                    id: 'erp-diagnostico',
+                    name: 'Diagnóstico ERP',
+                    description: 'Analizamos tus procesos y definimos si necesitas ERP, CRM o automatización.',
+                    basePrice: 0,
+                    marketValue: 150,
+                    priceType: 'one-time',
+                    features: ['Llamada de Descubrimiento', 'Mapa de Procesos', 'Módulos Requeridos', 'Estimación de Alcance'],
+                    extras: []
+                },
+                {
+                    id: 'erp-base',
+                    name: 'ERP Base Pyme',
+                    description: 'Clientes, productos, ventas, compras y reportes básicos. Ideal para empezar.',
+                    basePrice: 900,
+                    marketValue: 1800,
+                    priceType: 'one-time',
+                    features: ['Clientes y Productos', 'Ventas y Compras', 'Reportes Iniciales', 'Capacitación Básica'],
+                    extras: [
+                        { id: 'erp-migracion', name: 'Migración de Datos', price: 0, type: 'one-time', description: 'Cotizar aparte según volumen' },
+                        { id: 'erp-integracion', name: 'Integración Simple (WhatsApp, web, API)', price: 300, type: 'one-time', description: 'Por integración' },
+                        { id: 'erp-soporte-mensual', name: 'ERP Gestionado Básico (servicio mensual)', price: 150, type: 'monthly', description: 'Hosting gestionado, backups, revisiones y soporte por incidencias. Hasta 1h/mes de ajustes.' }
+                    ]
+                },
+                {
+                    id: 'erp-operativo',
+                    name: 'ERP Operativo',
+                    description: 'Inventario, flujos de aprobación, dashboards y automatizaciones internas.',
+                    basePrice: 2500,
+                    marketValue: 4500,
+                    priceType: 'one-time',
+                    features: ['Inventario y Almacenes', 'Flujos de Aprobación', 'Dashboards', 'Automatizaciones'],
+                    extras: [
+                        { id: 'erp-operativo-migracion', name: 'Migración de Datos', price: 0, type: 'one-time', description: 'Cotizar aparte según volumen' },
+                        { id: 'erp-operativo-integracion', name: 'Integración Simple (WhatsApp, web, API)', price: 300, type: 'one-time', description: 'Por integración' },
+                        { id: 'erp-soporte-evolucion', name: 'ERP Gestionado Operativo (servicio mensual)', price: 300, type: 'monthly', description: 'Revisiones de integraciones, hasta 3h/mes de soporte, ajustes o capacitación. Priorización de incidencias.' }
+                    ]
+                },
+                {
+                    id: 'erp-produccion',
+                    name: 'ERP Producción / Mantenimiento',
+                    description: 'Órdenes de trabajo, máquinas, incidencias, repuestos y trazabilidad.',
+                    basePrice: 4500,
+                    marketValue: 7500,
+                    priceType: 'one-time',
+                    features: ['Producción', 'Órdenes de Trabajo', 'Mantenimiento', 'Reportes de Productividad'],
+                    extras: [
+                        { id: 'erp-prod-migracion', name: 'Migración de Datos', price: 0, type: 'one-time', description: 'Cotizar aparte según volumen' },
+                        { id: 'erp-prod-integracion', name: 'Integración Personalizada', price: 500, type: 'one-time', description: 'Por integración compleja' },
+                        { id: 'erp-soporte-avanzado', name: 'ERP Gestionado Avanzado (servicio mensual)', price: 500, type: 'monthly', description: 'Mayor capacidad de soporte, seguimiento de mejoras, reuniones de evolución, soporte prioritario y plan de crecimiento tecnológico.' }
+                    ]
+                }
+            ]
+        },
+        {
             category: 'consultoria',
             categoryName: 'Consultoría & Estrategia',
             categoryIcon: 'compass',
@@ -330,10 +390,18 @@
             ]
         },
         {
+            question: '¿Manejas inventario, producción o necesitas centralizar ventas y compras?',
+            options: [
+                { label: 'Sí, necesito ordenar varias áreas del negocio', value: 'erp-yes', recommend: ['erp-gestion'] },
+                { label: 'Solo necesito organizar clientes y ventas', value: 'crm-only', recommend: ['crm-automatizacion'] },
+                { label: 'No, mi operación es simple', value: 'simple', recommend: [] }
+            ]
+        },
+        {
             question: '¿Qué es lo más urgente para ti?',
             options: [
                 { label: 'Vender más sin contratar', value: 'sell', recommend: ['chatbots-ia'] },
-                { label: 'Organizar mi negocio', value: 'organize', recommend: ['crm-automatizacion', 'consultoria'] },
+                { label: 'Organizar mi negocio', value: 'organize', recommend: ['crm-automatizacion', 'erp-gestion'] },
                 { label: 'Tener presencia online profesional', value: 'online', recommend: ['web', 'consultoria'] },
                 { label: 'Soporte técnico confiable', value: 'support', recommend: ['consultoria'] }
             ]
@@ -412,6 +480,50 @@
 
     function getSelectedCount() {
         return Object.values(state.selectedServices).filter(Boolean).length;
+    }
+
+    function getERPManagedServiceRecommendation() {
+        const selectedERPIds = Object.entries(state.selectedServices)
+            .filter(([k, v]) => v && k.startsWith('erp-') && k !== 'erp-diagnostico' && !k.endsWith('-selected'))
+            .map(([k]) => getServiceById(k))
+            .filter(Boolean);
+
+        if (selectedERPIds.length === 0) return null;
+
+        const needsAdvanced = selectedERPIds.some(s =>
+            s.id === 'erp-produccion' ||
+            s.id === 'erp-operativo'
+        );
+        const needsOperative = selectedERPIds.some(s =>
+            s.id === 'erp-operativo' ||
+            s.id === 'erp-base'
+        );
+
+        if (needsAdvanced && selectedERPIds.some(s => s.id === 'erp-produccion')) {
+            return {
+                level: 'avanzado',
+                title: 'ERP Gestionado Avanzado',
+                price: '$500 USD/mes',
+                reason: 'Tu empresa maneja producción, mantenimiento u operaciones críticas. Recomendamos el plan avanzado para tener seguimiento de mejoras, soporte prioritario y un plan de crecimiento tecnológico.',
+                extraId: 'erp-soporte-avanzado'
+            };
+        }
+        if (needsOperative) {
+            return {
+                level: 'operativo',
+                title: 'ERP Gestionado Operativo',
+                price: '$300 USD/mes',
+                reason: 'Tu ERP es parte importante de la operación diaria. Recomendamos al menos el plan operativo con revisiones de integraciones, priorización de incidencias y hasta 3h/mes de soporte.',
+                extraId: 'erp-soporte-evolucion'
+            };
+        }
+        return {
+            level: 'basico',
+            title: 'ERP Gestionado Básico',
+            price: '$150 USD/mes',
+            reason: 'Para mantener tu ERP online, respaldado y con soporte básico, te recomendamos el plan de gestión mensual.',
+            extraId: 'erp-soporte-mensual'
+        };
     }
 
     // ==========================================
@@ -523,6 +635,28 @@
                         </div>
                     </div>
                 `).join('')}
+
+                ${(function() {
+                    const erpRec = getERPManagedServiceRecommendation();
+                    if (!erpRec) return '';
+                    return `
+                    <div class="card-modern p-6 mt-4" style="border-color: var(--cd-highlight-color); box-shadow: 0 0 0 1px var(--cd-highlight-color);">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i data-lucide="shield-check" class="w-5 h-5" style="color: var(--cd-highlight-color);"></i>
+                            <h4 class="font-bold text-base">Servicio ERP Gestionado Mensual</h4>
+                        </div>
+                        <p class="text-sm text-cd-text-dim mb-3">${erpRec.reason}</p>
+                        <p class="text-xs text-cd-text-dim mb-3">Un ERP no termina el dia que se instala. El servicio mensual gestionado cubre infraestructura, mantenimiento, disponibilidad tecnica, soporte y acompanamiento continuo. Aunque un mes no se soliciten cambios, mantiene activa la supervision y la capacidad de respuesta del equipo.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 rounded-full font-semibold" style="background: var(--cd-highlight-color); color: white;">${erpRec.title} — ${erpRec.price}</span>
+                            <span class="text-xs px-3 py-1 rounded-full" style="background: var(--cd-surface); color: var(--cd-text-dim);">Incluye hosting, backups, soporte y acompanamiento</span>
+                        </div>
+                        <p class="text-xs text-cd-text-dim mt-3">
+                            <i data-lucide="info" class="w-3.5 h-3.5 inline-block mr-1"></i>
+                            Selecciona el plan en los extras de tu servicio ERP arriba para incluirlo en la cotizacion.
+                        </p>
+                    </div>`;
+                })()}
 
                 <button onclick="window.calcGoToStep(1)" class="btn-secondary text-sm mt-4">
                     <i data-lucide="arrow-left" class="w-4 h-4"></i> Agregar más categorías

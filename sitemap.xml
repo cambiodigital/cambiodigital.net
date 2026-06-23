@@ -114,12 +114,24 @@
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
-   <url>
-      <loc>https://cambiodigital.net/servicios/whatsapp-demobot.html</loc>
-      <lastmod>2026-03-28</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.9</priority>
-   </url>
+    <url>
+       <loc>https://cambiodigital.net/servicios/whatsapp-demobot.html</loc>
+       <lastmod>2026-03-28</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.9</priority>
+    </url>
+    <url>
+       <loc>https://cambiodigital.net/servicios/erp-open-source.html</loc>
+       <lastmod>2026-06-23</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.9</priority>
+    </url>
+    <url>
+       <loc>https://cambiodigital.net/blog/erp-open-source-pymes-cuando-conviene-2026.html</loc>
+       <lastmod>2026-06-23</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+    </url>
    <url>
       <loc>https://cambiodigital.net/cotizador.html</loc>
       <lastmod>2026-03-28</lastmod>
