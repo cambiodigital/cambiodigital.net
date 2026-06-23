@@ -490,16 +490,10 @@
 
         if (selectedERPIds.length === 0) return null;
 
-        const needsAdvanced = selectedERPIds.some(s =>
-            s.id === 'erp-produccion' ||
-            s.id === 'erp-operativo'
-        );
-        const needsOperative = selectedERPIds.some(s =>
-            s.id === 'erp-operativo' ||
-            s.id === 'erp-base'
-        );
+        const hasProduccion = selectedERPIds.some(s => s.id === 'erp-produccion');
+        const hasOperativo = selectedERPIds.some(s => s.id === 'erp-operativo');
 
-        if (needsAdvanced && selectedERPIds.some(s => s.id === 'erp-produccion')) {
+        if (hasProduccion) {
             return {
                 level: 'avanzado',
                 title: 'ERP Gestionado Avanzado',
@@ -508,12 +502,12 @@
                 extraId: 'erp-soporte-avanzado'
             };
         }
-        if (needsOperative) {
+        if (hasOperativo) {
             return {
                 level: 'operativo',
                 title: 'ERP Gestionado Operativo',
                 price: '$300 USD/mes',
-                reason: 'Tu ERP es parte importante de la operación diaria. Recomendamos al menos el plan operativo con revisiones de integraciones, priorización de incidencias y hasta 3h/mes de soporte.',
+                reason: 'Tu ERP es parte central de la operación diaria. Recomendamos el plan operativo para tener revisiones de integraciones, priorización de incidencias, hasta 3h/mes de soporte y acompañamiento para que el sistema evolucione con el negocio.',
                 extraId: 'erp-soporte-evolucion'
             };
         }
@@ -521,7 +515,7 @@
             level: 'basico',
             title: 'ERP Gestionado Básico',
             price: '$150 USD/mes',
-            reason: 'Para mantener tu ERP online, respaldado y con soporte básico, te recomendamos el plan de gestión mensual.',
+            reason: 'Para asegurar la continuidad de tu negocio, recomendamos el plan de gestión mensual con hosting supervisado, backups periódicos, soporte por incidencias y acompañamiento técnico. Un ERP cuidado es un ERP que no te deja solo cuando más lo necesitas.',
             extraId: 'erp-soporte-mensual'
         };
     }
@@ -646,7 +640,7 @@
                             <h4 class="font-bold text-base">Servicio ERP Gestionado Mensual</h4>
                         </div>
                         <p class="text-sm text-cd-text-dim mb-3">${erpRec.reason}</p>
-                        <p class="text-xs text-cd-text-dim mb-3">Un ERP no termina el dia que se instala. El servicio mensual gestionado cubre infraestructura, mantenimiento, disponibilidad tecnica, soporte y acompanamiento continuo. Aunque un mes no se soliciten cambios, mantiene activa la supervision y la capacidad de respuesta del equipo.</p>
+                        <p class="text-xs text-cd-text-dim mb-3">Un ERP no termina el dia que se instala. El servicio mensual gestionado asegura la continuidad de tu operacion: hosting supervisado, backups, soporte tecnico, acompanamiento y capacidad de respuesta. Aunque un mes no se soliciten cambios, mantiene activa la supervision del sistema y al equipo preparado para actuar cuando el negocio lo requiera.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-xs px-3 py-1 rounded-full font-semibold" style="background: var(--cd-highlight-color); color: white;">${erpRec.title} — ${erpRec.price}</span>
                             <span class="text-xs px-3 py-1 rounded-full" style="background: var(--cd-surface); color: var(--cd-text-dim);">Incluye hosting, backups, soporte y acompanamiento</span>
