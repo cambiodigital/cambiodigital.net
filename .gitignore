@@ -1,2 +1,8 @@
 node_modules/
 presupuestos/
+.env
+.env.php
+storage/logs/
+storage/epayco/
+.codegraph/
+.zcode/

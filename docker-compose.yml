@@ -1,0 +1,21 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cambiodigital-web:latest
+    container_name: cambiodigital-web-test
+    restart: unless-stopped
+    ports:
+      - "8088:80"
+    environment:
+      - EPAYCO_CUSTOMER_ID=123456
+      - EPAYCO_SECRET_KEY=test_p_key_secret_12345
+      - EPAYCO_PUBLIC_KEY=test_public_key
+      # - N8N_PAYMENTS_WEBHOOK_URL=https://n8n.cambiodigital.cloud/webhook/test-pagos
+    volumes:
+      - epayco_storage:/var/www/html/storage
+
+volumes:
+  epayco_storage:
+    name: cambiodigital_storage

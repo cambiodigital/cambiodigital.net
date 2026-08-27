@@ -5,6 +5,7 @@ module.exports = {
     './blog/**/*.html',
     './partials/**/*.html',
     './servicios/**/*.html',
+    './pago/**/*.html',
     './assets/js/**/*.js'
   ],
   theme: {

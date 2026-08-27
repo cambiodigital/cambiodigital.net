@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Pago | Cambio Digital</title>
+    <meta name="description" content="Estado y comprobante de transacción de pago de servicios de Cambio Digital.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1c2143">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: light)" href="/assets/images/LogoCDFondoClaro.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" href="/assets/images/LogoCDFondoOscuro.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/tailwind.generated.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/assets/js/config.js"></script>
+
+    <style>
+        @media print {
+            #header-container, #footer-container, #action-buttons, #cursor-outline, #cursor-dot, .bg-grid {
+                display: none !important;
+            }
+            body, main {
+                padding: 0 !important;
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+            .card-modern, .border-hard {
+                border: 1px solid #cccccc !important;
+                box-shadow: none !important;
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-cd-magenta selection:text-white" style="background: var(--color-bg); color: var(--color-text);">
+    <!-- Custom Cursor -->
+    <div id="cursor-outline"></div>
+    <div id="cursor-dot"></div>
+
+    <div class="fixed inset-0 z-0 bg-grid"></div>
+
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <main class="relative z-10 pt-32 pb-24 px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-start">
+        <div class="max-w-3xl mx-auto w-full">
+            
+            <!-- Breadcrumb / Badge -->
+            <div class="text-center mb-6 animate-fade-in">
+                <span class="inline-block px-4 py-1 border-2 border-cd-lavender text-cd-lavender font-mono text-xs font-bold uppercase rounded-full tracking-wider bg-transparent">
+                    Pasarela Segura ePayco
+                </span>
+            </div>
+
+            <!-- Main Result Card Container -->
+            <div id="status-card" class="card-modern p-6 sm:p-10 border-2 rounded-2xl shadow-xl transition-all duration-300" style="background: var(--color-surface); border-color: var(--color-border);">
+                
+                <!-- 1. LOADING STATE -->
+                <div id="state-loading" class="text-center py-12">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 animate-spin-slow bg-cd-lavender/10 text-cd-lavender">
+                        <i data-lucide="loader-2" class="w-10 h-10 animate-spin"></i>
+                    </div>
+                    <h2 class="font-black text-2xl sm:text-3xl uppercase mb-3">Verificando Transacción...</h2>
+                    <p class="font-mono text-sm max-w-md mx-auto text-cd-text-muted" style="color: var(--color-text-muted);">
+                        Estamos consultando de forma segura la confirmación del pago con ePayco. Por favor espera un momento.
+                    </p>
+                </div>
+
+                <!-- 2. APPROVED STATE -->
+                <div id="state-approved" class="hidden text-center">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 bg-emerald-500/20 text-emerald-500 border-2 border-emerald-500 shadow-[0_0_24px_rgba(16,185,129,0.3)]">
+                        <i data-lucide="check-circle-2" class="w-12 h-12 stroke-[2.5]"></i>
+                    </div>
+                    <h1 class="font-black text-3xl sm:text-4xl uppercase mb-2 text-emerald-400">¡Pago Aprobado!</h1>
+                    <p class="text-base sm:text-lg font-medium mb-1 text-cd-lavender">Pago de servicios Cambio Digital</p>
+                    <p class="text-sm font-mono mb-8 text-cd-text-muted" style="color: var(--color-text-muted);">Tu transacción fue procesada con éxito y el servicio ha sido confirmado.</p>
+                </div>
+
+                <!-- 3. PENDING STATE -->
+                <div id="state-pending" class="hidden text-center">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 bg-amber-500/20 text-amber-400 border-2 border-amber-500 shadow-[0_0_24px_rgba(245,158,11,0.3)]">
+                        <i data-lucide="clock" class="w-12 h-12 stroke-[2.5]"></i>
+                    </div>
+                    <h1 class="font-black text-3xl sm:text-4xl uppercase mb-2 text-amber-400">Pago en Proceso</h1>
+                    <p class="text-base sm:text-lg font-medium mb-1 text-cd-lavender">Pago de servicios Cambio Digital</p>
+                    <p class="text-sm font-mono mb-8 text-cd-text-muted" style="color: var(--color-text-muted);">Tu pago está pendiente de aprobación por tu entidad bancaria. Te notificaremos una vez sea confirmado.</p>
+                </div>
+
+                <!-- 4. REJECTED / CANCELLED STATE -->
+                <div id="state-rejected" class="hidden text-center">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 bg-rose-500/20 text-rose-500 border-2 border-rose-500 shadow-[0_0_24px_rgba(244,63,94,0.3)]">
+                        <i data-lucide="x-circle" class="w-12 h-12 stroke-[2.5]"></i>
+                    </div>
+                    <h1 class="font-black text-3xl sm:text-4xl uppercase mb-2 text-rose-400">Pago No Completado</h1>
+                    <p class="text-base sm:text-lg font-medium mb-1 text-cd-lavender">Pago de servicios Cambio Digital</p>
+                    <p id="rejected-reason" class="text-sm font-mono mb-8 text-cd-text-muted" style="color: var(--color-text-muted);">La transacción fue cancelada o rechazada por la entidad financiera.</p>
+                </div>
+
+                <!-- 5. UNKNOWN / ERROR STATE -->
+                <div id="state-error" class="hidden text-center">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 bg-slate-500/20 text-slate-400 border-2 border-slate-500">
+                        <i data-lucide="help-circle" class="w-12 h-12 stroke-[2.5]"></i>
+                    </div>
+                    <h1 class="font-black text-3xl sm:text-4xl uppercase mb-2">Estado No Disponible</h1>
+                    <p class="text-base sm:text-lg font-medium mb-1 text-cd-lavender">Pago de servicios Cambio Digital</p>
+                    <p id="error-message" class="text-sm font-mono mb-8 text-cd-text-muted" style="color: var(--color-text-muted);">No se proporcionó una referencia válida de ePayco o la sesión ha expirado.</p>
+                </div>
+
+                <!-- TRANSACTION DETAILS (Visible when data exists) -->
+                <div id="details-section" class="hidden border-t-2 pt-6 mt-2 space-y-4" style="border-color: var(--color-border);">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-black text-sm uppercase tracking-wider text-cd-lavender flex items-center gap-2">
+                            <i data-lucide="receipt" class="w-4 h-4"></i> Detalle de la Transacción
+                        </h3>
+                        <span id="badge-status" class="px-3 py-0.5 text-xs font-mono font-bold rounded-full uppercase border"></span>
+                    </div>
+
+                    <div class="rounded-xl p-5 font-mono text-sm space-y-3" style="background: rgba(0,0,0,0.12); border: 1px solid var(--color-border);">
+                        <div class="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-white/5 gap-1">
+                            <span class="text-cd-text-muted" style="color: var(--color-text-muted);">Concepto / Servicio:</span>
+                            <span id="detail-description" class="font-bold text-right sm:max-w-xs truncate">Servicios profesionales y soluciones digitales</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-white/5 gap-1">
+                            <span class="text-cd-text-muted" style="color: var(--color-text-muted);">Referencia ePayco:</span>
+                            <span id="detail-ref" class="font-bold font-mono text-right">-</span>
+                        </div>
+                        <div id="invoice-row" class="hidden flex flex-col sm:flex-row sm:justify-between py-1 border-b border-white/5 gap-1">
+                            <span class="text-cd-text-muted" style="color: var(--color-text-muted);">Factura / Referencia:</span>
+                            <span id="detail-invoice" class="font-bold text-right">-</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-white/5 gap-1">
+                            <span class="text-cd-text-muted" style="color: var(--color-text-muted);">Importe Pagado:</span>
+                            <span id="detail-amount" class="font-black text-lg text-emerald-400 text-right">-</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-white/5 gap-1">
+                            <span class="text-cd-text-muted" style="color: var(--color-text-muted);">Fecha y Hora:</span>
+                            <span id="detail-date" class="text-right">-</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-white/5 gap-1">
+                            <span class="text-cd-text-muted" style="color: var(--color-text-muted);">Medio de Pago:</span>
+                            <span id="detail-method" class="text-right">-</span>
+                        </div>
+                        <div id="approval-row" class="hidden flex flex-col sm:flex-row sm:justify-between py-1 gap-1">
+                            <span class="text-cd-text-muted" style="color: var(--color-text-muted);">Código de Autorización:</span>
+                            <span id="detail-approval" class="text-right">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scope & Terms Reminder -->
+                <div class="mt-6 p-4 rounded-xl text-xs font-mono" style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); color: var(--color-text);">
+                    <p class="flex items-start gap-2">
+                        <i data-lucide="info" class="w-4 h-4 text-cd-lavender flex-shrink-0 mt-0.5"></i>
+                        <span>
+                            <strong>Cambio Digital:</strong> Servicios de desarrollo web, automatización, inteligencia artificial, soporte tecnológico, consultoría e implementaciones digitales.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- ACTION BUTTONS -->
+                <div id="action-buttons" class="mt-8 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4" style="border-color: var(--color-border);">
+                    <a href="/" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all border-2 border-black shadow-[4px_4px_0_black] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_black]" style="background: var(--color-primary); color: #ffffff;">
+                        <i data-lucide="home" class="w-4 h-4"></i> Volver al Inicio
+                    </a>
+
+                    <div class="w-full sm:w-auto flex items-center gap-3">
+                        <button id="btn-print" type="button" onclick="window.print()" class="hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-sm border-2 transition-all" style="background: var(--color-surface); border-color: var(--color-border); color: var(--color-text);">
+                            <i data-lucide="printer" class="w-4 h-4"></i> Imprimir
+                        </button>
+                        <a id="btn-whatsapp-support" href="https://wa.me/573122908416?text=Hola,%20tengo%20una%20consulta%20sobre%20mi%20pago%20en%20Cambio%20Digital." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-[#25D366] text-white border-2 border-black shadow-[3px_3px_0_black] hover:translate-x-[1px] hover:translate-y-[1px] transition-all">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i> Soporte
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Layout loader runtime -->
+    <script src="/assets/js/layout-loader.js"></script>
+
+    <script>
+        (function() {
+            'use strict';
+
+            const EPAYCO_VALIDATION_URL = 'https://secure.epayco.co/validation/v1/reference/';
+
+            function getQueryParam(name) {
+                const params = new URLSearchParams(window.location.search);
+                return params.get(name) || params.get(name.toLowerCase()) || '';
+            }
+
+            function formatCurrency(amount, currency) {
+                const num = parseFloat(amount) || 0;
+                const curr = (currency || 'USD').toUpperCase();
+                try {
+                    return new Intl.NumberFormat('es-CO', {
+                        style: 'currency',
+                        currency: curr,
+                        minimumFractionDigits: curr === 'COP' ? 0 : 2
+                    }).format(num);
+                } catch (e) {
+                    return `${curr} $${num.toFixed(2)}`;
+                }
+            }
+
+            function hideAllStates() {
+                document.getElementById('state-loading').classList.add('hidden');
+                document.getElementById('state-approved').classList.add('hidden');
+                document.getElementById('state-pending').classList.add('hidden');
+                document.getElementById('state-rejected').classList.add('hidden');
+                document.getElementById('state-error').classList.add('hidden');
+            }
+
+            function updateWhatsAppSupportLink(refPayco, statusText) {
+                const waBtn = document.getElementById('btn-whatsapp-support');
+                if (!waBtn) return;
+                const msg = encodeURIComponent(`Hola Cambio Digital, acabo de realizar un pago con referencia ePayco: ${refPayco || 'N/A'} (Estado: ${statusText}). Quisiera confirmar los siguientes pasos.`);
+                waBtn.href = `https://wa.me/573122908416?text=${msg}`;
+            }
+
+            function renderDetails(data) {
+                const detailsSec = document.getElementById('details-section');
+                const printBtn = document.getElementById('btn-print');
+                if (!detailsSec) return;
+
+                detailsSec.classList.remove('hidden');
+                if (printBtn) printBtn.classList.remove('hidden');
+
+                const ref = data.x_ref_payco || data.ref_payco || '-';
+                const description = data.x_description || 'Servicios profesionales y soluciones digitales';
+                const amount = data.x_amount || data.amount || 0;
+                const currency = data.x_currency_code || data.currency || 'USD';
+                const date = data.x_transaction_date || data.x_fecha_transaccion || new Date().toLocaleString();
+                const franchise = data.x_franchise || '';
+                const bank = data.x_bank_name || '';
+                const invoice = data.x_id_invoice || '';
+                const approval = data.x_approval_code || '';
+
+                document.getElementById('detail-ref').textContent = ref;
+                document.getElementById('detail-description').textContent = description;
+                document.getElementById('detail-amount').textContent = formatCurrency(amount, currency);
+                document.getElementById('detail-date').textContent = date;
+                document.getElementById('detail-method').textContent = [franchise, bank].filter(Boolean).join(' - ') || 'En línea (ePayco)';
+
+                if (invoice) {
+                    const invRow = document.getElementById('invoice-row');
+                    if (invRow) {
+                        invRow.classList.remove('hidden');
+                        document.getElementById('detail-invoice').textContent = invoice;
+                    }
+                }
+
+                if (approval) {
+                    const appRow = document.getElementById('approval-row');
+                    if (appRow) {
+                        appRow.classList.remove('hidden');
+                        document.getElementById('detail-approval').textContent = approval;
+                    }
+                }
+            }
+
+            const SERVER_STATUS_URL = '/api/pagos/epayco/estado?ref_payco=';
+            const EPAYCO_FALLBACK_URL = 'https://secure.epayco.co/validation/v1/reference/';
+
+            async function verifyTransaction() {
+                const refPayco = getQueryParam('ref_payco') || getQueryParam('x_ref_payco');
+
+                if (!refPayco) {
+                    hideAllStates();
+                    document.getElementById('state-error').classList.remove('hidden');
+                    document.getElementById('error-message').textContent = 'No se encontró una referencia de pago válida en la URL. Si acabas de realizar una transacción, por favor contáctanos con tu comprobante.';
+                    if (window.refreshLucideIcons) window.refreshLucideIcons();
+                    return;
+                }
+
+                try {
+                    let data = null;
+
+                    // 1. Try server-side status endpoint first (no CORS, checks DB + ePayco)
+                    try {
+                        const serverRes = await fetch(`${SERVER_STATUS_URL}${encodeURIComponent(refPayco)}`, {
+                            method: 'GET',
+                            headers: { 'Accept': 'application/json' }
+                        });
+                        if (serverRes.ok) {
+                            const sJson = await serverRes.json();
+                            if (sJson && sJson.success && sJson.data) {
+                                data = sJson.data;
+                            }
+                        }
+                    } catch (serverErr) {
+                        console.warn('Server-side status check failed, attempting fallback...', serverErr);
+                    }
+
+                    // 2. Client-side fallback if server-side returned nothing
+                    if (!data) {
+                        const directRes = await fetch(`${EPAYCO_FALLBACK_URL}${encodeURIComponent(refPayco)}`, {
+                            method: 'GET',
+                            headers: { 'Accept': 'application/json' }
+                        });
+                        if (!directRes.ok) {
+                            throw new Error(`Error en validación ePayco: HTTP ${directRes.status}`);
+                        }
+                        const directJson = await directRes.json();
+                        data = directJson.data || directJson;
+                    }
+
+                    if (!data) {
+                        throw new Error('No se recibieron datos de la transacción.');
+                    }
+
+                    const responseCode = parseInt(data.x_cod_response || data.x_cod_transaction_state, 10);
+                    const responseText = data.x_response || data.x_transaction_state || 'Transacción';
+
+                    hideAllStates();
+                    const statusBadge = document.getElementById('badge-status');
+
+                    switch (responseCode) {
+                        case 1: // Aprobada
+                            document.getElementById('state-approved').classList.remove('hidden');
+                            if (statusBadge) {
+                                statusBadge.textContent = 'Aprobado';
+                                statusBadge.className = 'px-3 py-0.5 text-xs font-mono font-bold rounded-full uppercase border bg-emerald-500/20 text-emerald-400 border-emerald-500';
+                            }
+                            updateWhatsAppSupportLink(refPayco, 'Aprobado');
+                            break;
+
+                        case 3: // Pendiente
+                            document.getElementById('state-pending').classList.remove('hidden');
+                            if (statusBadge) {
+                                statusBadge.textContent = 'Pendiente';
+                                statusBadge.className = 'px-3 py-0.5 text-xs font-mono font-bold rounded-full uppercase border bg-amber-500/20 text-amber-400 border-amber-500';
+                            }
+                            updateWhatsAppSupportLink(refPayco, 'Pendiente');
+                            break;
+
+                        case 2: // Rechazada
+                        case 4: // Fallida / Cancelada
+                        case 6: // Reversada
+                        case 7: // Retenida
+                            document.getElementById('state-rejected').classList.remove('hidden');
+                            const reason = data.x_response_reason_text || 'La transacción no pudo ser completada.';
+                            document.getElementById('rejected-reason').textContent = reason;
+                            if (statusBadge) {
+                                statusBadge.textContent = responseCode === 2 ? 'Rechazado' : 'Fallido / Cancelado';
+                                statusBadge.className = 'px-3 py-0.5 text-xs font-mono font-bold rounded-full uppercase border bg-rose-500/20 text-rose-400 border-rose-500';
+                            }
+                            updateWhatsAppSupportLink(refPayco, 'Rechazado');
+                            break;
+
+                        default:
+                            document.getElementById('state-error').classList.remove('hidden');
+                            document.getElementById('error-message').textContent = `Estado de pago: ${responseText}. Por favor verifica con tu entidad o contáctanos.`;
+                            if (statusBadge) {
+                                statusBadge.textContent = responseText;
+                                statusBadge.className = 'px-3 py-0.5 text-xs font-mono font-bold rounded-full uppercase border bg-slate-500/20 text-slate-300 border-slate-500';
+                            }
+                            updateWhatsAppSupportLink(refPayco, responseText);
+                            break;
+                    }
+
+                    renderDetails(data);
+
+                } catch (err) {
+                    console.error('Error validando pago:', err);
+                    hideAllStates();
+                    document.getElementById('state-error').classList.remove('hidden');
+                    document.getElementById('error-message').textContent = `No pudimos verificar la referencia ${refPayco}. Si realizaste el débito, por favor escríbenos directamente a soporte con tu comprobante.`;
+                    updateWhatsAppSupportLink(refPayco, 'Error de Verificación');
+                } finally {
+                    if (window.refreshLucideIcons) {
+                        window.refreshLucideIcons();
+                    }
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                verifyTransaction();
+            });
+        })();
+    </script>
+</body>
+</html>
