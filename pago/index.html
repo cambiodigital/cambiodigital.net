@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Seguro de Servicios | Cambio Digital</title>
+    <meta name="description" content="Paga tus servicios, asesorías, proyectos y soluciones digitales de forma ágil y 100% segura con ePayco en Cambio Digital.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1c2143">
+    <link rel="canonical" href="https://cambiodigital.net/pago/">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: light)" href="/assets/images/LogoCDFondoClaro.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" href="/assets/images/LogoCDFondoOscuro.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cambiodigital.net/pago/">
+    <meta property="og:title" content="Pago Seguro de Servicios | Cambio Digital">
+    <meta property="og:description" content="Paga tus servicios y soluciones digitales de forma ágil y 100% segura con ePayco en Cambio Digital.">
+    <meta property="og:image" content="https://cambiodigital.net/assets/images/LogoCDFondoClaro.png">
+
+    <!-- Theme Setup (pre-render to avoid flash) -->
+    <script>
+        (function () {
+            try {
+                document.documentElement.setAttribute('data-theme', localStorage.getItem('cd-theme') || 'light');
+            } catch (error) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/tailwind.generated.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/assets/js/config.js"></script>
+    <script src="/assets/js/theme-toggle.js" defer></script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden bg-cd-base text-cd-cream selection:bg-cd-magenta selection:text-white" style="background: var(--color-bg); color: var(--color-text);">
+    <!-- Custom Cursor -->
+    <div id="cursor-outline"></div>
+    <div id="cursor-dot"></div>
+
+    <!-- Background Grid -->
+    <div class="fixed inset-0 z-0 bg-grid"></div>
+
+    <!-- Header Partial Container -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-28 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-start">
+        <div class="max-w-3xl mx-auto w-full">
+            
+            <!-- Breadcrumb / Badge -->
+            <div class="text-center mb-6">
+                <span class="inline-flex items-center gap-2 px-4 py-1 border-2 border-cd-lavender text-cd-lavender font-mono text-xs font-bold uppercase rounded-full tracking-wider bg-transparent">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i> Pasarela Segura de Pagos
+                </span>
+            </div>
+
+            <!-- Header Title -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight mb-3">
+                    Pago de Servicios
+                </h1>
+                <p class="font-sans text-base sm:text-lg max-w-xl mx-auto text-cd-text-muted" style="color: var(--color-text-muted);">
+                    Realiza el pago de tus servicios, cuotas, asesorías o implementaciones acordadas con <strong class="text-cd-lavender font-bold">Cambio Digital</strong> de manera rápida, transparente y protegida.
+                </p>
+            </div>
+
+            <!-- Main Payment Card -->
+            <div class="card-modern p-6 sm:p-10 border-2 rounded-2xl shadow-2xl transition-all duration-300 mb-8" style="background: var(--color-surface); border-color: var(--color-border);">
+                
+                <div class="flex items-center justify-between border-b pb-4 mb-6" style="border-color: var(--color-border);">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-cd-lavender/10 text-cd-lavender">
+                            <i data-lucide="credit-card" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-black text-lg sm:text-xl uppercase">Pago Abierto</h2>
+                            <p class="text-xs font-mono text-cd-text-muted" style="color: var(--color-text-muted);">Procesado por ePayco</p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 text-xs font-mono font-bold rounded-full border bg-emerald-500/10 text-emerald-400 border-emerald-500/30 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        En línea
+                    </span>
+                </div>
+
+                <!-- Instructions box -->
+                <div class="rounded-xl p-5 mb-8 space-y-3 font-mono text-xs sm:text-sm" style="background: rgba(99, 102, 241, 0.06); border: 1px solid rgba(99, 102, 241, 0.2);">
+                    <p class="font-bold flex items-center gap-2 text-cd-lavender">
+                        <i data-lucide="info" class="w-4 h-4 flex-shrink-0"></i>
+                        ¿Cómo realizar tu pago?
+                    </p>
+                    <ol class="list-decimal list-inside space-y-1.5 text-cd-text-muted" style="color: var(--color-text-muted);">
+                        <li>Haz clic en el botón <strong class="text-cd-cream">"Pagar con ePayco"</strong> a continuación.</li>
+                        <li>Ingresa el <strong class="text-cd-cream">valor acordado</strong> y el concepto o número de cotización/factura.</li>
+                        <li>Elige tu método de pago preferido (Tarjetas de Crédito/Débito, PSE, Nequi, Daviplata o Efectivo).</li>
+                        <li>Recibe tu confirmación y comprobante inmediatamente.</li>
+                    </ol>
+                </div>
+
+                <!-- ePayco Form -->
+                <!-- =====================================================================
+                      ///////////   Este es su botón de Pago Abierto ePayco   ///////////
+                     ===================================================================== -->
+                <form id="frm_ePaycoCheckoutOpen" 
+                      name="frm_ePaycoCheckoutOpen" 
+                      method="POST" 
+                      action="https://secure.payco.co/checkoutopen.php"
+                      class="flex flex-col items-center justify-center space-y-4">
+                    
+                    <input type="hidden" id="idboton" name="idboton" value="6754ae4b-cef0-4d74-9882-46dcccedf95a"/>
+                    
+                    <!-- Modern Styled CTA Button -->
+                    <button type="submit" 
+                            id="btn-pay-action"
+                            class="w-full sm:w-auto min-w-[280px] inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-black text-base uppercase tracking-wider transition-all duration-200 border-2 border-black shadow-[4px_4px_0_black] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_black] cursor-pointer" 
+                            style="background: var(--color-primary); color: #ffffff;">
+                        <i data-lucide="lock" class="w-5 h-5"></i>
+                        <span>Pagar con ePayco</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+
+                    <!-- Official ePayco Badge Image as Secondary/Clickable Option -->
+                    <div class="pt-2 flex flex-col items-center">
+                        <span class="text-xs font-mono text-cd-text-muted mb-2" style="color: var(--color-text-muted);">O haz clic directamente en el botón oficial:</span>
+                        <input type="image" 
+                               id="imagen" 
+                               src="https://multimedia.epayco.co/dashboard/btns/btn3.png" 
+                               alt="Pagar con ePayco"
+                               class="hover:opacity-90 transition-opacity cursor-pointer max-h-12"/>
+                    </div>
+                </form>
+                <!-- ================================================================== -->
+
+                <!-- Payment Methods & Security Info -->
+                <div class="mt-10 pt-6 border-t space-y-4" style="border-color: var(--color-border);">
+                    <div class="text-center font-mono text-xs text-cd-text-muted mb-3" style="color: var(--color-text-muted);">
+                        Medios de pago soportados en pasarela segura:
+                    </div>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                        <div class="p-3 rounded-xl border flex flex-col items-center justify-center gap-1.5" style="border-color: var(--color-border); background: rgba(0,0,0,0.06);">
+                            <i data-lucide="credit-card" class="w-5 h-5 text-cd-lavender"></i>
+                            <span class="font-bold text-xs">Tarjetas de Crédito</span>
+                            <span class="text-[10px] text-cd-text-muted" style="color: var(--color-text-muted);">Visa, Master, Amex</span>
+                        </div>
+                        <div class="p-3 rounded-xl border flex flex-col items-center justify-center gap-1.5" style="border-color: var(--color-border); background: rgba(0,0,0,0.06);">
+                            <i data-lucide="landmark" class="w-5 h-5 text-emerald-400"></i>
+                            <span class="font-bold text-xs">PSE / Cuentas</span>
+                            <span class="text-[10px] text-cd-text-muted" style="color: var(--color-text-muted);">Débito bancario</span>
+                        </div>
+                        <div class="p-3 rounded-xl border flex flex-col items-center justify-center gap-1.5" style="border-color: var(--color-border); background: rgba(0,0,0,0.06);">
+                            <i data-lucide="smartphone" class="w-5 h-5 text-amber-400"></i>
+                            <span class="font-bold text-xs">Billeteras</span>
+                            <span class="text-[10px] text-cd-text-muted" style="color: var(--color-text-muted);">Nequi / Daviplata</span>
+                        </div>
+                        <div class="p-3 rounded-xl border flex flex-col items-center justify-center gap-1.5" style="border-color: var(--color-border); background: rgba(0,0,0,0.06);">
+                            <i data-lucide="banknote" class="w-5 h-5 text-rose-400"></i>
+                            <span class="font-bold text-xs">Efectivo</span>
+                            <span class="text-[10px] text-cd-text-muted" style="color: var(--color-text-muted);">Efecty / Baloto</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Trust & Support Card -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <div class="card-modern p-5 border rounded-xl flex items-start gap-3" style="background: var(--color-surface); border-color: var(--color-border);">
+                    <div class="w-8 h-8 rounded-lg flex-shrink-0 flex items-center justify-center bg-emerald-500/10 text-emerald-400 mt-0.5">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm">Seguridad Garantizada</h3>
+                        <p class="text-xs text-cd-text-muted mt-1 leading-relaxed" style="color: var(--color-text-muted);">
+                            Certificación PCI-DSS Nivel 1 y cifrado SSL de 256 bits. Tus datos bancarios nunca se almacenan en nuestros servidores.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-modern p-5 border rounded-xl flex items-start gap-3" style="background: var(--color-surface); border-color: var(--color-border);">
+                    <div class="w-8 h-8 rounded-lg flex-shrink-0 flex items-center justify-center bg-[#25D366]/10 text-[#25D366] mt-0.5">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm">¿Dudas con tu pago?</h3>
+                        <p class="text-xs text-cd-text-muted mt-1 leading-relaxed" style="color: var(--color-text-muted);">
+                            Comunícate directamente con nuestro equipo de soporte para coordinar transferencias directas o resolver inquietudes.
+                        </p>
+                        <a href="https://wa.me/573122908416?text=Hola,%20tengo%20una%20pregunta%20sobre%20el%20pago%20de%20servicios%20en%20Cambio%20Digital." target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-[#25D366] hover:underline mt-2">
+                            Contactar por WhatsApp <i data-lucide="external-link" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Partial Container -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Custom Cursor
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+        let mouseX = 0, mouseY = 0;
+        let outlineX = 0, outlineY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            if (cursorDot) cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+        });
+
+        function animateCursor() {
+            if (cursorOutline) {
+                outlineX += (mouseX - outlineX) * 0.15;
+                outlineY += (mouseY - outlineY) * 0.15;
+                cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px)`;
+            }
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+    </script>
+
+    <!-- Layout loader runtime -->
+    <script src="/assets/js/layout-loader.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide && window.lucide.createIcons) {
+                window.lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
