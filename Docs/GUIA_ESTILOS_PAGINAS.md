@@ -50,7 +50,7 @@ Este documento establece los estándares de diseño y código para mantener cons
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons - OBLIGATORIO -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/assets/js/lucide.min.js"></script>
 </head>
 ```
 

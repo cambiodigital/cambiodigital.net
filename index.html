@@ -65,7 +65,7 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap">
     </noscript>
 
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="/assets/js/lucide.min.js" defer></script>
     <script src="/assets/js/config.js" defer></script>
     <script src="/assets/js/theme-toggle.js" defer></script>
     <script src="/assets/js/clickable-cards.js" defer></script>
@@ -114,17 +114,6 @@
         <section id="home"
             class="min-h-screen w-full flex items-center justify-center px-4 pt-24 pb-24 relative overflow-hidden">
             <div class="absolute inset-0 w-full h-full z-0" style="background: var(--cd-base-dark);">
-                <!-- Fallback Image (Shown on video error) -->
-                <div id="hero-fallback" class="absolute inset-0 w-full h-full bg-cover bg-center opacity-30 hidden"
-                    style="background-image: url('assets/og-home.png');"></div>
-
-                <video id="hero-video" autoplay loop muted playsinline preload="metadata" poster="assets/og-home.png"
-                    class="w-full h-full object-cover opacity-30"
-                    onerror="this.style.display='none'; document.getElementById('hero-fallback').classList.remove('hidden');">
-                    <source src="https://cambiodigital.net/media/videoiacrm.mp4" type="video/mp4">
-                    <!-- Fallback for browsers that don't support video tag -->
-                    <img src="assets/og-home.png" alt="Hero Background" class="w-full h-full object-cover">
-                </video>
                 <div class="absolute inset-0 hero-overlay"></div>
             </div>
 
@@ -1083,8 +1072,6 @@
                 else if (hh === '#servicio') window.switchForm('service');
                 else if (hh === '#contacto') window.switchForm('simple');
             });
-            const v = document.getElementById('hero-video');
-            if (v) { v.muted = true; const p = v.play(); if (p !== undefined) p.catch(() => { const s = () => { v.play();['click', 'touchstart', 'scroll'].forEach(e => document.removeEventListener(e, s)); };['click', 'touchstart', 'scroll'].forEach(e => document.addEventListener(e, s, { once: true })); }); }
 
             refreshHomeIcons();
             loadHomeBlogPreview();

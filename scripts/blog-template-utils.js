@@ -224,7 +224,7 @@ function normalizeBlogPostHtml(html, templateDefinition = loadTemplateDefinition
         /\s*<link rel="stylesheet" href="\/assets\/css\/tailwind\.generated\.css">\s*/g,
         /\s*<link rel="stylesheet" href="\/assets\/css\/theme\.css">\s*/g,
         /\s*<!-- Google Fonts -->[\s\S]*?<\/noscript>\s*/g,
-        /\s*<!-- Lucide Icons -->\s*<script src="https:\/\/unpkg\.com\/lucide@latest"(?: defer)?><\/script>\s*/g,
+        /\s*<!-- Lucide Icons -->\s*<script src="\/assets\/js\/lucide\.min\.js"(?: defer)?><\/script>\s*/g,
         /\s*<!-- Theme Toggle \(in head to prevent flash\) -->\s*<script src="\/assets\/js\/theme-toggle\.js"(?: defer)?><\/script>\s*/g
     ];
 

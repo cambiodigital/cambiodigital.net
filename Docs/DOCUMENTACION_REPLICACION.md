@@ -91,7 +91,7 @@
     *   `assets/images/LogoCDFondoClaro.png` (Para fondos claros)
     *   `assets/images/LogoCDFondoOscuro.png` (Para fondos oscuros/header)
 *   **Iconografía:**
-    *   Librería: **Lucide Icons** (cargada vía CDN `unpkg.com/lucide@latest`).
+    *   Librería: **Lucide Icons** (archivo local `/assets/js/lucide.min.js`, sin CDN).
     *   Usos: `shield-check`, `zap`, `users`, `message-circle`, etc.
 *   **Tipografía:**
     *   Fuentes: **Inter** (Textos generales) y **Space Mono** (Datos técnicos/código).

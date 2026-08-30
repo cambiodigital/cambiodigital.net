@@ -1,10 +1,23 @@
 Options -Indexes -MultiViews
 DirectoryIndex index.html index.php
 
+# Evita que mod_dir genere redirects 301 con Location http:// (bloqueados por el
+# navegador como mixed content cuando el proxy de Dokploy termina el HTTPS)
+DirectorySlash Off
+
 # Bloqueo estricto de acceso HTTP a carpetas y archivos sensibles
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
+
+    # Esquema correcto para redirects detrás del proxy de Dokploy (Traefik):
+    # Apache ve la petición en HTTP, pero el cliente está en HTTPS.
+    RewriteCond %{HTTP:X-Forwarded-Proto} =https [OR]
+    RewriteCond %{HTTPS} =on
+    RewriteRule ^ - [E=CD_SCHEME:https]
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ - [E=CD_SCHEME:http]
 
     # Bloquear acceso a storage, Docs, .git, .env, backups
     RewriteRule ^(storage|Docs|\.git|\.env|node_modules|scripts)(/.*)?$ - [F,L,NC]
@@ -12,15 +25,21 @@ DirectoryIndex index.html index.php
 
     # Redirigir de .html o .php a sin extensión (301 permanente)
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.(html|php) [NC]
-    RewriteRule ^ %1 [R=301,L]
+    RewriteRule ^ %{ENV:CD_SCHEME}://%{HTTP_HOST}%1 [R=301,L]
 
-    # Directorio sin index.html → servir el .html homónimo de la raíz (p.ej. /blog/ → blog.html)
+    # Directorio con index.html → servirlo internamente (p.ej. /pago → /pago/index.html)
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{REQUEST_URI} !/$
+    RewriteCond %{REQUEST_FILENAME}/index.html -f
+    RewriteRule ^(.*)$ $1/index.html [L]
+
+    # Directorio sin index.html → .html homónimo en la raíz (p.ej. /blog/ → blog.html)
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteCond %{REQUEST_FILENAME}/index.html !-f
     RewriteCond %{REQUEST_URI} ^/([^/]+)/?$
     RewriteCond %{DOCUMENT_ROOT}/%1.html -f
     RewriteRule ^ %1.html [L]
-    
+
     # Si existe archivo.php, ejecutarlo
     RewriteCond %{REQUEST_FILENAME}.php -f
     RewriteRule ^(.*?)/?$ $1.php [L]
@@ -28,7 +47,7 @@ DirectoryIndex index.html index.php
     # Si existe archivo.html, priorizarlo sobre directorio del mismo nombre
     RewriteCond %{REQUEST_FILENAME}.html -f
     RewriteRule ^(.*?)/?$ $1.html [L]
-    
+
     # Si no existe como archivo o directorio directo, verificar si existe .php o .html
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d

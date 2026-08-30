@@ -7,8 +7,8 @@
     'use strict';
 
     const THEME_SCRIPT_SRC = '/assets/js/theme-toggle.js';
-    const LUCIDE_SCRIPT_SRC = 'https://unpkg.com/lucide@latest';
-    const LUCIDE_SCRIPT_SELECTOR = 'script[src*="unpkg.com/lucide"]';
+    const LUCIDE_SCRIPT_SRC = '/assets/js/lucide.min.js';
+    const LUCIDE_SCRIPT_SELECTOR = 'script[src*="assets/js/lucide.min.js"]';
     const GOOGLE_FONTS_HREF = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap';
 
     function applyStoredThemeFallback() {
