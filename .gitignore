@@ -6,3 +6,10 @@ storage/logs/
 storage/epayco/
 .codegraph/
 .zcode/
+.venv/
+.uploads/
+.tmp-lighthouse/
+testsprite_tests/
+Inventario_Cambio_Digital/
+imagenes_publicas/
+*.log

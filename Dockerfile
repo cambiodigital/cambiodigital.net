@@ -47,6 +47,9 @@ WORKDIR /var/www/html
 # Copy application source code
 COPY --from=frontend-builder /app /var/www/html
 
+# Remove build-time Node dependencies (not needed at runtime)
+RUN rm -rf /var/www/html/node_modules
+
 # Copy and setup entrypoint
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh

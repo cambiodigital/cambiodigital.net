@@ -1,0 +1,31 @@
+# Control de versiones y entornos locales
+.git
+.gitignore
+.gitattributes
+.env
+.env.php
+.env.example
+
+# Dependencias y entornos virtuales
+node_modules
+.venv
+
+# Datos locales que viven en volúmenes / no se despliegan
+storage
+.uploads
+presupuestos
+Propuestas
+Docs
+Inventario_Cambio_Digital
+imagenes_publicas
+
+# Artefactos de desarrollo y herramientas
+.tmp-lighthouse
+testsprite_tests
+.codegraph
+.zcode
+.atl
+.trae
+
+# Logs
+*.log

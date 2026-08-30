@@ -1,21 +1,35 @@
+# ==============================================================================
+# Cambio Digital - Docker Compose para Dokploy
+# ------------------------------------------------------------------------------
+# - Dokploy inyecta las variables de entorno desde el panel (Settings > Env)
+#   creando un .env en la raíz del repo, que Compose interpola aquí.
+# - NO publicamos puertos: Dokploy enruta el tráfico a través de su proxy
+#   (Traefik) hacia el servicio "web" en el puerto 80.
+# - El volumen guarda la base SQLite y logs de ePayco de forma persistente.
+# ==============================================================================
+
 services:
   web:
     build:
       context: .
       dockerfile: Dockerfile
     image: cambiodigital-web:latest
-    container_name: cambiodigital-web-test
     restart: unless-stopped
-    ports:
-      - "8088:80"
     environment:
-      - EPAYCO_CUSTOMER_ID=123456
-      - EPAYCO_SECRET_KEY=test_p_key_secret_12345
-      - EPAYCO_PUBLIC_KEY=test_public_key
-      # - N8N_PAYMENTS_WEBHOOK_URL=https://n8n.cambiodigital.cloud/webhook/test-pagos
+      # ePayco Gateway - llaves reales desde el panel de Dokploy
+      EPAYCO_CUSTOMER_ID: ${EPAYCO_CUSTOMER_ID:-}
+      EPAYCO_SECRET_KEY: ${EPAYCO_SECRET_KEY:-}
+      EPAYCO_PUBLIC_KEY: ${EPAYCO_PUBLIC_KEY:-}
+      # Webhook opcional para n8n / CRM
+      N8N_PAYMENTS_WEBHOOK_URL: ${N8N_PAYMENTS_WEBHOOK_URL:-}
     volumes:
       - epayco_storage:/var/www/html/storage
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 
 volumes:
   epayco_storage:
-    name: cambiodigital_storage
