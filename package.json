@@ -6,6 +6,9 @@
   "scripts": {
     "blog:new": "node scripts/blog-new.js",
     "blog:sync-template": "node scripts/blog-sync-template.js",
+    "demo:new": "node scripts/demo-new.js",
+    "demo:sync-template": "node scripts/demo-sync-template.js",
+    "demo:validate": "node scripts/demo-validate.js",
     "build:css": "tailwindcss -i assets/css/tailwind.input.css -o assets/css/tailwind.generated.css --minify",
     "watch:css": "tailwindcss -i assets/css/tailwind.input.css -o assets/css/tailwind.generated.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITULO_DEMO | Demo — Cambio Digital</title>
+    <meta name="description" content="DESCRIPCION_DEMO">
+    <meta name="robots" content="META_ROBOTS">
+    <meta name="theme-color" content="#1c2143">
+    <meta name="demo-title" content="TITULO_DEMO">
+    <link rel="canonical" href="https://cambiodigital.net/demos/SLUG_DEMO">
+    <!-- DEMO_SHARED_ICONS_START -->
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: light)" href="/assets/images/LogoCDFondoClaro.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" href="/assets/images/LogoCDFondoOscuro.png">
+    <!-- DEMO_SHARED_ICONS_END -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TITULO_DEMO | Demo — Cambio Digital">
+    <meta property="og:description" content="DESCRIPCION_DEMO">
+    <meta property="og:image" content="URL_IMAGEN_DEMO">
+    <meta property="og:url" content="https://cambiodigital.net/demos/SLUG_DEMO">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cambiodigital.net/demos/SLUG_DEMO">
+    <meta property="twitter:title" content="TITULO_DEMO | Demo — Cambio Digital">
+    <meta property="twitter:description" content="DESCRIPCION_DEMO">
+    <meta property="twitter:image" content="URL_IMAGEN_DEMO">
+
+    <!-- DEMO_SHARED_HEAD_START -->
+    <script>
+        (function () {
+            try {
+                document.documentElement.setAttribute('data-theme', localStorage.getItem('cd-theme') || 'light');
+            } catch (error) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/tailwind.generated.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Lucide Icons -->
+    <script src="/assets/js/lucide.min.js" defer></script>
+
+    <!-- Theme Toggle (in head to prevent flash) -->
+    <script src="/assets/js/theme-toggle.js" defer></script>
+    <!-- DEMO_SHARED_HEAD_END -->
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden bg-cd-base text-cd-cream selection:bg-cd-magenta selection:text-white">
+    <div class="fixed inset-0 z-0 bg-grid"></div>
+
+    <!-- DEMO_SHARED_CHROME_TOP_START -->
+    <header class="fixed top-0 left-0 w-full z-50 px-4 md:px-6">
+        <nav class="flex justify-between items-center gap-3 max-w-7xl mx-auto px-4 md:px-6 py-3 mt-3 rounded-xl glass z-50 relative" aria-label="Barra de demo de Cambio Digital">
+            <div class="flex items-center gap-3 min-w-0">
+                <a href="/demos" class="inline-flex items-center gap-2 font-mono text-sm font-bold text-cd-cream hover:text-cd-highlight transition-colors min-h-[44px] px-1">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> <span class="hidden sm:inline">Demos</span>
+                </a>
+                <span class="w-px h-6 shrink-0" style="background: var(--cd-border);"></span>
+                <span data-demo-title class="font-bold text-sm md:text-base truncate text-cd-cream"></span>
+                <span class="badge badge-accent text-xs shrink-0">DEMO</span>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button class="theme-toggle" aria-label="Cambiar tema" title="Cambiar modo claro/oscuro">
+                    <i data-lucide="sun" class="w-4 h-4 icon-sun"></i>
+                    <i data-lucide="moon" class="w-4 h-4 icon-moon"></i>
+                </button>
+                <a href="/#contacto" class="btn-primary text-xs py-2 px-4">
+                    Quiero algo así <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!-- DEMO_SHARED_CHROME_TOP_END -->
+
+    <main class="relative z-10 pt-28 pb-8 px-4 md:px-8">
+        <!-- DEMO_CONTENT_START -->
+        <div class="max-w-4xl mx-auto">
+            <div class="card-modern p-8 md:p-12 reveal">
+                <span class="badge badge-accent mb-4 inline-flex">Demo</span>
+                <h1 class="font-black text-3xl md:text-4xl uppercase mb-4">TITULO_DEMO</h1>
+                <p class="text-cd-text-muted mb-6">DESCRIPCION_DEMO</p>
+                <p class="font-mono text-sm p-4 rounded-lg" style="background: var(--cd-surface); border: 1px dashed var(--cd-border);">
+                    CONTENIDO_PLACEHOLDER — Reemplaza este bloque con la experiencia interactiva de la demo.
+                    Todo lo que vive entre los marcadores DEMO_CONTENT_START/END es contenido específico de la demo.
+                </p>
+            </div>
+        </div>
+        <!-- DEMO_CONTENT_END -->
+    </main>
+
+    <!-- DEMO_SHARED_CHROME_BOTTOM_START -->
+    <section class="relative z-10 pb-10 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto card-modern p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-cd-text-muted text-center md:text-left">
+                <i data-lucide="info" class="w-4 h-4 inline-block mr-1 -mt-0.5" style="color: var(--cd-highlight-color);"></i>
+                Esta es una demo interactiva con <strong>datos ficticios</strong>: así podría verse tu operación con una solución de Cambio Digital.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 justify-center shrink-0">
+                <a href="/servicios/erp-open-source" class="btn-secondary text-xs py-2 px-4">Soluciones relacionadas</a>
+                <a href="/#contacto" class="btn-primary text-xs py-2 px-4">Hablar con un asesor</a>
+            </div>
+        </div>
+    </section>
+    <!-- DEMO_SHARED_CHROME_BOTTOM_END -->
+
+    <!-- DEMO_SHARED_FOOTER_SCRIPTS_START -->
+    <script src="/assets/js/demo-chrome.js"></script>
+    <!-- DEMO_SHARED_FOOTER_SCRIPTS_END -->
+</body>
+</html>

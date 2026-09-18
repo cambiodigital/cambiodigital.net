@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demos Interactivas | Cambio Digital</title>
+    <meta name="description" content="Explora nuestras demos interactivas: ERPs, CRMs, chatbots y paneles a medida. Mira en vivo cómo podría funcionar la solución de tu negocio.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cambiodigital.net/demos">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cambiodigital.net/demos">
+    <meta property="og:title" content="Demos Interactivas | Cambio Digital">
+    <meta property="og:description" content="Mira en vivo cómo podría funcionar la solución de tu negocio.">
+    <meta property="og:image" content="https://cambiodigital.net/assets/og-home.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cambiodigital.net/demos">
+    <meta property="twitter:title" content="Demos Interactivas | Cambio Digital">
+    <meta property="twitter:description" content="Mira en vivo cómo podría funcionar la solución de tu negocio.">
+    <meta property="twitter:image" content="https://cambiodigital.net/assets/og-home.png">
+
+    <script>
+        (function () {
+            try {
+                document.documentElement.setAttribute('data-theme', localStorage.getItem('cd-theme') || 'light');
+            } catch (error) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/tailwind.generated.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <script src="/assets/js/lucide.min.js" defer></script>
+    <script src="/assets/js/config.js"></script>
+    <script src="/assets/js/theme-toggle.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Demos Interactivas de Cambio Digital",
+      "url": "https://cambiodigital.net/demos",
+      "description": "Catálogo de demos interactivas de soluciones para negocios: ERP, CRM, chatbots y desarrollo a medida.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cambio Digital"
+      }
+    }
+    </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden bg-cd-base text-cd-cream selection:bg-cd-magenta selection:text-white">
+
+    <div id="cursor-outline"></div>
+    <div id="cursor-dot"></div>
+    <div class="fixed inset-0 z-0 bg-grid"></div>
+
+    <div id="header-container"></div>
+
+    <main class="relative z-10 pt-28 pb-20 px-5 md:px-4">
+        <!-- Hero -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="badge badge-accent mb-4 inline-flex">Demos Interactivas</span>
+            <h1 class="text-4xl md:text-5xl font-black mb-4">Demos</h1>
+            <p class="text-lg text-cd-text-muted max-w-xl mx-auto">Explora en vivo cómo podría verse y funcionar la solución de tu negocio. Todas las demos usan datos ficticios: lo que es real es la experiencia.</p>
+        </div>
+
+        <!-- Filtros (generados desde el manifiesto) -->
+        <div id="demos-filters" class="flex flex-wrap justify-center gap-2 mb-12 max-w-4xl mx-auto" aria-label="Filtrar demos por categoría"></div>
+
+        <!-- Grid de demos (generado desde el manifiesto) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" id="demos-grid"></div>
+
+        <!-- Estado vacío -->
+        <div id="demos-empty" class="hidden max-w-2xl mx-auto card-modern p-10 text-center">
+            <i data-lucide="monitor-play" class="w-10 h-10 mx-auto mb-4" style="color: var(--cd-highlight-color);"></i>
+            <h2 class="font-bold text-xl mb-3">Estamos preparando nuevas demos</h2>
+            <p class="text-sm text-cd-text-muted mb-6">Mientras tanto, cuéntanos qué quieres resolver y te preparamos una demo a la medida de tu negocio.</p>
+            <a href="/#contacto" class="btn-primary py-3 px-6">Solicitar una demo personalizada <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+
+        <noscript>
+            <div class="max-w-2xl mx-auto card-modern p-8 text-center mt-8">
+                <p class="text-sm text-cd-text-dim">Este catálogo necesita JavaScript para cargar la lista de demos. Escríbenos a <a href="mailto:contacto@cambiodigital.net" class="text-cd-highlight">contacto@cambiodigital.net</a> y te enviamos los enlaces directamente.</p>
+            </div>
+        </noscript>
+
+        <!-- Cómo funcionan las demos -->
+        <div class="max-w-4xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card-modern p-6 text-center">
+                <i data-lucide="mouse-pointer-click" class="w-8 h-8 mx-auto mb-3" style="color: var(--cd-highlight-color);"></i>
+                <h3 class="font-bold mb-2">Interactivas</h3>
+                <p class="text-sm text-cd-text-muted">No son capturas: navega, filtra y prueba los flujos como lo haría tu equipo.</p>
+            </div>
+            <div class="card-modern p-6 text-center">
+                <i data-lucide="flask-conical" class="w-8 h-8 mx-auto mb-3" style="color: var(--cd-highlight-color);"></i>
+                <h3 class="font-bold mb-2">Datos ficticios</h3>
+                <p class="text-sm text-cd-text-muted">Toda la información es de ejemplo. Ninguna funcionalidad requiere instalación.</p>
+            </div>
+            <div class="card-modern p-6 text-center">
+                <i data-lucide="puzzle" class="w-8 h-8 mx-auto mb-3" style="color: var(--cd-highlight-color);"></i>
+                <h3 class="font-bold mb-2">100% adaptables</h3>
+                <p class="text-sm text-cd-text-muted">Lo que veas aquí se puede personalizar con tus procesos, tu marca y tus datos.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-16">
+            <div class="card-modern p-10 max-w-2xl mx-auto" style="background: linear-gradient(135deg, var(--cd-surface), var(--cd-base));">
+                <h2 class="font-black text-2xl md:text-3xl mb-4">¿Te imaginas tu negocio así?</h2>
+                <p class="text-cd-text-muted mb-6">Cuéntanos qué proceso quieres transformar y te mostramos una versión para tu operación.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a href="/#contacto" class="btn-primary py-3 px-6">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i> Quiero una demo así
+                    </a>
+                    <a href="/cotizador.html" class="btn-secondary py-3 px-6">Cotizar Ahora <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="/assets/js/demos-data.js"></script>
+    <script src="/assets/js/clickable-cards.js"></script>
+    <script src="/assets/js/demos-catalog.js"></script>
+    <script src="/assets/js/animations.js"></script>
+    <script src="/assets/js/layout-loader.js"></script>
+</body>
+</html>

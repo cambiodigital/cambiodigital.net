@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control ERP | Demo — Cambio Digital</title>
+    <meta name="description" content="Demo interactiva de un panel ERP para pymes: indicadores, pedidos, inventario y clientes con datos ficticios.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1c2143">
+    <meta name="demo-title" content="Panel de Control ERP">
+    <link rel="canonical" href="https://cambiodigital.net/demos/erp-dashboard">
+    <!-- DEMO_SHARED_ICONS_START -->
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="icon" type="image/png" media="(prefers-color-scheme: light)" href="/assets/images/LogoCDFondoClaro.png">
+<link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" href="/assets/images/LogoCDFondoOscuro.png">
+<!-- DEMO_SHARED_ICONS_END -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Panel de Control ERP | Demo — Cambio Digital">
+    <meta property="og:description" content="Demo interactiva de un panel ERP para pymes: indicadores, pedidos, inventario y clientes con datos ficticios.">
+    <meta property="og:image" content="https://cambiodigital.net/assets/images/demos/erp-dashboard.png">
+    <meta property="og:url" content="https://cambiodigital.net/demos/erp-dashboard">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cambiodigital.net/demos/erp-dashboard">
+    <meta property="twitter:title" content="Panel de Control ERP | Demo — Cambio Digital">
+    <meta property="twitter:description" content="Demo interactiva de un panel ERP para pymes: indicadores, pedidos, inventario y clientes con datos ficticios.">
+    <meta property="twitter:image" content="https://cambiodigital.net/assets/images/demos/erp-dashboard.png">
+
+    <!-- DEMO_SHARED_HEAD_START -->
+<script>
+    (function () {
+        try {
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('cd-theme') || 'light');
+        } catch (error) {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    })();
+</script>
+
+<link rel="stylesheet" href="/assets/css/tailwind.generated.css">
+<link rel="stylesheet" href="/assets/css/theme.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</noscript>
+
+<!-- Lucide Icons -->
+<script src="/assets/js/lucide.min.js" defer></script>
+
+<!-- Theme Toggle (in head to prevent flash) -->
+<script src="/assets/js/theme-toggle.js" defer></script>
+<!-- DEMO_SHARED_HEAD_END -->
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden bg-cd-base text-cd-cream selection:bg-cd-magenta selection:text-white">
+    <div class="fixed inset-0 z-0 bg-grid"></div>
+
+    <!-- DEMO_SHARED_CHROME_TOP_START -->
+<header class="fixed top-0 left-0 w-full z-50 px-4 md:px-6">
+    <nav class="flex justify-between items-center gap-3 max-w-7xl mx-auto px-4 md:px-6 py-3 mt-3 rounded-xl glass z-50 relative" aria-label="Barra de demo de Cambio Digital">
+        <div class="flex items-center gap-3 min-w-0">
+            <a href="/demos" class="inline-flex items-center gap-2 font-mono text-sm font-bold text-cd-cream hover:text-cd-highlight transition-colors min-h-[44px] px-1">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> <span class="hidden sm:inline">Demos</span>
+            </a>
+            <span class="w-px h-6 shrink-0" style="background: var(--cd-border);"></span>
+            <span data-demo-title class="font-bold text-sm md:text-base truncate text-cd-cream"></span>
+            <span class="badge badge-accent text-xs shrink-0">DEMO</span>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+            <button class="theme-toggle" aria-label="Cambiar tema" title="Cambiar modo claro/oscuro">
+                <i data-lucide="sun" class="w-4 h-4 icon-sun"></i>
+                <i data-lucide="moon" class="w-4 h-4 icon-moon"></i>
+            </button>
+            <a href="/#contacto" class="btn-primary text-xs py-2 px-4">
+                Quiero algo así <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </nav>
+</header>
+<!-- DEMO_SHARED_CHROME_TOP_END -->
+
+    <main class="relative z-10 pt-28 pb-8 px-4 md:px-8">
+        <!-- DEMO_CONTENT_START -->
+        <div class="max-w-7xl mx-auto">
+            <!-- Encabezado de la "aplicación" -->
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h1 class="font-black text-2xl md:text-3xl uppercase">Comercial Aurora</h1>
+                        <span class="text-xs px-2 py-0.5 rounded-full font-mono" style="background: var(--cd-surface); border: 1px dashed var(--cd-border); color: var(--cd-text-muted);">datos ficticios</span>
+                    </div>
+                    <p class="text-sm text-cd-text-muted mt-1">Panel de operación · Septiembre 2026</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button type="button" id="refresh-btn" class="btn-secondary text-xs py-2 px-4">
+                        <i data-lucide="refresh-cw" class="w-4 h-4"></i> Actualizar
+                    </button>
+                    <button type="button" id="new-order-btn" class="btn-primary text-xs py-2 px-4">
+                        <i data-lucide="plus" class="w-4 h-4"></i> Nuevo pedido
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Navegación lateral (desktop) -->
+                <aside class="hidden lg:block w-56 shrink-0">
+                    <nav class="card-modern p-3 sticky top-28" aria-label="Módulos del panel" id="demo-sidebar">
+                        <button type="button" data-view="resumen" class="demo-nav-btn demo-nav-btn-active w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors">
+                            <i data-lucide="layout-dashboard" class="w-4 h-4 shrink-0"></i> Resumen
+                        </button>
+                        <button type="button" data-view="ventas" class="demo-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors">
+                            <i data-lucide="shopping-cart" class="w-4 h-4 shrink-0"></i> Ventas
+                        </button>
+                        <button type="button" data-view="inventario" class="demo-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors">
+                            <i data-lucide="package" class="w-4 h-4 shrink-0"></i> Inventario
+                        </button>
+                        <button type="button" data-view="clientes" class="demo-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors">
+                            <i data-lucide="users" class="w-4 h-4 shrink-0"></i> Clientes
+                        </button>
+                        <button type="button" data-view="reportes" class="demo-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors">
+                            <i data-lucide="bar-chart-3" class="w-4 h-4 shrink-0"></i> Reportes
+                        </button>
+                        <div class="mt-3 pt-3 px-3" style="border-top: 1px solid var(--cd-border);">
+                            <p class="font-mono text-xs text-cd-text-dim leading-relaxed">Todos los módulos de esta demo son navegables. Ningún dato es real.</p>
+                        </div>
+                    </nav>
+                </aside>
+
+                <!-- Navegación horizontal (mobile) -->
+                <nav class="lg:hidden flex gap-2 overflow-x-auto pb-2 -mx-1 px-1" aria-label="Módulos del panel" id="demo-tabs">
+                    <button type="button" data-view="resumen" class="demo-nav-btn demo-nav-btn-active badge shrink-0">Resumen</button>
+                    <button type="button" data-view="ventas" class="demo-nav-btn badge shrink-0">Ventas</button>
+                    <button type="button" data-view="inventario" class="demo-nav-btn badge shrink-0">Inventario</button>
+                    <button type="button" data-view="clientes" class="demo-nav-btn badge shrink-0">Clientes</button>
+                    <button type="button" data-view="reportes" class="demo-nav-btn badge shrink-0">Reportes</button>
+                </nav>
+
+                <!-- Contenido de módulos -->
+                <section class="flex-1 min-w-0">
+                    <!-- RESUMEN -->
+                    <div class="demo-view" data-view-panel="resumen">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6" id="kpi-grid"></div>
+
+                        <div class="card-modern p-6 mb-6">
+                            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                                <h2 class="font-bold text-lg">Ventas últimos 6 meses</h2>
+                                <span class="font-mono text-xs text-cd-text-dim">COP · millones</span>
+                            </div>
+                            <div id="sales-chart" class="w-full overflow-x-auto" role="img" aria-label="Gráfica de línea con las ventas de los últimos 6 meses"></div>
+                        </div>
+
+                        <div class="card-modern p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h2 class="font-bold text-lg">Últimos pedidos</h2>
+                                <button type="button" data-goto="ventas" class="text-sm font-semibold hover:text-cd-highlight transition-colors" style="color: var(--cd-highlight-color);">Ver todos</button>
+                            </div>
+                            <div class="overflow-x-auto" id="recent-orders"></div>
+                        </div>
+                    </div>
+
+                    <!-- VENTAS -->
+                    <div class="demo-view hidden" data-view-panel="ventas">
+                        <div class="card-modern p-6">
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                                <h2 class="font-bold text-lg">Pedidos</h2>
+                                <div class="flex flex-wrap gap-2" id="orders-filters" role="group" aria-label="Filtrar pedidos por estado"></div>
+                            </div>
+                            <div class="overflow-x-auto" id="orders-table"></div>
+                        </div>
+                    </div>
+
+                    <!-- INVENTARIO -->
+                    <div class="demo-view hidden" data-view-panel="inventario">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6" id="inventory-kpis"></div>
+                        <div class="card-modern p-6">
+                            <h2 class="font-bold text-lg mb-4">Stock por referencia</h2>
+                            <div class="overflow-x-auto" id="inventory-table"></div>
+                        </div>
+                    </div>
+
+                    <!-- CLIENTES -->
+                    <div class="demo-view hidden" data-view-panel="clientes">
+                        <div class="card-modern p-6 mb-6">
+                            <h2 class="font-bold text-lg mb-4">Cartera de clientes</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" id="clients-grid"></div>
+                        </div>
+                    </div>
+
+                    <!-- REPORTES -->
+                    <div class="demo-view hidden" data-view-panel="reportes">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div class="card-modern p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h2 class="font-bold text-lg">Top productos</h2>
+                                    <button type="button" id="export-btn" class="btn-secondary text-xs py-2 px-4">
+                                        <i data-lucide="download" class="w-4 h-4"></i> Exportar
+                                    </button>
+                                </div>
+                                <div class="space-y-4" id="top-products"></div>
+                            </div>
+                            <div class="card-modern p-6">
+                                <h2 class="font-bold text-lg mb-4">Ventas por canal</h2>
+                                <div class="space-y-4" id="channel-sales"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Modal: nuevo pedido (simulado) -->
+        <div id="order-modal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4" style="background: rgba(2, 6, 23, 0.6);" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+            <div class="card-modern w-full max-w-md p-6" style="background: var(--cd-card-bg);">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 id="order-modal-title" class="font-bold text-lg">Nuevo pedido</h3>
+                    <button type="button" id="order-modal-close" class="p-2 rounded-lg hover:text-cd-highlight transition-colors" aria-label="Cerrar">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <form id="order-form" class="space-y-4">
+                    <div>
+                        <label for="order-client" class="block text-sm font-semibold mb-1">Cliente</label>
+                        <select id="order-client" required class="demo-input"></select>
+                    </div>
+                    <div>
+                        <label for="order-product" class="block text-sm font-semibold mb-1">Producto</label>
+                        <select id="order-product" required class="demo-input"></select>
+                    </div>
+                    <div>
+                        <label for="order-qty" class="block text-sm font-semibold mb-1">Cantidad</label>
+                        <input type="number" id="order-qty" min="1" value="1" required class="demo-input">
+                    </div>
+                    <p class="text-xs text-cd-text-dim font-mono">Simulación: el pedido se agrega solo en esta sesión, sin guardar nada.</p>
+                    <button type="submit" class="btn-primary w-full justify-center">Crear pedido <i data-lucide="check" class="w-4 h-4"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toast -->
+        <div id="demo-toast" class="hidden fixed bottom-6 right-6 z-[110] card-modern px-4 py-3 text-sm font-semibold items-center gap-2" style="background: var(--cd-card-bg);"></div>
+        <!-- DEMO_CONTENT_END -->
+    </main>
+
+    <!-- DEMO_SHARED_CHROME_BOTTOM_START -->
+<section class="relative z-10 pb-10 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto card-modern p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-cd-text-muted text-center md:text-left">
+            <i data-lucide="info" class="w-4 h-4 inline-block mr-1 -mt-0.5" style="color: var(--cd-highlight-color);"></i>
+            Esta es una demo interactiva con <strong>datos ficticios</strong>: así podría verse tu operación con una solución de Cambio Digital.
+        </p>
+        <div class="flex flex-wrap items-center gap-3 justify-center shrink-0">
+            <a href="/servicios/erp-open-source" class="btn-secondary text-xs py-2 px-4">Soluciones relacionadas</a>
+            <a href="/#contacto" class="btn-primary text-xs py-2 px-4">Hablar con un asesor</a>
+        </div>
+    </div>
+</section>
+<!-- DEMO_SHARED_CHROME_BOTTOM_END -->
+
+    <!-- DEMO_SHARED_FOOTER_SCRIPTS_START -->
+<script src="/assets/js/demo-chrome.js"></script>
+<!-- DEMO_SHARED_FOOTER_SCRIPTS_END -->
+
+    <!-- Lógica específica de esta demo (fuera de los bloques compartidos: demo:sync-template no la toca) -->
+    <script>
+    (function () {
+        'use strict';
+
+        /* ------------------------------------------------------------------ */
+        /* Datos ficticios de la demo. Ningún valor es real.                   */
+        /* ------------------------------------------------------------------ */
+        var DEMO_DATA = {
+            empresa: 'Comercial Aurora',
+            ventasMes: 48250000,
+            pedidosMes: 312,
+            ticketPromedio: 154647,
+            meses: ['ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP'],
+            serieVentas: [31.2, 34.8, 30.1, 38.6, 41.9, 48.3],
+            orders: [
+                { id: 'PED-1041', cliente: 'Ferretería El Tornillo', fecha: '2026-09-17', estado: 'pendiente', items: 14, total: 2140000 },
+                { id: 'PED-1040', cliente: 'Construcciones Roble', fecha: '2026-09-17', estado: 'camino', items: 8, total: 5620000 },
+                { id: 'PED-1039', cliente: 'Mayorista Andina', fecha: '2026-09-16', estado: 'entregado', items: 42, total: 12750000 },
+                { id: 'PED-1038', cliente: 'Tienda La Esquina', fecha: '2026-09-16', estado: 'entregado', items: 6, total: 890000 },
+                { id: 'PED-1037', cliente: 'Distribuidora Zeus', fecha: '2026-09-15', estado: 'entregado', items: 25, total: 7310000 },
+                { id: 'PED-1036', cliente: 'Ferretería El Tornillo', fecha: '2026-09-15', estado: 'entregado', items: 11, total: 1560000 },
+                { id: 'PED-1035', cliente: 'Servicios Montecarlo', fecha: '2026-09-14', estado: 'entregado', items: 3, total: 420000 },
+                { id: 'PED-1034', cliente: 'Mayorista Andina', fecha: '2026-09-13', estado: 'entregado', items: 30, total: 9840000 },
+                { id: 'PED-1033', cliente: 'Tienda La Esquina', fecha: '2026-09-12', estado: 'entregado', items: 5, total: 675000 },
+                { id: 'PED-1032', cliente: 'Construcciones Roble', fecha: '2026-09-11', estado: 'entregado', items: 19, total: 4480000 }
+            ],
+            products: [
+                { sku: 'TOR-0034', nombre: 'Tornillo autoperforante 1"', categoria: 'Fijaciones', stock: 1240, min: 400, precio: 150 },
+                { sku: 'TUB-1102', nombre: 'Tubo PVC 110mm x 4m', categoria: 'Hidráulica', stock: 86, min: 120, precio: 28900 },
+                { sku: 'CIN-0207', nombre: 'Cinta aislante industrial', categoria: 'Eléctrica', stock: 640, min: 200, precio: 3400 },
+                { sku: 'MAR-0450', nombre: 'Martillo carpintero 16oz', categoria: 'Herramienta', stock: 54, min: 60, precio: 32000 },
+                { sku: 'PIN-0121', nombre: 'Pintura blanca 4L', categoria: 'Acabados', stock: 210, min: 80, precio: 58900 },
+                { sku: 'LLA-0088', nombre: 'Llave expansiva 10"', categoria: 'Herramienta', stock: 31, min: 50, precio: 41500 },
+                { sku: 'CAB-3310', nombre: 'Cable THHW 12 AWG (rollo)', categoria: 'Eléctrica', stock: 118, min: 60, precio: 128000 },
+                { sku: 'SIL-0092', nombre: 'Silicona transparente 280ml', categoria: 'Acabados', stock: 380, min: 150, precio: 9800 },
+                { sku: 'TUE-0551', nombre: 'Tuerca galvanizada 3/8"', categoria: 'Fijaciones', stock: 2050, min: 500, precio: 320 },
+                { sku: 'GUO-0773', nombre: 'Guantes nitrilo (caja x100)', categoria: 'Seguridad', stock: 96, min: 90, precio: 38500 }
+            ],
+            clients: [
+                { nombre: 'Mayorista Andina', ciudad: 'Bogotá', segmento: 'Mayorista', pedidos: 87, total: 214300000 },
+                { nombre: 'Construcciones Roble', ciudad: 'Medellín', segmento: 'Proyecto', pedidos: 52, total: 148900000 },
+                { nombre: 'Distribuidora Zeus', ciudad: 'Cali', segmento: 'Distribuidor', pedidos: 46, total: 96100000 },
+                { nombre: 'Ferretería El Tornillo', ciudad: 'Manizales', segmento: 'Detalle', pedidos: 118, total: 74200000 },
+                { nombre: 'Tienda La Esquina', ciudad: 'Pereira', segmento: 'Detalle', pedidos: 95, total: 31800000 },
+                { nombre: 'Servicios Montecarlo', ciudad: 'Bucaramanga', segmento: 'Servicios', pedidos: 21, total: 12600000 }
+            ],
+            topProducts: [
+                { nombre: 'Tubo PVC 110mm x 4m', pct: 92 },
+                { nombre: 'Cable THHW 12 AWG', pct: 74 },
+                { nombre: 'Pintura blanca 4L', pct: 61 },
+                { nombre: 'Tornillo autoperforante 1"', pct: 48 },
+                { nombre: 'Guantes nitrilo (caja x100)', pct: 33 }
+            ],
+            canales: [
+                { nombre: 'Vendedores de campo', pct: 44 },
+                { nombre: 'Pedidos por WhatsApp', pct: 31 },
+                { nombre: 'Tienda online', pct: 17 },
+                { nombre: 'Mostrador', pct: 8 }
+            ]
+        };
+
+        var ESTADOS = {
+            entregado: { label: 'Entregado', color: 'var(--cd-accent-green, #22c55e)' },
+            camino: { label: 'En camino', color: 'var(--cd-highlight-color, #6366f1)' },
+            pendiente: { label: 'Pendiente', color: '#f59e0b' },
+            nuevo: { label: 'Nuevo', color: 'var(--cd-magenta, #4f46e5)' }
+        };
+
+        var state = {
+            view: 'resumen',
+            orderFilter: 'todos',
+            pedidosMes: DEMO_DATA.pedidosMes,
+            ventasMes: DEMO_DATA.ventasMes
+        };
+
+        /* ------------------------------ utils ------------------------------ */
+        function fmtCOP(value) {
+            return '$' + Math.round(value).toLocaleString('es-CO');
+        }
+        function fmtMillones(value) {
+            return '$' + value.toFixed(1).replace('.', ',') + ' M';
+        }
+        function esc(value) {
+            return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+        function refreshIcons() {
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                window.lucide.createIcons();
+            }
+        }
+        function showToast(message) {
+            var toast = document.getElementById('demo-toast');
+            toast.innerHTML = '<i data-lucide="check-circle-2" class="w-4 h-4" style="color: var(--cd-accent-green, #22c55e);"></i> ' + esc(message);
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            refreshIcons();
+            clearTimeout(showToast._timer);
+            showToast._timer = setTimeout(function () {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3200);
+        }
+
+        /* ------------------------------- KPIs ------------------------------- */
+        function renderKpis() {
+            var lowStock = DEMO_DATA.products.filter(function (p) { return p.stock < p.min; }).length;
+            var kpis = [
+                { icon: 'banknote', label: 'Ventas del mes', value: fmtCOP(state.ventasMes), delta: '+12,4%', up: true },
+                { icon: 'shopping-cart', label: 'Pedidos', value: String(state.pedidosMes), delta: '+8,1%', up: true },
+                { icon: 'receipt', label: 'Ticket promedio', value: fmtCOP(state.ventasMes / state.pedidosMes), delta: '+3,9%', up: true },
+                { icon: 'alert-triangle', label: 'Stock bajo', value: lowStock + ' referencias', delta: 'reponer', up: false }
+            ];
+            document.getElementById('kpi-grid').innerHTML = kpis.map(function (kpi) {
+                return '' +
+                    '<div class="card-modern p-5">' +
+                        '<div class="flex items-center justify-between mb-3">' +
+                            '<span class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: var(--cd-surface);"><i data-lucide="' + kpi.icon + '" class="w-4 h-4" style="color: var(--cd-highlight-color);"></i></span>' +
+                            '<span class="font-mono text-xs font-bold" style="color: ' + (kpi.up ? 'var(--cd-accent-green, #22c55e)' : '#f59e0b') + ';">' + kpi.delta + '</span>' +
+                        '</div>' +
+                        '<p class="font-black text-xl md:text-2xl mb-1">' + esc(kpi.value) + '</p>' +
+                        '<p class="text-xs text-cd-text-dim">' + esc(kpi.label) + '</p>' +
+                    '</div>';
+            }).join('');
+            refreshIcons();
+        }
+
+        /* ------------------------------ gráfica ----------------------------- */
+        function renderChart() {
+            var container = document.getElementById('sales-chart');
+            var width = 720, height = 240, pad = 34;
+            var max = Math.max.apply(null, DEMO_DATA.serieVentas) * 1.15;
+            var stepX = (width - pad * 2) / (DEMO_DATA.meses.length - 1);
+            var points = DEMO_DATA.serieVentas.map(function (value, index) {
+                return {
+                    x: pad + index * stepX,
+                    y: height - pad - (value / max) * (height - pad * 2),
+                    value: value,
+                    label: DEMO_DATA.meses[index]
+                };
+            });
+
+            var line = points.map(function (p) { return p.x.toFixed(1) + ',' + p.y.toFixed(1); }).join(' ');
+            var area = pad + ',' + (height - pad) + ' ' + line + ' ' + (width - pad) + ',' + (height - pad);
+            var gridLines = [0.25, 0.5, 0.75, 1].map(function (ratio) {
+                var y = height - pad - ratio * (height - pad * 2);
+                return '<line x1="' + pad + '" y1="' + y.toFixed(1) + '" x2="' + (width - pad) + '" y2="' + y.toFixed(1) + '" stroke="var(--cd-border)" stroke-dasharray="4 6"/>';
+            }).join('');
+            var dots = points.map(function (p) {
+                return '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="5" fill="var(--cd-highlight-color)" stroke="var(--cd-card-bg)" stroke-width="2"><title>' + p.label + ': ' + fmtMillones(p.value) + '</title></circle>';
+            }).join('');
+            var labels = points.map(function (p) {
+                return '<text x="' + p.x.toFixed(1) + '" y="' + (height - 10) + '" text-anchor="middle" style="fill: var(--cd-text-dim);" font-size="12" font-family="Space Mono, monospace">' + p.label + '</text>';
+            }).join('');
+
+            container.innerHTML =
+                '<svg viewBox="0 0 ' + width + ' ' + height + '" class="w-full h-auto" style="min-width: 480px;">' +
+                    gridLines +
+                    '<polygon points="' + area + '" fill="var(--cd-highlight-color)" opacity="0.12"/>' +
+                    '<polyline points="' + line + '" fill="none" stroke="var(--cd-highlight-color)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>' +
+                    dots + labels +
+                '</svg>';
+        }
+
+        /* ------------------------------ pedidos ----------------------------- */
+        function orderRow(order) {
+            var estado = ESTADOS[order.estado] || ESTADOS.pendiente;
+            return '' +
+                '<tr class="border-t" style="border-color: var(--cd-border);">' +
+                    '<td class="py-3 pr-4 font-mono text-xs">' + esc(order.id) + '</td>' +
+                    '<td class="py-3 pr-4 text-sm font-semibold">' + esc(order.cliente) + '</td>' +
+                    '<td class="py-3 pr-4 font-mono text-xs text-cd-text-dim hidden sm:table-cell">' + esc(order.fecha) + '</td>' +
+                    '<td class="py-3 pr-4 text-xs hidden md:table-cell">' + order.items + '</td>' +
+                    '<td class="py-3 pr-4"><span class="text-xs px-2 py-0.5 rounded-full font-bold" style="background: var(--cd-surface); color: ' + estado.color + ';">' + estado.label + '</span></td>' +
+                    '<td class="py-3 text-right font-mono text-sm font-bold">' + fmtCOP(order.total) + '</td>' +
+                '</tr>';
+        }
+
+        function ordersTableHead() {
+            return '<thead><tr>' +
+                '<th class="pb-2 pr-4 font-mono text-xs text-cd-text-dim text-left">PEDIDO</th>' +
+                '<th class="pb-2 pr-4 font-mono text-xs text-cd-text-dim text-left">CLIENTE</th>' +
+                '<th class="pb-2 pr-4 font-mono text-xs text-cd-text-dim text-left hidden sm:table-cell">FECHA</th>' +
+                '<th class="pb-2 pr-4 font-mono text-xs text-cd-text-dim text-left hidden md:table-cell">ÍTEMS</th>' +
+                '<th class="pb-2 pr-4 font-mono text-xs text-cd-text-dim text-left">ESTADO</th>' +
+                '<th class="pb-2 font-mono text-xs text-cd-text-dim text-right">TOTAL</th>' +
+            '</tr></thead>';
+        }
+
+        function visibleOrders() {
+            if (state.orderFilter === 'todos') return DEMO_DATA.orders;
+            return DEMO_DATA.orders.filter(function (order) { return order.estado === state.orderFilter; });
+        }
+
+        function renderOrders() {
+            document.getElementById('orders-table').innerHTML =
+                '<table class="w-full min-w-[520px]">' + ordersTableHead() +
+                '<tbody>' + visibleOrders().map(orderRow).join('') + '</tbody></table>';
+
+            document.getElementById('recent-orders').innerHTML =
+                '<table class="w-full min-w-[520px]">' + ordersTableHead() +
+                '<tbody>' + DEMO_DATA.orders.slice(0, 5).map(orderRow).join('') + '</tbody></table>';
+
+            var filters = [{ id: 'todos', label: 'Todos' }].concat(
+                Object.keys(ESTADOS).filter(function (key) { return key !== 'nuevo'; }).map(function (key) {
+                    return { id: key, label: ESTADOS[key].label };
+                })
+            );
+            document.getElementById('orders-filters').innerHTML = filters.map(function (filter) {
+                var active = state.orderFilter === filter.id;
+                return '<button type="button" data-order-filter="' + filter.id + '" class="' + (active ? 'badge badge-accent' : 'badge') + '">' + esc(filter.label) + '</button>';
+            }).join('');
+        }
+
+        /* ----------------------------- inventario ---------------------------- */
+        function stockLevel(product) {
+            var ratio = product.stock / (product.min * 2);
+            if (product.stock < product.min) return { label: 'Crítico', color: '#ef4444', pct: Math.max(6, Math.round(ratio * 100)) };
+            if (product.stock < product.min * 1.5) return { label: 'Bajo', color: '#f59e0b', pct: Math.round(Math.min(ratio, 1) * 100) };
+            return { label: 'OK', color: 'var(--cd-accent-green, #22c55e)', pct: Math.min(100, Math.round(ratio * 100)) };
+        }
+
+        function renderInventory() {
+            var alerts = DEMO_DATA.products.filter(function (p) { return p.stock < p.min; }).length;
+            var totalUnits = DEMO_DATA.products.reduce(function (sum, p) { return sum + p.stock; }, 0);
+            var valor = DEMO_DATA.products.reduce(function (sum, p) { return sum + p.stock * p.precio; }, 0);
+
+            document.getElementById('inventory-kpis').innerHTML = [
+                { label: 'Referencias', value: String(DEMO_DATA.products.length) },
+                { label: 'Unidades en bodega', value: totalUnits.toLocaleString('es-CO') },
+                { label: 'En alerta', value: String(alerts) },
+                { label: 'Valor inventario', value: fmtCOP(valor) }
+            ].map(function (kpi) {
+                return '<div class="card-modern p-4"><p class="font-black text-lg md:text-xl mb-1">' + esc(kpi.value) + '</p><p class="text-xs text-cd-text-dim">' + esc(kpi.label) + '</p></div>';
+            }).join('');
+
+            document.getElementById('inventory-table').innerHTML =
+                '<table class="w-full min-w-[560px]"><thead><tr>' +
+                    '<th class="pb-2 pr-4 font-mono text-xs text-cd-text-dim text-left">SKU</th>' +
+                    '<th class="pb-2 pr-4 font-mono text-xs text-cd-text-dim text-left">PRODUCTO</th>' +
+                    '<th class="pb-2 pr-4 font-mono text-xs text-cd-text-dim text-left hidden md:table-cell">CATEGORÍA</th>' +
+                    '<th class="pb-2 pr-4 font-mono text-xs text-cd-text-dim text-left">STOCK</th>' +
+                    '<th class="pb-2 font-mono text-xs text-cd-text-dim text-right">PRECIO</th>' +
+                '</tr></thead><tbody>' +
+                DEMO_DATA.products.map(function (product) {
+                    var level = stockLevel(product);
+                    return '<tr class="border-t" style="border-color: var(--cd-border);">' +
+                        '<td class="py-3 pr-4 font-mono text-xs">' + esc(product.sku) + '</td>' +
+                        '<td class="py-3 pr-4 text-sm font-semibold">' + esc(product.nombre) + '</td>' +
+                        '<td class="py-3 pr-4 text-sm text-cd-text-muted hidden md:table-cell">' + esc(product.categoria) + '</td>' +
+                        '<td class="py-3 pr-4">' +
+                            '<div class="flex items-center gap-2 min-w-[140px]">' +
+                                '<div class="h-2 rounded-full flex-1" style="background: var(--cd-surface);"><div class="h-2 rounded-full" style="width: ' + level.pct + '%; background: ' + level.color + ';"></div></div>' +
+                                '<span class="font-mono text-xs w-14 text-right">' + product.stock + '</span>' +
+                                '<span class="text-xs font-bold w-14 hidden sm:inline" style="color: ' + level.color + ';">' + level.label + '</span>' +
+                            '</div>' +
+                        '</td>' +
+                        '<td class="py-3 text-right font-mono text-sm">' + fmtCOP(product.precio) + '</td>' +
+                    '</tr>';
+                }).join('') + '</tbody></table>';
+        }
+
+        /* ------------------------------ clientes ----------------------------- */
+        function renderClients() {
+            document.getElementById('clients-grid').innerHTML = DEMO_DATA.clients.map(function (client) {
+                var initials = client.nombre.split(' ').map(function (word) { return word.charAt(0); }).slice(0, 2).join('');
+                return '' +
+                    '<div class="rounded-xl p-5" style="background: var(--cd-surface); border: 1px solid var(--cd-border);">' +
+                        '<div class="flex items-center gap-3 mb-4">' +
+                            '<span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-sm" style="background: var(--cd-highlight-color); color: #fff;">' + esc(initials) + '</span>' +
+                            '<div class="min-w-0">' +
+                                '<p class="font-bold truncate">' + esc(client.nombre) + '</p>' +
+                                '<p class="text-xs text-cd-text-dim">' + esc(client.ciudad) + '</p>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="flex items-center justify-between text-sm">' +
+                            '<span class="badge text-xs">' + esc(client.segmento) + '</span>' +
+                            '<span class="font-mono text-xs text-cd-text-dim">' + client.pedidos + ' pedidos</span>' +
+                        '</div>' +
+                        '<p class="font-mono text-sm font-bold mt-3">' + fmtCOP(client.total) + '</p>' +
+                    '</div>';
+            }).join('');
+        }
+
+        /* ------------------------------ reportes ----------------------------- */
+        function renderBar(item, index) {
+            return '' +
+                '<div>' +
+                    '<div class="flex items-center justify-between mb-1.5">' +
+                        '<span class="text-sm font-semibold">' + esc(item.nombre) + '</span>' +
+                        '<span class="font-mono text-xs text-cd-text-dim">' + item.pct + '%</span>' +
+                    '</div>' +
+                    '<div class="h-3 rounded-full" style="background: var(--cd-surface);">' +
+                        '<div class="h-3 rounded-full transition-all duration-700" style="width: ' + item.pct + '%; background: var(--cd-highlight-color); opacity: ' + (1 - index * 0.13) + ';"></div>' +
+                    '</div>' +
+                '</div>';
+        }
+
+        function renderReports() {
+            document.getElementById('top-products').innerHTML = DEMO_DATA.topProducts.map(renderBar).join('');
+            document.getElementById('channel-sales').innerHTML = DEMO_DATA.canales.map(renderBar).join('');
+        }
+
+        /* --------------------------- navegación ----------------------------- */
+        function switchView(view) {
+            state.view = view;
+            document.querySelectorAll('.demo-view').forEach(function (panel) {
+                panel.classList.toggle('hidden', panel.dataset.viewPanel !== view);
+            });
+            document.querySelectorAll('.demo-nav-btn').forEach(function (btn) {
+                btn.classList.toggle('demo-nav-btn-active', btn.dataset.view === view);
+            });
+        }
+
+        /* ------------------------------ modal -------------------------------- */
+        function openModal() {
+            var modal = document.getElementById('order-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.getElementById('order-client').focus();
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('order-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function populateModal() {
+            document.getElementById('order-client').innerHTML = DEMO_DATA.clients.map(function (client) {
+                return '<option value="' + esc(client.nombre) + '">' + esc(client.nombre) + '</option>';
+            }).join('');
+            document.getElementById('order-product').innerHTML = DEMO_DATA.products.map(function (product) {
+                return '<option value="' + esc(product.sku) + '" data-precio="' + product.precio + '">' + esc(product.nombre) + ' — ' + fmtCOP(product.precio) + '</option>';
+            }).join('');
+        }
+
+        /* ------------------------------ init --------------------------------- */
+        function init() {
+            renderKpis();
+            renderChart();
+            renderOrders();
+            renderInventory();
+            renderClients();
+            renderReports();
+            populateModal();
+            refreshIcons();
+
+            document.querySelectorAll('.demo-nav-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () { switchView(btn.dataset.view); });
+            });
+            document.querySelectorAll('[data-goto]').forEach(function (link) {
+                link.addEventListener('click', function () { switchView(link.dataset.goto); });
+            });
+            document.getElementById('orders-filters').addEventListener('click', function (event) {
+                var button = event.target.closest('[data-order-filter]');
+                if (!button) return;
+                state.orderFilter = button.dataset.orderFilter;
+                renderOrders();
+            });
+            document.getElementById('new-order-btn').addEventListener('click', openModal);
+            document.getElementById('order-modal-close').addEventListener('click', closeModal);
+            document.getElementById('order-modal').addEventListener('click', function (event) {
+                if (event.target === this) closeModal();
+            });
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') closeModal();
+            });
+            document.getElementById('order-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                var client = document.getElementById('order-client').value;
+                var productSelect = document.getElementById('order-product');
+                var precio = Number(productSelect.options[productSelect.selectedIndex].dataset.precio);
+                var qty = Math.max(1, Number(document.getElementById('order-qty').value) || 1);
+                var total = precio * qty;
+                var nextId = 1042 + DEMO_DATA.orders.filter(function (order) { return order.estado === 'nuevo'; }).length;
+
+                DEMO_DATA.orders.unshift({ id: 'PED-' + nextId, cliente: client, fecha: '2026-09-18', estado: 'nuevo', items: qty, total: total });
+                state.pedidosMes += 1;
+                state.ventasMes += total;
+
+                renderOrders();
+                renderKpis();
+                closeModal();
+                document.getElementById('order-form').reset();
+                document.getElementById('order-qty').value = 1;
+                showToast('Pedido PED-' + nextId + ' creado (simulación sin persistencia)');
+                switchView('ventas');
+                state.orderFilter = 'todos';
+                renderOrders();
+            });
+            document.getElementById('refresh-btn').addEventListener('click', function () {
+                renderKpis();
+                renderChart();
+                renderOrders();
+                showToast('Datos actualizados (siempre ficticios)');
+            });
+            document.getElementById('export-btn').addEventListener('click', function () {
+                showToast('Exportación simulada: en tu solución real sería CSV/PDF');
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
+</body>
+</html>

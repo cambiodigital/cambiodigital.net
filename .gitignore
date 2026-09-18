@@ -13,3 +13,5 @@ testsprite_tests/
 Inventario_Cambio_Digital/
 imagenes_publicas/
 *.log
+.playwright-cli/
+Certificado-Laboral-*.docx

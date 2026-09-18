@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "demos/marcela-cuenca/index.html"
+        ],
+        "createdAt": "2026-09-18T16:17:17.073Z",
+        "reason": "user confirmed: hallazgos heredados del tema global (#5b4eff/#6366f1 en hover del chrome compartido) fuera de alcance en Hito 5 CAMBIG-8122; los estilos propios de la demo cumplen AA"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "demos/marcela-cuenca/index.html"
+        ],
+        "createdAt": "2026-09-18T16:17:17.266Z",
+        "reason": "user confirmed: sombras marcadas son negras neutras con offset (wa-float, tile hover) del tema global, fuera de alcance en Hito 5 CAMBIG-8122"
+      }
+    ]
+  }
+}

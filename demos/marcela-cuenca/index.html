@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Marcela Cuenca | Demo — Cambio Digital</title>
+    <meta name="description" content="Demo personalizada para Marcela Cuenca, abogada de Extranjería y Familia. Variante A (autoridad local) y B (conversión moderna) con datos de contacto reales y simulaciones marcadas como demo.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1c2143">
+    <meta name="demo-title" content="Marcela Cuenca">
+    <link rel="canonical" href="https://cambiodigital.net/demos/marcela-cuenca">
+    <!-- DEMO_SHARED_ICONS_START -->
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: light)" href="/assets/images/LogoCDFondoClaro.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" href="/assets/images/LogoCDFondoOscuro.png">
+    <!-- DEMO_SHARED_ICONS_END -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Web Marcela Cuenca | Demo — Cambio Digital">
+    <meta property="og:description" content="Demo personalizada para Marcela Cuenca, abogada de Extranjería y Familia. Variante A (autoridad local) y B (conversión moderna) con datos de contacto reales y simulaciones marcadas como demo.">
+    <meta property="og:image" content="https://cambiodigital.net/assets/og-home.png">
+    <meta property="og:url" content="https://cambiodigital.net/demos/marcela-cuenca">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cambiodigital.net/demos/marcela-cuenca">
+    <meta property="twitter:title" content="Web Marcela Cuenca | Demo — Cambio Digital">
+    <meta property="twitter:description" content="Demo personalizada para Marcela Cuenca, abogada de Extranjería y Familia. Variante A (autoridad local) y B (conversión moderna) con datos de contacto reales y simulaciones marcadas como demo.">
+    <meta property="twitter:image" content="https://cambiodigital.net/assets/og-home.png">
+
+    <!-- DEMO_SHARED_HEAD_START -->
+    <script>
+        (function () {
+            try {
+                document.documentElement.setAttribute('data-theme', localStorage.getItem('cd-theme') || 'light');
+            } catch (error) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/tailwind.generated.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Lucide Icons -->
+    <script src="/assets/js/lucide.min.js" defer></script>
+
+    <!-- Theme Toggle (in head to prevent flash) -->
+    <script src="/assets/js/theme-toggle.js" defer></script>
+    <!-- DEMO_SHARED_HEAD_END -->
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden bg-cd-base text-cd-cream selection:bg-cd-magenta selection:text-white">
+    <div class="fixed inset-0 z-0 bg-grid"></div>
+
+    <!-- DEMO_SHARED_CHROME_TOP_START -->
+    <header class="fixed top-0 left-0 w-full z-50 px-4 md:px-6">
+        <nav class="flex justify-between items-center gap-3 max-w-7xl mx-auto px-4 md:px-6 py-3 mt-3 rounded-xl glass z-50 relative" aria-label="Barra de demo de Cambio Digital">
+            <div class="flex items-center gap-3 min-w-0">
+                <a href="/demos" class="inline-flex items-center gap-2 font-mono text-sm font-bold text-cd-cream hover:text-cd-highlight transition-colors min-h-[44px] px-1">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> <span class="hidden sm:inline">Demos</span>
+                </a>
+                <span class="w-px h-6 shrink-0" style="background: var(--cd-border);"></span>
+                <span data-demo-title class="font-bold text-sm md:text-base truncate text-cd-cream"></span>
+                <span class="badge badge-accent text-xs shrink-0">DEMO</span>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button class="theme-toggle" aria-label="Cambiar tema" title="Cambiar modo claro/oscuro">
+                    <i data-lucide="sun" class="w-4 h-4 icon-sun"></i>
+                    <i data-lucide="moon" class="w-4 h-4 icon-moon"></i>
+                </button>
+                <a href="/#contacto" class="btn-primary text-xs py-2 px-4">
+                    Quiero algo así <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!-- DEMO_SHARED_CHROME_TOP_END -->
+
+    <main class="relative z-10 pt-28 pb-8 px-4 md:px-8">
+        <!-- DEMO_CONTENT_START -->
+        <style>
+            /* ═══════════════════════════════════════════════════════════════
+               Demo Marcela Cuenca — estilos específicos de esta demo.
+               No modifica tokens globales ni la infraestructura compartida.
+               ═══════════════════════════════════════════════════════════════ */
+            .mc-demo { font-family: 'Lato', ui-sans-serif, system-ui, sans-serif; }
+            .mc-serif { font-family: 'Playfair Display', Georgia, serif; }
+
+            /* ——— Selector de propuestas (presentación Cambio Digital) ——— */
+            .mc-switcher {
+                background: var(--cd-surface, #10131f);
+                border: 1px solid var(--cd-border, rgba(255,255,255,.12));
+                border-radius: 14px;
+            }
+            .mc-sw-btn {
+                font-family: 'Space Mono', ui-monospace, monospace;
+                font-size: .75rem; letter-spacing: .04em;
+                padding: .55rem 1rem; min-height: 40px;
+                border-radius: 999px; border: 1px solid var(--cd-border, rgba(255,255,255,.18));
+                color: var(--cd-cream, #eee); transition: all .2s ease; white-space: nowrap;
+            }
+            .mc-sw-btn:hover { border-color: var(--cd-highlight-color, #f43f8e); color: var(--cd-highlight-color, #f43f8e); }
+            .mc-sw-btn.mc-sw-active {
+                background: var(--cd-highlight-color, #f43f8e); border-color: var(--cd-highlight-color, #f43f8e);
+                color: #fff; font-weight: 700;
+            }
+            .mc-sw-btn:focus-visible { outline: 2px solid var(--cd-highlight-color, #f43f8e); outline-offset: 2px; }
+
+            /* ——— Botones y piezas compartidas A/B ——— */
+            .mc-btn {
+                display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+                font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .78rem;
+                min-height: 48px; padding: 0 1.5rem; transition: all .25s ease; cursor: pointer;
+            }
+            .mc-btn:focus-visible { outline: 2px solid #C5A059; outline-offset: 2px; }
+            .mc-btn-b {
+                display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+                font-weight: 700; font-size: .9rem; min-height: 48px; padding: 0 1.35rem;
+                border-radius: 12px; transition: all .2s ease; cursor: pointer;
+            }
+            .mc-btn-b:focus-visible { outline: 2px solid #A38446; outline-offset: 2px; }
+
+            /* ——— VARIANTE A · Autoridad local ——— */
+            .mc-a {
+                --a-ink: #141414; --a-panel: #1C1B18; --a-line: rgba(197,160,89,.22);
+                --a-gold: #C5A059; --a-gold-soft: #D9BC82; --a-ivory: #F4EFE6; --a-muted: #ABA398;
+                background: var(--a-ink); color: var(--a-ivory);
+                margin-left: -1rem; margin-right: -1rem; padding-left: 1rem; padding-right: 1rem;
+            }
+            @media (min-width: 768px) {
+                .mc-a { margin-left: -2rem; margin-right: -2rem; padding-left: 2rem; padding-right: 2rem; }
+            }
+            .mc-a section[id] { scroll-margin-top: 110px; }
+            .mc-btn-gold { background: var(--a-gold); color: #161513; border: 1px solid var(--a-gold); }
+            .mc-btn-gold:hover { background: var(--a-gold-soft); border-color: var(--a-gold-soft); }
+            .mc-btn-ghost { border: 1px solid rgba(244,239,230,.32); color: var(--a-ivory); }
+            .mc-btn-ghost:hover { border-color: var(--a-gold); color: var(--a-gold); }
+            .mc-zone-chip {
+                display: inline-block; border: 1px solid var(--a-line); padding: .4rem .8rem;
+                font-size: .78rem; letter-spacing: .03em; color: var(--a-ivory);
+            }
+            .mc-portrait-frame {
+                position: absolute; inset: 0; transform: translate(16px, 16px);
+                border: 1px solid var(--a-gold); pointer-events: none;
+            }
+            .mc-portrait-tag {
+                position: absolute; left: 1rem; bottom: 1rem; z-index: 20;
+                background: rgba(20,20,20,.82); border: 1px solid var(--a-line);
+                padding: .5rem .9rem; font-size: .75rem; letter-spacing: .18em; text-transform: uppercase;
+            }
+            .mc-svc { display: grid; grid-template-columns: 2.6rem 1fr; gap: .35rem 1.1rem; padding: 1.4rem 0; border-bottom: 1px solid var(--a-line); }
+            .mc-svc:last-child, .mc-svc:nth-last-child(2):nth-child(odd) { border-bottom: 0; }
+            .mc-svc-num { font-family: 'Playfair Display', serif; color: var(--a-gold); font-size: 1.05rem; padding-top: .15rem; }
+            .mc-pending {
+                display: inline-block; border: 1px dashed var(--a-gold); color: var(--a-gold-soft);
+                font-size: .75rem; font-weight: 700; letter-spacing: .04em;
+                padding: .35rem .7rem; white-space: nowrap;
+            }
+            .mc-node-ring { transform-box: fill-box; transform-origin: center; animation: mcPulse 2.8s ease-out infinite; }
+            @keyframes mcPulse {
+                0% { transform: scale(.55); opacity: .9; }
+                70% { transform: scale(2.3); opacity: 0; }
+                100% { transform: scale(2.3); opacity: 0; }
+            }
+            .mc-anim-up { animation: mcUp .65s ease both; }
+            .mc-anim-up-2 { animation: mcUp .65s .12s ease both; }
+            .mc-anim-up-3 { animation: mcUp .65s .24s ease both; }
+            @keyframes mcUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+            /* ——— VARIANTE B · Conversión moderna ——— */
+            .mc-b {
+                --b-bg: #FAF8F3; --b-ink: #1B1C20; --b-muted: #5E5C55; --b-gold: #7D6429;
+                --b-gold-bright: #C5A059; --b-line: #E7E1D3; --b-card: #FFFFFF;
+                background: var(--b-bg); color: var(--b-ink);
+                margin-left: -1rem; margin-right: -1rem; padding-left: 1rem; padding-right: 1rem;
+            }
+            @media (min-width: 768px) {
+                .mc-b { margin-left: -2rem; margin-right: -2rem; padding-left: 2rem; padding-right: 2rem; }
+            }
+            .mc-b-logo {
+                width: 46px; height: 46px; border-radius: 12px; background: var(--b-ink);
+                display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            }
+            .mc-b-logo img { width: 34px; height: 34px; object-fit: contain; }
+            .mc-b-card { background: var(--b-card); border: 1px solid var(--b-line); border-radius: 18px; }
+            .mc-tile {
+                background: var(--b-card); border: 1px solid var(--b-line); border-radius: 14px;
+                padding: 1.1rem .9rem; display: flex; flex-direction: column; align-items: flex-start;
+                transition: all .18s ease; cursor: pointer; min-height: 96px;
+            }
+            .mc-tile:hover { border-color: var(--b-gold-bright); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(27,28,32,.08); }
+            .mc-tile[aria-pressed="true"] { border-color: var(--b-gold); box-shadow: inset 0 0 0 1.5px var(--b-gold); background: #FFFDF8; }
+            .mc-tile:focus-visible { outline: 2px solid var(--b-gold); outline-offset: 2px; }
+            .mc-badge-demo {
+                display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .03em;
+                color: #6E5623; background: #F5EBD6;
+                border: 1px solid #E5D4AC; border-radius: 999px; padding: .3rem .7rem; white-space: nowrap;
+            }
+            .mc-badge-demo-dark { color: #E9D9AE; background: rgba(197,160,89,.14); border-color: rgba(197,160,89,.4); }
+            .mc-btn-b-gold { background: var(--b-gold-bright); color: #1B1C20; }
+            .mc-btn-b-gold:hover { background: #D4B87A; }
+            .mc-btn-b-wa { background: #25D366; color: #1B1C20; }
+            .mc-btn-b-wa:hover { background: #1FBF5B; }
+            .mc-btn-b-ghost { border: 1px solid var(--b-line); color: var(--b-ink); background: var(--b-card); }
+            .mc-btn-b-ghost:hover { border-color: var(--b-gold); color: var(--b-gold); }
+            .mc-day, .mc-slot {
+                border: 1px solid var(--b-line); background: var(--b-card); border-radius: 10px;
+                padding: .55rem .5rem; min-height: 48px; font-size: .82rem; font-weight: 700;
+                transition: all .15s ease; cursor: pointer; color: var(--b-ink);
+            }
+            .mc-day { min-width: 92px; display: inline-flex; flex-direction: column; align-items: center; gap: .1rem; flex-shrink: 0; }
+            .mc-day .mc-day-dow { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--b-muted); }
+            .mc-slot { display: inline-flex; align-items: center; justify-content: center; }
+            .mc-day:hover:not(:disabled), .mc-slot:hover:not(:disabled) { border-color: var(--b-gold); }
+            .mc-day.mc-sel, .mc-slot.mc-sel { background: var(--b-ink); color: #fff; border-color: var(--b-ink); }
+            .mc-day.mc-sel .mc-day-dow { color: var(--b-gold-bright); }
+            .mc-day:disabled, .mc-slot:disabled { opacity: .38; cursor: not-allowed; }
+            .mc-day:focus-visible, .mc-slot:focus-visible { outline: 2px solid var(--b-gold); outline-offset: 2px; }
+            .mc-input {
+                width: 100%; min-height: 48px; background: var(--b-card); border: 1px solid var(--b-line);
+                border-radius: 12px; padding: 0 1rem; font-size: .95rem; color: var(--b-ink);
+            }
+            .mc-input:focus { outline: none; border-color: var(--b-gold); box-shadow: 0 0 0 3px rgba(197,160,89,.18); }
+            .mc-bubble-user { background: var(--b-ink); color: #fff; border-radius: 14px 14px 4px 14px; padding: .65rem 1rem; font-size: .88rem; max-width: 85%; }
+            .mc-bubble-bot { background: #F4F0E6; border-radius: 14px 14px 14px 4px; padding: .65rem 1rem; font-size: .88rem; max-width: 92%; }
+            .mc-typing span { display: inline-block; width: 5px; height: 5px; border-radius: 999px; background: var(--b-gold); margin-right: 3px; animation: mcBlink 1s infinite; }
+            .mc-typing span:nth-child(2) { animation-delay: .18s; }
+            .mc-typing span:nth-child(3) { animation-delay: .36s; }
+            @keyframes mcBlink { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+            .mc-assist-q {
+                border: 1px solid var(--b-line); background: var(--b-card); border-radius: 999px;
+                padding: .5rem 1rem; font-size: .8rem; font-weight: 700; color: var(--b-ink);
+                transition: all .15s ease; cursor: pointer; min-height: 40px;
+            }
+            .mc-assist-q:hover:not(:disabled) { border-color: var(--b-gold); color: var(--b-gold); }
+            .mc-assist-q:disabled { opacity: .45; cursor: wait; }
+            .mc-bar-origin { height: 8px; border-radius: 999px; background: rgba(255,255,255,.12); overflow: hidden; }
+            .mc-bar-origin > i { display: block; height: 100%; border-radius: 999px; background: var(--b-gold-bright); }
+
+            /* ——— Barras móviles y flotante WhatsApp ——— */
+            .mc-mbar {
+                position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+                display: flex; gap: .6rem; align-items: center;
+                padding: .65rem .9rem calc(.65rem + env(safe-area-inset-bottom, 0px));
+                background: rgba(20,20,20,.94); border-top: 1px solid rgba(197,160,89,.3);
+                transition: transform .3s ease;
+            }
+            .mc-b .mc-mbar { background: rgba(250,248,243,.96); border-top: 1px solid var(--b-line); }
+            @media (min-width: 768px) { .mc-mbar { display: none; } }
+            .mc-bar-hidden { transform: translateY(110%); }
+            .mc-mbar .mc-btn { flex: 1; min-height: 46px; font-size: .74rem; }
+            .mc-mbar-wa {
+                width: 46px; height: 46px; flex-shrink: 0; border-radius: 12px; background: #25D366;
+                color: #fff; display: flex; align-items: center; justify-content: center;
+            }
+            .mc-wa-float {
+                position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 40;
+                width: 56px; height: 56px; border-radius: 999px; background: #25D366; color: #fff;
+                display: flex; align-items: center; justify-content: center;
+                box-shadow: 0 12px 30px rgba(0,0,0,.28); transition: transform .2s ease;
+            }
+            .mc-wa-float:hover { transform: scale(1.07); }
+            @media (max-width: 767px) { .mc-wa-float { display: none; } }
+
+            @media (prefers-reduced-motion: reduce) {
+                .mc-anim-up, .mc-anim-up-2, .mc-anim-up-3, .mc-node-ring, .mc-typing span { animation: none !important; }
+                .mc-tile, .mc-btn, .mc-btn-b, .mc-wa-float { transition: none !important; }
+            }
+
+            /* ——— Ajustes locales de esta demo (no afectan a otras demos) ——— */
+            #mc-b-agenda { scroll-margin-top: 110px; }
+            .mc-b .mc-mbar .mc-btn { border-radius: 12px; }
+            @media (max-width: 639px) {
+                .mc-tile:nth-child(odd):last-child { grid-column: 1 / -1; }
+            }
+            /* Chrome de Cambio Digital a 375 px: dar aire al nombre sin tocar lo global.
+               Nota: el nombre completo en la barra requiere un ajuste del chrome global (fuera de alcance). */
+            @media (max-width: 430px) {
+                header.fixed nav { gap: .5rem; padding-left: .65rem; padding-right: .65rem; }
+                header.fixed nav .btn-primary { padding-left: .6rem; padding-right: .6rem; font-size: .66rem; }
+                header.fixed nav .theme-toggle { display: none; }
+            }
+        </style>
+
+        <!-- ══════════ Selector de propuestas — presentación Cambio Digital ══════════ -->
+        <div id="mc-switcher" class="mc-switcher max-w-7xl mx-auto mb-6 px-4 md:px-6 py-3" role="region" aria-label="Selector de propuestas de Cambio Digital">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                <p class="font-mono text-xs tracking-wide" style="color: var(--cd-text-muted, #9aa0b5);">
+                    Demo personalizada · Marcela Cuenca
+                </p>
+                <div class="flex items-center gap-2">
+                    <button type="button" id="mc-sw-a" class="mc-sw-btn" aria-pressed="true">
+                        <span class="sm:hidden">A · Autoridad local</span><span class="hidden sm:inline">Propuesta A · Autoridad local</span>
+                    </button>
+                    <button type="button" id="mc-sw-b" class="mc-sw-btn" aria-pressed="false">
+                        <span class="sm:hidden">B · Conversión</span><span class="hidden sm:inline">Propuesta B · Conversión moderna</span>
+                    </button>
+                </div>
+            </div>
+            <p class="mt-2 font-mono text-xs tracking-wide" style="color: var(--cd-text-muted, #9aa0b5);">
+                Selector de presentación de Cambio Digital — no forma parte de la web final. Contacto real; simulaciones marcadas como demo.
+            </p>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             VARIANTE A · AUTORIDAD LOCAL
+             ═══════════════════════════════════════════════════════════ -->
+        <div id="mc-variant-a" class="mc-demo mc-a" lang="es">
+            <!-- Header -->
+            <header>
+                <div class="max-w-6xl mx-auto py-5 flex items-center justify-between gap-4">
+                    <a href="#" class="flex items-center gap-3" aria-label="Marcela Cuenca — inicio">
+                        <img src="/assets/images/demos/marcela-cuenca/logo-white.png" alt="Monograma MC" class="w-10 h-10 object-contain" width="40" height="40">
+                        <span class="leading-tight">
+                            <span class="mc-serif block text-sm" style="color: var(--a-gold);">MARCELA CUENCA</span>
+                            <span class="block text-[.7rem] tracking-[.3em] uppercase" style="color: var(--a-muted);">Abogada</span>
+                        </span>
+                    </a>
+                    <nav class="hidden lg:flex items-center gap-8 text-sm" aria-label="Navegación principal">
+                        <a href="#servicios" class="hover:text-white transition-colors" style="color: var(--a-muted);">Servicios</a>
+                        <a href="#sobre-mi" class="hover:text-white transition-colors" style="color: var(--a-muted);">Sobre Marcela</a>
+                        <a href="#zona" class="hover:text-white transition-colors" style="color: var(--a-muted);">Zona de atención</a>
+                        <a href="#contacto" class="hover:text-white transition-colors" style="color: var(--a-muted);">Contacto</a>
+                    </nav>
+                    <a href="#contacto" data-mc-wa="__cita__" target="_blank" rel="noopener" class="mc-btn mc-btn-gold !min-h-[42px] !px-4 !text-xs">Solicitar cita</a>
+                </div>
+            </header>
+
+            <!-- Hero -->
+            <section class="relative" aria-label="Presentación">
+                <div class="absolute top-0 inset-x-0 h-px" aria-hidden="true" style="background: linear-gradient(90deg, transparent, var(--a-gold), transparent);"></div>
+                <div class="max-w-6xl mx-auto pt-12 pb-14 md:pt-20 md:pb-20 grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                    <div class="lg:col-span-7">
+                        <h1 class="mc-serif text-4xl sm:text-5xl lg:text-[3.6rem] leading-[1.08] mt-1 mc-anim-up">
+                            Abogada de <span style="color: var(--a-gold);">Extranjería y Familia</span>
+                            <em class="block mt-2 text-2xl sm:text-3xl font-normal" style="color: var(--a-gold-soft);">en el sur de Madrid</em>
+                        </h1>
+                        <p class="mt-6 text-lg leading-relaxed max-w-xl mc-anim-up-2" style="color: var(--a-muted);">
+                            Te ayudo con tus trámites de extranjería y familia, con explicaciones claras de principio a fin.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-7 mc-anim-up-2" data-mc-zones></div>
+                        <div class="flex flex-col sm:flex-row gap-3 mt-9 mc-anim-up-3">
+                            <a href="#" data-mc-wa="__cita__" target="_blank" rel="noopener" class="mc-btn mc-btn-gold">Solicitar cita</a>
+                            <a href="#" data-mc-wa="__generic__" target="_blank" rel="noopener" class="mc-btn mc-btn-ghost">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i> Hablar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 mc-anim-up-2">
+                        <div class="relative max-w-[380px] mx-auto lg:max-w-none">
+                            <div class="mc-portrait-frame" aria-hidden="true"></div>
+                            <img src="/assets/images/demos/marcela-cuenca/about-photo.jpeg" alt="Marcela Cuenca, abogada, trabajando en su despacho"
+                                 class="relative z-10 w-full object-cover" width="642" height="1020" fetchpriority="high">
+                            <p class="mc-portrait-tag">Marcela Cuenca · Abogada</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Franja de confianza -->
+            <div class="border-y" style="border-color: var(--a-line);" aria-hidden="true">
+                <div class="max-w-6xl mx-auto py-4 px-1 flex flex-wrap justify-center md:justify-between gap-x-10 gap-y-2 text-xs" style="color: var(--a-muted);">
+                    <span>Atención presencial con cita previa</span>
+                    <span>Atención personal y directa</span>
+                    <span>Extranjería y Derecho de Familia</span>
+                </div>
+            </div>
+
+            <!-- Servicios -->
+            <section id="servicios">
+                <div class="max-w-6xl mx-auto py-16 md:py-24">
+                    <h2 class="mc-serif text-3xl md:text-4xl mt-1">Servicios</h2>
+                    <p class="mt-4 max-w-2xl leading-relaxed" style="color: var(--a-muted);">
+                        Asesoramiento completo y personalizado en extranjería y familia. Te explico cada trámite en lenguaje claro, sin letra pequeña.
+                    </p>
+                    <div id="mc-a-services" class="mt-10 grid md:grid-cols-2 gap-x-14"></div>
+                </div>
+            </section>
+
+            <!-- Sobre Marcela -->
+            <section id="sobre-mi" class="border-t" style="border-color: var(--a-line);">
+                <div class="max-w-6xl mx-auto py-16 md:py-24">
+                    <div class="max-w-2xl">
+                        <h2 class="mc-serif text-3xl md:text-4xl mt-1">Derecho, <em style="color: var(--a-gold);">Sueños</em>, Realidad</h2>
+                        <div class="w-14 h-px mt-6" aria-hidden="true" style="background: var(--a-gold);"></div>
+                        <p class="mt-6 leading-relaxed">
+                            Soy Marcela Cuenca, abogada colegiada especializada en Extranjería y Derecho de Familia. Mi misión va más allá de los trámites; se trata de construir puentes hacia una nueva vida en España.
+                        </p>
+                        <p class="mt-4 leading-relaxed" style="color: var(--a-muted);">
+                            Conozco de cerca la burocracia española y lo importante que es preparar cada trámite bien desde el principio. Te explico cada paso con claridad para que tú y tu familia avancéis con seguridad.
+                        </p>
+                    </div>
+                    <div class="mt-9 grid sm:grid-cols-3 gap-6">
+                            <div>
+                                <p class="text-xs font-bold tracking-[.2em] uppercase" style="color: var(--a-gold);">Experiencia</p>
+                                <p class="text-sm mt-2" style="color: var(--a-muted);">Trayectoria en extranjería y familia</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold tracking-[.2em] uppercase" style="color: var(--a-gold);">Empatía</p>
+                                <p class="text-sm mt-2" style="color: var(--a-muted);">Trato humano en cada caso</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold tracking-[.2em] uppercase" style="color: var(--a-gold);">Eficiencia</p>
+                                <p class="text-sm mt-2" style="color: var(--a-muted);">Trámites bien preparados desde el primer día</p>
+                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Zona de atención / nueva oficina -->
+            <section id="zona" class="border-t" style="border-color: var(--a-line); background: var(--a-panel);">
+                <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div>
+                        <h2 class="mc-serif text-3xl md:text-4xl mt-1">Atención presencial en la zona sur de Madrid</h2>
+                        <p class="mt-5 leading-relaxed" style="color: var(--a-muted);">
+                            Marcela atiende en Aranjuez y Ocaña, y acompaña a clientes de toda la zona sur de Madrid y de las poblaciones próximas de Toledo.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-6" data-mc-zones></div>
+                        <div class="mt-9 p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 border" style="border-color: var(--a-line);">
+                            <span class="w-11 h-11 shrink-0 flex items-center justify-center border" style="border-color: var(--a-gold);" aria-hidden="true">
+                                <i data-lucide="building-2" class="w-5 h-5" style="color: var(--a-gold);"></i>
+                            </span>
+                            <span class="flex-1">
+                                <span class="block font-bold">Nueva oficina · Atención presencial con cita previa</span>
+                                <span class="block text-sm mt-1" style="color: var(--a-muted);">Un espacio para atenderte personalmente en la zona.</span>
+                            </span>
+                            <span class="mc-pending">Ubicación exacta por confirmar</span>
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 640 440" class="w-full h-auto border p-2.5" style="border-color: var(--a-line);" role="img" aria-label="Mapa ilustrativo de la zona de atención: Aranjuez, Ocaña, zona sur de Madrid y poblaciones próximas de Toledo">
+                            <rect width="640" height="440" fill="#1B1A18"></rect>
+                            <g stroke="rgba(197,160,89,.07)" stroke-width="1" fill="none">
+                                <path d="M0 88H640M0 176H640M0 264H640M0 352H640"></path>
+                                <path d="M91 0V440M182 0V440M273 0V440M364 0V440M455 0V440M546 0V440"></path>
+                            </g>
+                            <g stroke="rgba(244,239,230,.05)" stroke-width="10" fill="none" stroke-linecap="round">
+                                <path d="M-20 330 C 140 290, 210 220, 300 210 S 560 120, 660 50"></path>
+                                <path d="M300 460 C 310 360, 400 260, 470 140"></path>
+                            </g>
+                            <circle cx="470" cy="322" r="64" fill="rgba(197,160,89,.05)" stroke="rgba(197,160,89,.45)" stroke-dasharray="5 6"></circle>
+                            <g class="mc-node" transform="translate(150,88)">
+                                <circle class="mc-node-ring" r="9" fill="none" stroke="#C5A059" stroke-width="1.5"></circle>
+                                <circle r="5" fill="#C5A059"></circle>
+                                <text y="-16" text-anchor="middle" fill="#F4EFE6" font-size="13.5" font-weight="700" font-family="Lato, sans-serif">Zona sur de Madrid</text>
+                            </g>
+                            <g class="mc-node" transform="translate(300,210)">
+                                <circle class="mc-node-ring" r="9" fill="none" stroke="#C5A059" stroke-width="1.5" style="animation-delay: .6s;"></circle>
+                                <circle r="5" fill="#C5A059"></circle>
+                                <text y="-16" text-anchor="middle" fill="#F4EFE6" font-size="14" font-weight="700" font-family="Lato, sans-serif">Aranjuez</text>
+                            </g>
+                            <g class="mc-node" transform="translate(455,128)">
+                                <circle class="mc-node-ring" r="9" fill="none" stroke="#C5A059" stroke-width="1.5" style="animation-delay: 1.2s;"></circle>
+                                <circle r="5" fill="#C5A059"></circle>
+                                <text y="-16" text-anchor="middle" fill="#F4EFE6" font-size="14" font-weight="700" font-family="Lato, sans-serif">Ocaña</text>
+                            </g>
+                            <text x="470" y="330" text-anchor="middle" fill="#D9BC82" font-size="11.5" font-family="Lato, sans-serif">Poblaciones próximas</text>
+                            <text x="470" y="348" text-anchor="middle" fill="#D9BC82" font-size="11.5" font-family="Lato, sans-serif">de Toledo</text>
+                        </svg>
+                        <p class="text-xs mt-3" style="color: var(--a-muted);">Mapa ilustrativo de la zona de atención. No representa una ubicación exacta.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cómo solicitar ayuda -->
+            <section class="border-t" style="border-color: var(--a-line);">
+                <div class="max-w-6xl mx-auto py-16 md:py-24">
+                    <h2 class="mc-serif text-3xl md:text-4xl mt-1">Tres pasos, sin complicaciones</h2>
+                    <div class="mt-12 grid md:grid-cols-3 gap-10">
+                        <div>
+                            <p class="mc-serif text-4xl" style="color: var(--a-gold);">01</p>
+                            <h3 class="font-bold mt-4">Cuéntame tu caso</h3>
+                            <p class="text-sm mt-2 leading-relaxed" style="color: var(--a-muted);">Escríbeme por WhatsApp o llámame y explícame tu situación.</p>
+                        </div>
+                        <div>
+                            <p class="mc-serif text-4xl" style="color: var(--a-gold);">02</p>
+                            <h3 class="font-bold mt-4">Valoramos cómo ayudarte</h3>
+                            <p class="text-sm mt-2 leading-relaxed" style="color: var(--a-muted);">Estudio tu caso y te explico con claridad el camino a seguir.</p>
+                        </div>
+                        <div>
+                            <p class="mc-serif text-4xl" style="color: var(--a-gold);">03</p>
+                            <h3 class="font-bold mt-4">Coordinamos tu cita</h3>
+                            <p class="text-sm mt-2 leading-relaxed" style="color: var(--a-muted);">Quedamos para tu cita presencial en la zona o en videollamada.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contacto -->
+            <section id="contacto" class="border-t" style="border-color: var(--a-line); background: var(--a-panel);">
+                <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 text-center">
+                    <h2 class="mc-serif text-3xl md:text-5xl mt-1">Hablemos de tu caso</h2>
+                    <p class="mt-5 max-w-xl mx-auto leading-relaxed" style="color: var(--a-muted);">
+                        Me escribes, me cuentas tu caso y lo valoramos con calma. Sin formularios largos ni esperas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center mt-9">
+                        <a href="#" data-mc-phone-href class="mc-btn mc-btn-gold">
+                            <i data-lucide="phone" class="w-4 h-4"></i> <span data-mc-phone>Llamar</span>
+                        </a>
+                        <a href="#" data-mc-wa="__generic__" target="_blank" rel="noopener" class="mc-btn mc-btn-ghost">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i> Escribir por WhatsApp
+                        </a>
+                    </div>
+                    <p class="mt-7 text-xs tracking-wide" style="color: var(--a-muted);"><span data-mc-zones-text></span></p>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="border-t" style="border-color: var(--a-line);">
+                <div class="max-w-6xl mx-auto py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-3">
+                        <img src="/assets/images/demos/marcela-cuenca/logo-white.png" alt="Monograma MC" class="w-9 h-9 object-contain" width="36" height="36" loading="lazy">
+                        <span class="leading-tight">
+                            <span class="mc-serif block text-sm" style="color: var(--a-gold);">MARCELA CUENCA</span>
+                            <span class="block text-[.7rem] tracking-[.3em] uppercase" style="color: var(--a-muted);">Abogada</span>
+                        </span>
+                    </div>
+                    <p class="text-xs text-center" style="color: var(--a-muted);">Extranjería y Derecho de Familia · <a href="#" data-mc-phone-href class="hover:text-white transition-colors"><span data-mc-phone></span></a></p>
+                </div>
+                <p class="pb-24 md:pb-6 text-center text-xs" style="color: rgba(171,163,152,.8);">
+                    © 2026 Marcela Cuenca · Propuesta de web presentada por Cambio Digital (demo)
+                </p>
+            </footer>
+
+            <!-- Barra de acción móvil + WhatsApp flotante -->
+            <div class="mc-mbar" data-mc-bar>
+                <a href="#" data-mc-wa="__cita__" target="_blank" rel="noopener" class="mc-btn mc-btn-gold">Solicitar cita</a>
+                <a href="#" data-mc-wa="__generic__" target="_blank" rel="noopener" class="mc-mbar-wa" aria-label="Contactar por WhatsApp">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+            </div>
+            <a href="#" data-mc-wa="__generic__" target="_blank" rel="noopener" class="mc-wa-float" aria-label="Contactar por WhatsApp">
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+            </a>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             VARIANTE B · CONVERSIÓN MODERNA
+             ═══════════════════════════════════════════════════════════ -->
+        <div id="mc-variant-b" class="mc-demo mc-b hidden" lang="es">
+
+            <!-- Header compacto -->
+            <header class="max-w-6xl mx-auto pt-7 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3 min-w-0">
+                    <span class="mc-b-logo" aria-hidden="true">
+                        <img src="/assets/images/demos/marcela-cuenca/logo-white.png" alt="" width="34" height="34">
+                    </span>
+                    <span class="leading-tight min-w-0">
+                        <span class="block font-black tracking-tight">Marcela Cuenca</span>
+                        <span class="block text-xs truncate" style="color: var(--b-muted);">Abogada de Extranjería y Familia</span>
+                    </span>
+                </div>
+                <a href="#" data-mc-phone-href class="hidden sm:inline-flex items-center gap-2 text-sm font-bold border rounded-full px-4 py-2 transition-colors hover:border-[#C5A059]" style="border-color: var(--b-line);">
+                    <i data-lucide="phone" class="w-4 h-4" style="color: var(--b-gold);"></i> <span data-mc-phone></span>
+                </a>
+            </header>
+
+            <!-- Flujo principal -->
+            <section class="max-w-6xl mx-auto pt-10 md:pt-14" aria-label="Asistente de consulta">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">¿En qué podemos ayudarte?</h1>
+                <p class="mt-3 max-w-xl leading-relaxed" style="color: var(--b-muted);">
+                    Elige tu situación y te explicamos cómo seguir. Sin formularios largos: pides cita o escribes por WhatsApp.
+                </p>
+                <div id="mc-b-options" class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"></div>
+
+                <div class="mt-6 grid lg:grid-cols-5 gap-6 items-start">
+                    <div id="mc-b-detail" class="lg:col-span-3" aria-live="polite">
+                        <div id="mc-b-empty" class="mc-b-card p-8 text-center border-dashed">
+                            <i data-lucide="mouse-pointer-click" class="w-6 h-6 mx-auto" style="color: var(--b-gold);"></i>
+                            <p class="mt-3 text-sm" style="color: var(--b-muted);">Selecciona una opción para ver cómo te ayuda Marcela.</p>
+                        </div>
+                        <div id="mc-b-panel" class="hidden mc-b-card p-6 md:p-8">
+                            <div class="flex items-start justify-between gap-4">
+                                <div>
+                                    <p class="text-xs font-bold tracking-[.18em] uppercase" style="color: var(--b-gold);">Tu consulta</p>
+                                    <h2 id="mc-detail-title" class="text-2xl font-black tracking-tight mt-1"></h2>
+                                </div>
+                                <button type="button" id="mc-detail-close" class="text-xs font-bold px-3 py-2 rounded-full border transition-colors hover:border-[#C5A059]" style="border-color: var(--b-line); color: var(--b-muted);">Cambiar</button>
+                            </div>
+                            <p id="mc-detail-desc" class="mt-4 leading-relaxed"></p>
+                            <p class="text-xs font-bold tracking-[.14em] uppercase mt-6" style="color: var(--b-gold);">Qué incluye</p>
+                            <ul id="mc-detail-list" class="mt-3 space-y-2"></ul>
+                            <div class="flex flex-col sm:flex-row gap-3 mt-8">
+                                <a href="#mc-b-agenda" class="mc-btn-b mc-btn-b-gold">
+                                    <i data-lucide="calendar-check" class="w-4 h-4"></i> Solicitar cita
+                                </a>
+                                <a id="mc-detail-wa" href="#" target="_blank" rel="noopener" class="mc-btn-b mc-btn-b-wa">
+                                    <i data-lucide="message-circle" class="w-4 h-4"></i> Consultar por WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="lg:col-span-2 mc-b-card p-6">
+                        <div class="flex items-center gap-4">
+                            <img src="/assets/images/demos/marcela-cuenca/about-photo.jpeg" alt="Marcela Cuenca" class="w-16 h-16 rounded-full object-cover border-2" style="border-color: var(--b-gold-bright);" loading="lazy">
+                            <div>
+                                <p class="font-black tracking-tight">Marcela Cuenca</p>
+                                <p class="text-xs" style="color: var(--b-muted);">Responde personalmente</p>
+                            </div>
+                        </div>
+                        <p class="mt-5 text-sm leading-relaxed" style="color: var(--b-muted);">
+                            Sin cuestionarios ni respuestas automáticas: cada consulta la lee y responde Marcela.
+                        </p>
+                        <div class="flex flex-col gap-3 mt-5">
+                            <a href="#" data-mc-phone-href class="mc-btn-b mc-btn-b-ghost w-full">
+                                <i data-lucide="phone" class="w-4 h-4"></i> <span data-mc-phone></span>
+                            </a>
+                            <a href="#" data-mc-wa="__generic__" target="_blank" rel="noopener" class="mc-btn-b mc-btn-b-wa w-full">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+                            </a>
+                        </div>
+                        <p class="mt-5 text-xs leading-relaxed" style="color: var(--b-muted);">
+                            Nueva oficina en la zona sur de Madrid · ubicación exacta por confirmar.
+                        </p>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- Agenda demo -->
+            <section id="mc-b-agenda" class="max-w-6xl mx-auto py-12 md:py-16" aria-label="Reserva de cita (demostración)">
+                <div class="mc-b-card p-6 md:p-10">
+                    <div class="flex flex-wrap items-start justify-between gap-3">
+                        <div>
+                            <h2 class="text-2xl font-black tracking-tight">Reserva tu cita</h2>
+                            <p class="text-sm mt-1" style="color: var(--b-muted);">Elige día y hora; la confirmación es inmediata.</p>
+                        </div>
+                        <span class="mc-badge-demo">Demo — no se envía nada</span>
+                    </div>
+                    <p class="mt-5 text-sm" style="color: var(--b-muted);">
+                        Servicio: <strong id="mc-agenda-svc" style="color: var(--b-ink);">Consulta general</strong>
+                        <span class="mc-badge-demo ml-2">Horarios de demostración</span>
+                    </p>
+                    <div class="mt-7">
+                        <p class="text-xs font-bold tracking-[.16em] uppercase" style="color: var(--b-gold);">1 · Elige el día</p>
+                        <div id="mc-agenda-days" class="mt-3 flex gap-2 overflow-x-auto pb-2"></div>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-xs font-bold tracking-[.16em] uppercase" style="color: var(--b-gold);">2 · Elige la hora</p>
+                        <div id="mc-agenda-slots" class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-2"></div>
+                    </div>
+                    <form id="mc-agenda-form" class="mt-8" novalidate>
+                        <p class="text-xs font-bold tracking-[.16em] uppercase" style="color: var(--b-gold);">3 · Tus datos</p>
+                        <div class="mt-3 grid sm:grid-cols-2 gap-3">
+                            <label class="block">
+                                <span class="sr-only">Nombre</span>
+                                <input id="mc-agenda-name" type="text" class="mc-input" placeholder="Tu nombre" autocomplete="name" required>
+                            </label>
+                            <label class="block">
+                                <span class="sr-only">Teléfono</span>
+                                <input id="mc-agenda-phone" type="tel" class="mc-input" placeholder="Tu teléfono" autocomplete="tel" required>
+                            </label>
+                        </div>
+                        <p id="mc-agenda-hint" class="hidden text-sm mt-3" style="color: #B4443C;"></p>
+                        <button type="submit" class="mc-btn-b mc-btn-b-gold w-full mt-4">Confirmar reserva</button>
+                    </form>
+                    <div id="mc-agenda-ok" class="hidden mt-8 rounded-2xl p-6" style="background: #FDF9F0;" aria-live="polite">
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="check-circle" class="w-8 h-8 shrink-0" style="color: var(--b-gold);"></i>
+                            <div class="min-w-0">
+                                <p class="font-black text-lg tracking-tight">¡Listo<span id="mc-ok-name"></span>!</p>
+                                <p class="text-sm mt-1" style="color: var(--b-muted);">
+                                    Cita solicitada: <strong id="mc-ok-svc" style="color: var(--b-ink);"></strong> · <span id="mc-ok-when" style="color: var(--b-ink);"></span>
+                                </p>
+                                <p class="text-xs mt-3" style="color: var(--b-muted);">Demo: no se ha enviado ningún dato. En la web real, Marcela recibiría esta solicitud al instante.</p>
+                                <div class="flex flex-col sm:flex-row gap-3 mt-5">
+                                    <a id="mc-ok-wa" href="#" target="_blank" rel="noopener" class="mc-btn-b mc-btn-b-wa">
+                                        <i data-lucide="message-circle" class="w-4 h-4"></i> Confirmar ahora por WhatsApp
+                                    </a>
+                                    <button type="button" id="mc-agenda-reset" class="mc-btn-b mc-btn-b-ghost">Hacer otra reserva</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Asistente demo -->
+            <section class="max-w-6xl mx-auto pb-12 md:pb-16" aria-label="Asistente de demostración">
+                <div class="mc-b-card p-6 md:p-8">
+                    <div class="flex flex-wrap items-start justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-full flex items-center justify-center" style="background: var(--b-ink);" aria-hidden="true">
+                                <i data-lucide="bot" class="w-5 h-5" style="color: var(--b-gold-bright);"></i>
+                            </span>
+                            <div>
+                                <h2 class="font-black tracking-tight">Prueba el asistente</h2>
+                                <p class="text-xs" style="color: var(--b-muted);">Una idea de lo que la web final puede ofrecer.</p>
+                            </div>
+                        </div>
+                        <span class="mc-badge-demo">Simulación local · sin IA</span>
+                    </div>
+                    <div id="mc-assist-chat" class="mt-6 space-y-3 max-h-80 overflow-y-auto" aria-live="polite"></div>
+                    <div class="mt-5 flex flex-wrap gap-2" role="group" aria-label="Preguntas de ejemplo">
+                        <button type="button" class="mc-assist-q" data-q="0">Necesito información sobre arraigo</button>
+                        <button type="button" class="mc-assist-q" data-q="1">¿Cuánto cuesta un trámite?</button>
+                        <button type="button" class="mc-assist-q" data-q="2">Quiero hablar con Marcela</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panel mensual demo -->
+            <section class="max-w-6xl mx-auto pb-14 md:pb-20" aria-label="Panel mensual de demostración">
+                <div class="rounded-[18px] p-6 md:p-10" style="background: var(--b-ink); color: #F6F4EE;">
+                    <div class="flex flex-wrap items-start justify-between gap-3">
+                        <div>
+                            <h2 class="text-2xl font-black tracking-tight">Lo que Marcela vería cada mes</h2>
+                            <p class="text-sm mt-1" style="color: rgba(246,244,238,.75);">Un panel sencillo: saber si la web está trayendo clientes.</p>
+                        </div>
+                        <span class="mc-badge-demo mc-badge-demo-dark">DEMO · Datos simulados</span>
+                    </div>
+                    <div class="mt-8 grid sm:grid-cols-3 gap-4">
+                        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,.05);">
+                            <p class="text-xs uppercase tracking-[.18em]" style="color: rgba(246,244,238,.72);">Visitas</p>
+                            <p class="text-4xl font-black mt-2">1.284</p>
+                            <p class="text-xs mt-1" style="color: rgba(246,244,238,.65);">dato simulado</p>
+                        </div>
+                        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,.05);">
+                            <p class="text-xs uppercase tracking-[.18em]" style="color: rgba(246,244,238,.72);">Solicitudes de cita</p>
+                            <p class="text-4xl font-black mt-2">96</p>
+                            <p class="text-xs mt-1" style="color: rgba(246,244,238,.65);">dato simulado</p>
+                        </div>
+                        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,.05);">
+                            <p class="text-xs uppercase tracking-[.18em]" style="color: rgba(246,244,238,.72);">Citas confirmadas</p>
+                            <p class="text-4xl font-black mt-2">71</p>
+                            <p class="text-xs mt-1" style="color: rgba(246,244,238,.65);">dato simulado</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 rounded-2xl p-5" style="background: rgba(255,255,255,.05);">
+                        <p class="text-xs uppercase tracking-[.18em]" style="color: rgba(246,244,238,.72);">Origen de los contactos</p>
+                        <div class="mt-4 space-y-3">
+                            <div class="flex items-center gap-3 text-sm">
+                                <span class="w-20 shrink-0">WhatsApp</span>
+                                <span class="mc-bar-origin flex-1"><i style="width: 54%;"></i></span>
+                                <span class="w-10 text-right font-bold">54%</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <span class="w-20 shrink-0">Web</span>
+                                <span class="mc-bar-origin flex-1"><i style="width: 32%; opacity: .75;"></i></span>
+                                <span class="w-10 text-right font-bold">32%</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <span class="w-20 shrink-0">Teléfono</span>
+                                <span class="mc-bar-origin flex-1"><i style="width: 14%; opacity: .55;"></i></span>
+                                <span class="w-10 text-right font-bold">14%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-5 text-xs" style="color: rgba(246,244,238,.65);">
+                        Cifras inventadas únicamente para ilustrar el informe mensual. En la versión real se alimentarían de tu web de verdad.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Footer compacto -->
+            <footer class="max-w-6xl mx-auto pb-24 md:pb-10">
+                <div class="border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4" style="border-color: var(--b-line);">
+                    <div class="flex items-center gap-3">
+                        <span class="mc-b-logo" style="width: 38px; height: 38px;" aria-hidden="true">
+                            <img src="/assets/images/demos/marcela-cuenca/logo-white.png" alt="" width="26" height="26" loading="lazy">
+                        </span>
+                        <span class="text-sm"><strong>Marcela Cuenca</strong> · Extranjería y Familia</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm">
+                        <a href="#" data-mc-phone-href class="font-bold"><span data-mc-phone></span></a>
+                        <a href="#" data-mc-wa="__generic__" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 font-bold" style="color: #147A3D;">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <p class="mt-6 text-center text-xs" style="color: var(--b-muted);">
+                    Propuesta de web presentada por Cambio Digital · Demo con datos simulados donde se indica
+                </p>
+            </footer>
+
+            <!-- Barra de acción móvil -->
+            <div class="mc-mbar" data-mc-bar>
+                <a href="#mc-b-agenda" class="mc-btn mc-btn-b-gold">Solicitar cita</a>
+                <a href="#" data-mc-wa="__generic__" target="_blank" rel="noopener" class="mc-mbar-wa" aria-label="Contactar por WhatsApp">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+        <script>
+        (function () {
+            'use strict';
+
+            /* ═══════════════════════════════════════════════════════════
+               FUENTE ÚNICA DE DATOS — consumida por las variantes A y B.
+               Datos reales de Marcela + pendientes explícitos.
+               ═══════════════════════════════════════════════════════════ */
+            var MARCELA_DATA = {
+                marca: {
+                    nombre: 'Marcela Cuenca',
+                    rol: 'Abogada de Extranjería y Familia',
+                    despacho: 'Despacho Jurídico Especializado',
+                    claim: 'Derecho, Sueños, Realidad'
+                },
+                contacto: {
+                    telefono: '+34 624 503 703',
+                    telefonoHref: 'tel:+34624503703',
+                    whatsapp: 'https://wa.me/34624503703',
+                    waCita: 'Hola Marcela, quiero agendar una consulta.',
+                    waGeneral: 'Hola Marcela, tengo una consulta.'
+                },
+                zonas: ['Aranjuez', 'Ocaña', 'Zona sur de Madrid', 'Poblaciones próximas de Toledo'],
+                pendientes: {
+                    oficina: 'Ubicación exacta por confirmar',
+                    horarios: 'Horarios de demostración (los reales se confirmarán con Marcela)'
+                },
+                assets: {
+                    logo: '/assets/images/demos/marcela-cuenca/logo-white.png',
+                    foto: '/assets/images/demos/marcela-cuenca/about-photo.jpeg'
+                },
+                servicios: [
+                    {
+                        id: 'nacionalidad', icono: 'globe',
+                        titulo: 'Nacionalidad y Arraigos', corto: 'Nacionalidad o arraigo',
+                        resumen: 'Nacionalidad española y las distintas formas de arraigo para regularizar tu situación.',
+                        incluye: ['Arraigo social, familiar, laboral y formativo', 'Nacionalidad por residencia y opción', 'Revisión completa de tu documentación']
+                    },
+                    {
+                        id: 'tie', icono: 'credit-card',
+                        titulo: 'Tarjeta de Residencia (TIE)', corto: 'TIE / residencia',
+                        resumen: 'Primera expedición y renovaciones de la tarjeta de identidad de extranjero.',
+                        incluye: ['Primera expedición y renovaciones', 'Cita de huellas y recogida de tarjeta', 'Acompañamiento en cada paso del trámite']
+                    },
+                    {
+                        id: 'visados', icono: 'plane',
+                        titulo: 'Visados de Estancia', corto: 'Visados',
+                        resumen: 'Visados de estudios, turismo y estancias de corta o larga duración.',
+                        incluye: ['Estudios y turismo', 'Estancias de corta y larga duración', 'Preparación y revisión de la solicitud']
+                    },
+                    {
+                        id: 'homologacion', icono: 'graduation-cap',
+                        titulo: 'Homologación de Títulos', corto: 'Homologación de títulos',
+                        resumen: 'Homologación y equivalencia de títulos extranjeros en España.',
+                        incluye: ['Títulos universitarios y no universitarios', 'Gestión completa del expediente', 'Seguimiento hasta la resolución']
+                    },
+                    {
+                        id: 'familia', icono: 'users',
+                        titulo: 'Derecho de Familia', corto: 'Familia',
+                        resumen: 'Reagrupación familiar, pareja de hecho, divorcio y custodia con elemento internacional.',
+                        incluye: ['Reagrupación familiar y parejas de hecho', 'Divorcios y custodia internacional', 'Defensa de tus derechos y los de tu familia']
+                    },
+                    {
+                        id: 'fiscalidad', icono: 'landmark',
+                        titulo: 'Fiscalidad Extranjera', corto: 'Fiscalidad',
+                        resumen: 'Declaración de la renta e impuestos para residentes y no residentes.',
+                        incluye: ['Declaración de la renta de residentes', 'Impuestos para no residentes', 'Orientación fiscal para extranjeros']
+                    }
+                ],
+                otraConsulta: {
+                    id: 'otra', icono: 'message-circle',
+                    titulo: 'Otra consulta', corto: 'Otra consulta',
+                    resumen: 'Cuéntame tu caso y valoramos juntos cómo ayudarte.',
+                    incluye: ['Atención personalizada', 'Te explicamos el camino a seguir con claridad']
+                }
+            };
+
+            /* ---------- utilidades ---------- */
+            function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+            function $all(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
+            function esc(s) {
+                return String(s).replace(/[&<>"']/g, function (c) {
+                    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+                });
+            }
+            function waUrl(msg) { return MARCELA_DATA.contacto.whatsapp + '?text=' + encodeURIComponent(msg); }
+            function refreshIcons() {
+                if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
+            }
+
+            /* ---------- contacto y zonas (datos reales) ---------- */
+            function fillContact() {
+                $all('[data-mc-phone]').forEach(function (el) { el.textContent = MARCELA_DATA.contacto.telefono; });
+                $all('[data-mc-phone-href]').forEach(function (a) { a.setAttribute('href', MARCELA_DATA.contacto.telefonoHref); });
+                $all('[data-mc-wa]').forEach(function (a) {
+                    var key = a.getAttribute('data-mc-wa');
+                    var msg = key === '__cita__' ? MARCELA_DATA.contacto.waCita
+                        : key === '__generic__' ? MARCELA_DATA.contacto.waGeneral
+                        : key;
+                    a.setAttribute('href', waUrl(msg));
+                });
+            }
+            function fillZones() {
+                $all('[data-mc-zones]').forEach(function (box) {
+                    box.innerHTML = MARCELA_DATA.zonas.map(function (z) {
+                        return '<span class="mc-zone-chip">' + esc(z) + '</span>';
+                    }).join('');
+                });
+                $all('[data-mc-zones-text]').forEach(function (el) { el.textContent = MARCELA_DATA.zonas.join(' · '); });
+            }
+
+            /* ---------- servicios ---------- */
+            function pad(n) { return n < 10 ? '0' + n : String(n); }
+            function allServices() { return MARCELA_DATA.servicios.concat([MARCELA_DATA.otraConsulta]); }
+
+            function renderServices() {
+                $('#mc-a-services').innerHTML = MARCELA_DATA.servicios.map(function (s, i) {
+                    return '<div class="mc-svc">' +
+                        '<span class="mc-svc-num" aria-hidden="true">' + pad(i + 1) + '</span>' +
+                        '<div>' +
+                            '<div class="flex items-center gap-3">' +
+                                '<i data-lucide="' + s.icono + '" class="w-4 h-4 shrink-0" style="color: var(--a-gold);"></i>' +
+                                '<h3 class="mc-serif text-lg md:text-xl" style="color: var(--a-ivory);">' + esc(s.titulo) + '</h3>' +
+                            '</div>' +
+                            '<p class="mt-2 text-sm leading-relaxed" style="color: var(--a-muted);">' + esc(s.resumen) + '</p>' +
+                        '</div>' +
+                    '</div>';
+                }).join('');
+
+                $('#mc-b-options').innerHTML = allServices().map(function (s) {
+                    return '<button type="button" class="mc-tile" data-svc="' + s.id + '" aria-pressed="false">' +
+                        '<i data-lucide="' + s.icono + '" class="w-5 h-5" style="color: var(--b-gold);"></i>' +
+                        '<span class="block font-bold text-sm mt-3 leading-snug">' + esc(s.corto) + '</span>' +
+                    '</button>';
+                }).join('');
+                $all('#mc-b-options .mc-tile').forEach(function (tile) {
+                    tile.addEventListener('click', function () { selectService(tile.getAttribute('data-svc'), true); });
+                });
+            }
+
+            function findService(id) {
+                var found = null;
+                allServices().forEach(function (s) { if (s.id === id) found = s; });
+                return found;
+            }
+
+            function selectService(id, scroll) {
+                var svc = findService(id);
+                if (!svc) return;
+                $all('#mc-b-options .mc-tile').forEach(function (tile) {
+                    tile.setAttribute('aria-pressed', tile.getAttribute('data-svc') === id ? 'true' : 'false');
+                });
+                $('#mc-detail-title').textContent = svc.titulo;
+                $('#mc-detail-desc').textContent = svc.resumen;
+                $('#mc-detail-list').innerHTML = svc.incluye.map(function (item) {
+                    return '<li class="flex items-start gap-2.5 text-sm">' +
+                        '<i data-lucide="check-circle" class="w-4 h-4 shrink-0 mt-0.5" style="color: var(--b-gold);"></i>' +
+                        '<span>' + esc(item) + '</span></li>';
+                }).join('');
+                $('#mc-detail-wa').setAttribute('href', waUrl('Hola Marcela, quisiera consultar sobre ' + svc.titulo + '.'));
+                $('#mc-agenda-svc').textContent = svc.titulo;
+                $('#mc-b-empty').classList.add('hidden');
+                $('#mc-b-panel').classList.remove('hidden');
+                refreshIcons();
+                if (scroll && window.innerWidth < 1024) {
+                    $('#mc-b-detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            /* ---------- agenda (simulada) ---------- */
+            var agenda = { dia: null, hora: null };
+            var DOW = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
+            var DOW_FULL = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+            var MES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+            var MES_FULL = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+            var SLOTS = ['09:00', '10:30', '12:00', '16:00', '17:30', '19:00'];
+
+            function nextWeekdays(count) {
+                var out = [], base = new Date(), i = 0;
+                while (out.length < count) {
+                    i += 1;
+                    var d = new Date(base.getTime() + i * 86400000);
+                    if (d.getDay() !== 0 && d.getDay() !== 6) out.push(d);
+                }
+                return out;
+            }
+
+            function renderAgenda() {
+                var days = nextWeekdays(10);
+                $('#mc-agenda-days').innerHTML = days.map(function (d, i) {
+                    return '<button type="button" class="mc-day" data-i="' + i + '">' +
+                        '<span class="mc-day-dow">' + DOW[d.getDay()] + '</span>' +
+                        '<span>' + d.getDate() + ' ' + MES[d.getMonth()] + '</span>' +
+                    '</button>';
+                }).join('');
+                $all('#mc-agenda-days .mc-day').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        $all('#mc-agenda-days .mc-day').forEach(function (b) { b.classList.remove('mc-sel'); });
+                        btn.classList.add('mc-sel');
+                        agenda.dia = days[Number(btn.getAttribute('data-i'))];
+                        $all('#mc-agenda-slots .mc-slot').forEach(function (s) { s.disabled = false; });
+                    });
+                });
+                $('#mc-agenda-slots').innerHTML = SLOTS.map(function (slot) {
+                    return '<button type="button" class="mc-slot" data-slot="' + slot + '" disabled>' + slot + '</button>';
+                }).join('');
+                $all('#mc-agenda-slots .mc-slot').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        $all('#mc-agenda-slots .mc-slot').forEach(function (b) { b.classList.remove('mc-sel'); });
+                        btn.classList.add('mc-sel');
+                        agenda.hora = btn.getAttribute('data-slot');
+                    });
+                });
+
+                $('#mc-agenda-form').addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    var hint = $('#mc-agenda-hint');
+                    var name = $('#mc-agenda-name').value.trim();
+                    var phone = $('#mc-agenda-phone').value.trim();
+                    var errors = [];
+                    if (!agenda.dia || !agenda.hora) errors.push('Elige día y hora antes de confirmar.');
+                    if (!name) errors.push('Escribe tu nombre.');
+                    if (!phone) errors.push('Escribe tu teléfono.');
+                    if (errors.length) {
+                        hint.textContent = errors.join(' ');
+                        hint.classList.remove('hidden');
+                        return;
+                    }
+                    hint.classList.add('hidden');
+                    var d = agenda.dia;
+                    var fecha = DOW_FULL[d.getDay()] + ' ' + d.getDate() + ' de ' + MES_FULL[d.getMonth()];
+                    var svcLabel = $('#mc-agenda-svc').textContent || 'Consulta general';
+                    $('#mc-ok-name').textContent = ', ' + esc(name);
+                    $('#mc-ok-svc').textContent = svcLabel;
+                    $('#mc-ok-when').textContent = fecha + ' · ' + agenda.hora + ' h';
+                    $('#mc-ok-wa').setAttribute('href', waUrl('Hola Marcela, quisiera agendar una cita sobre ' + svcLabel +
+                        ' el ' + fecha + ' a las ' + agenda.hora + '. Mi nombre es ' + name + '.'));
+                    $('#mc-agenda-form').classList.add('hidden');
+                    $('#mc-agenda-ok').classList.remove('hidden');
+                    refreshIcons();
+                });
+
+                $('#mc-agenda-reset').addEventListener('click', function () {
+                    $('#mc-agenda-ok').classList.add('hidden');
+                    $('#mc-agenda-form').classList.remove('hidden');
+                    $('#mc-agenda-name').value = '';
+                    $('#mc-agenda-phone').value = '';
+                });
+            }
+
+            /* ---------- asistente (simulación determinista) ---------- */
+            var ASSIST = [
+                {
+                    q: 'Necesito información sobre arraigo',
+                    a: 'Claro. Marcela puede ayudarte a revisar tu caso. Puedes solicitar una cita o escribirle directamente por WhatsApp.',
+                    actions: true
+                },
+                {
+                    q: '¿Cuánto cuesta un trámite?',
+                    a: 'Cada caso es distinto. En la consulta, Marcela estudia tu situación y te explica el coste con claridad antes de empezar.',
+                    actions: false
+                },
+                {
+                    q: 'Quiero hablar con Marcela',
+                    a: 'Perfecto. Escríbele por WhatsApp o reserva un hueco en la agenda de esta demo.',
+                    actions: true
+                }
+            ];
+
+            function initAssistant() {
+                var chat = $('#mc-assist-chat');
+                var chips = $all('.mc-assist-q');
+
+                function append(html) {
+                    chat.insertAdjacentHTML('beforeend', html);
+                    chat.scrollTop = chat.scrollHeight;
+                }
+
+                function ask(idx) {
+                    var item = ASSIST[idx];
+                    chips.forEach(function (c) { c.disabled = true; });
+                    append('<div class="flex justify-end"><p class="mc-bubble-user">' + esc(item.q) + '</p></div>');
+                    append('<div class="flex justify-start"><p class="mc-bubble-bot mc-typing" id="mc-assist-typing"><span></span><span></span><span></span></p></div>');
+                    setTimeout(function () {
+                        var typing = $('#mc-assist-typing');
+                        if (typing) typing.remove();
+                        append('<div class="flex justify-start"><p class="mc-bubble-bot" data-typed></p></div>');
+                        var target = chat.querySelector('[data-typed]:last-of-type');
+                        var i = 0;
+                        var timer = setInterval(function () {
+                            i += 2;
+                            target.textContent = item.a.slice(0, i);
+                            chat.scrollTop = chat.scrollHeight;
+                            if (i >= item.a.length) {
+                                clearInterval(timer);
+                                target.removeAttribute('data-typed');
+                                if (item.actions) {
+                                    append('<div class="flex flex-wrap gap-2 pl-1">' +
+                                        '<a href="#mc-b-agenda" class="mc-btn-b mc-btn-b-gold !min-h-[40px] !text-xs !px-4">Solicitar cita</a>' +
+                                        '<a href="' + waUrl(MARCELA_DATA.contacto.waGeneral) + '" target="_blank" rel="noopener" class="mc-btn-b mc-btn-b-wa !min-h-[40px] !text-xs !px-4">WhatsApp</a>' +
+                                    '</div>');
+                                    refreshIcons();
+                                }
+                                chips.forEach(function (c) { c.disabled = false; });
+                            }
+                        }, 16);
+                    }, 700);
+                }
+
+                chips.forEach(function (chip) {
+                    chip.addEventListener('click', function () { ask(Number(chip.getAttribute('data-q'))); });
+                });
+            }
+
+            /* ---------- selector A/B ---------- */
+            function setVariant(v, opts) {
+                opts = opts || {};
+                v = (v === 'b') ? 'b' : 'a';
+                $('#mc-variant-a').classList.toggle('hidden', v !== 'a');
+                $('#mc-variant-b').classList.toggle('hidden', v !== 'b');
+                var btnA = $('#mc-sw-a'), btnB = $('#mc-sw-b');
+                btnA.classList.toggle('mc-sw-active', v === 'a');
+                btnB.classList.toggle('mc-sw-active', v === 'b');
+                btnA.setAttribute('aria-pressed', v === 'a' ? 'true' : 'false');
+                btnB.setAttribute('aria-pressed', v === 'b' ? 'true' : 'false');
+                if (opts.push) {
+                    try { history.replaceState(null, '', location.pathname + '?variant=' + v); } catch (e) { /* no-op */ }
+                }
+                if (opts.scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+                refreshIcons();
+            }
+
+            function initSwitcher() {
+                $('#mc-sw-a').addEventListener('click', function () { setVariant('a', { push: true, scroll: true }); });
+                $('#mc-sw-b').addEventListener('click', function () { setVariant('b', { push: true, scroll: true }); });
+                var param = null;
+                try { param = new URLSearchParams(window.location.search).get('variant'); } catch (e) { /* no-op */ }
+                setVariant(param === 'b' ? 'b' : 'a', {});
+            }
+
+            /* ---------- barras móviles: ocultar al llegar al bloque CD inferior ---------- */
+            function initBars() {
+                var cdBottom = $('main') ? $('main').nextElementSibling : null;
+                if (cdBottom && 'IntersectionObserver' in window) {
+                    var io = new IntersectionObserver(function (entries) {
+                        $all('[data-mc-bar]').forEach(function (bar) {
+                            bar.classList.toggle('mc-bar-hidden', entries[0].isIntersecting);
+                        });
+                    }, { threshold: 0.05 });
+                    io.observe(cdBottom);
+                }
+            }
+
+            /* ---------- init ---------- */
+            fillContact();
+            fillZones();
+            renderServices();
+            renderAgenda();
+            initAssistant();
+            initSwitcher();
+            initBars();
+            refreshIcons();
+        })();
+        </script>
+        <!-- DEMO_CONTENT_END -->
+    </main>
+
+    <!-- DEMO_SHARED_CHROME_BOTTOM_START -->
+    <section class="relative z-10 pb-10 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto card-modern p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-cd-text-muted text-center md:text-left">
+                <i data-lucide="info" class="w-4 h-4 inline-block mr-1 -mt-0.5" style="color: var(--cd-highlight-color);"></i>
+                Esta es una demo interactiva con <strong>datos ficticios</strong>: así podría verse tu operación con una solución de Cambio Digital.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 justify-center shrink-0">
+                <a href="/servicios/erp-open-source" class="btn-secondary text-xs py-2 px-4">Soluciones relacionadas</a>
+                <a href="/#contacto" class="btn-primary text-xs py-2 px-4">Hablar con un asesor</a>
+            </div>
+        </div>
+    </section>
+    <!-- DEMO_SHARED_CHROME_BOTTOM_END -->
+
+    <!-- DEMO_SHARED_FOOTER_SCRIPTS_START -->
+    <script src="/assets/js/demo-chrome.js"></script>
+    <!-- DEMO_SHARED_FOOTER_SCRIPTS_END -->
+</body>
+</html>

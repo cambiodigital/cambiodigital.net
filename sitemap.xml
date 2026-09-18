@@ -145,6 +145,18 @@
       <priority>0.8</priority>
    </url>
    <url>
+      <loc>https://cambiodigital.net/demos</loc>
+      <lastmod>2026-09-18</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://cambiodigital.net/demos/erp-dashboard</loc>
+      <lastmod>2026-09-18</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
       <loc>https://cambiodigital.net/como-trabajamos.html</loc>
       <lastmod>2026-02-21</lastmod>
       <changefreq>monthly</changefreq>

@@ -715,3 +715,46 @@ article.bg-white .cta-box h3 {
     -webkit-text-stroke: 2px black;
     color: transparent;
 }
+
+/* ===== Sistema de demos (/demos) ===== */
+
+/* Navegación de módulos dentro de las demos internas */
+.demo-nav-btn {
+    color: var(--cd-text-muted);
+}
+
+.demo-nav-btn:hover {
+    background: var(--cd-surface-hover);
+    color: var(--cd-cream);
+}
+
+/* Variante sidebar (botones rectangulares redondeados) */
+button.demo-nav-btn:not(.badge).demo-nav-btn-active {
+    background: var(--cd-surface-hover);
+    color: var(--cd-cream);
+    box-shadow: inset 3px 0 0 var(--cd-highlight-color);
+}
+
+/* Variante tabs móviles (chips .badge) */
+.badge.demo-nav-btn-active {
+    background: var(--cd-highlight-color);
+    color: #ffffff;
+}
+
+/* Campos de formulario dentro de demos (selects, inputs) */
+.demo-input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.5rem;
+    background: var(--cd-surface);
+    border: 1px solid var(--cd-border);
+    color: var(--cd-cream);
+    font-family: inherit;
+    font-size: 0.875rem;
+}
+
+.demo-input:focus {
+    outline: none;
+    border-color: var(--cd-highlight-color);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+}

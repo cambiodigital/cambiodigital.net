@@ -654,6 +654,25 @@
 
         <div class="section-divider"></div>
 
+        <!-- ===== DEMOS RECIENTES ===== -->
+        <section id="demos-preview" class="w-full py-24 px-4 hidden">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="badge mb-4 inline-flex">Demos</span>
+                    <h2 class="reveal font-black text-4xl md:text-5xl mb-4">Pruébalo antes de decidir</h2>
+                    <p class="reveal text-cd-text-dim">Demos interactivas de nuestras soluciones, con datos ficticios:
+                        mira cómo se vería tu negocio funcionando.</p>
+                </div>
+                <div id="home-demos-preview-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"></div>
+                <div class="reveal text-center">
+                    <a href="/demos" class="btn-secondary">Ver todas las demos <i data-lucide="arrow-right"
+                            class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
         <!-- ===== 9. TESTIMONIOS ===== -->
         <section id="resenas" class="w-full py-24 px-4">
             <div class="max-w-6xl mx-auto">
@@ -1082,7 +1101,18 @@
     <div id="promo-modal-container"></div>
 
     <script src="/assets/js/animations.js" defer></script>
+    <script src="/assets/js/demos-data.js" defer></script>
+    <script src="/assets/js/demos-catalog.js" defer></script>
     <script src="/assets/js/layout-loader.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof window.renderRecentDemos === 'function') {
+                window.renderRecentDemos('#home-demos-preview-grid', 3, '#demos-preview');
+                const demosSection = document.getElementById('demos-preview');
+                if (demosSection && demosSection.style.display !== 'none') demosSection.classList.remove('hidden');
+            }
+        });
+    </script>
     <script>
         if (window.COOKIES_ENABLED) { const s = document.createElement('script'); s.src = '/assets/js/cookie-consent.js'; document.body.appendChild(s); }
         if (window.PROMO_ENABLED) { const s = document.createElement('script'); s.src = '/assets/js/promo-modal.js'; document.body.appendChild(s); }
