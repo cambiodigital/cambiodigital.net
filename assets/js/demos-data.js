@@ -83,6 +83,22 @@
                 { label: 'Propuesta B — Conversión moderna', url: '/demos/marcela-cuenca?variant=b' }
             ]
         },
+        {
+            id: 'asesoria-migratoria',
+            title: 'Asesoría Migratoria',
+            tagline: 'Web interactiva para despachos y asesores migratorios: orientación inicial, captación de consultas y reserva de citas.',
+            description: 'Demo genérica de una web de asesoría migratoria y extranjería: orientador interactivo de situaciones (¿Cómo podemos orientarte?), agenda de primera consulta simulada, resumen del caso vía WhatsApp y panel de resultados para el despacho. Marca ficticia: Horizonte Migratorio. Datos 100% ficticios.',
+            category: 'Web / Automatización',
+            tags: ['Web', 'UX', 'Orientación interactiva', 'Captación', 'Agenda', 'WhatsApp'],
+            date: '2026-09-18',
+            status: 'active',
+            visibility: 'public',
+            type: 'internal',
+            url: '/demos/asesoria-migratoria',
+            image: '/assets/images/demos/asesoria-migratoria.png',
+            client: null,
+            variants: []
+        },
         // CD_DEMOS_INSERT_ANCHOR — demo:new inserta las nuevas demos justo encima de esta línea
     ];
 })();

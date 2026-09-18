@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesoría Migratoria | Demo — Cambio Digital</title>
+    <meta name="description" content="Demo genérica de una web de asesoría migratoria y extranjería: orientador interactivo de situaciones (¿Cómo podemos orientarte?), agenda de primera consulta simulada, resumen del caso vía WhatsApp y panel de resultados para el despacho. Marca ficticia: Horizonte Migratorio. Datos 100% ficticios.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1c2143">
+    <meta name="demo-title" content="Asesoría Migratoria">
+    <link rel="canonical" href="https://cambiodigital.net/demos/asesoria-migratoria">
+    <!-- DEMO_SHARED_ICONS_START -->
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: light)" href="/assets/images/LogoCDFondoClaro.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" href="/assets/images/LogoCDFondoOscuro.png">
+    <!-- DEMO_SHARED_ICONS_END -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Asesoría Migratoria | Demo — Cambio Digital">
+    <meta property="og:description" content="Demo genérica de una web de asesoría migratoria y extranjería: orientador interactivo de situaciones (¿Cómo podemos orientarte?), agenda de primera consulta simulada, resumen del caso vía WhatsApp y panel de resultados para el despacho. Marca ficticia: Horizonte Migratorio. Datos 100% ficticios.">
+    <meta property="og:image" content="https://cambiodigital.net/assets/images/demos/asesoria-migratoria.png">
+    <meta property="og:url" content="https://cambiodigital.net/demos/asesoria-migratoria">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cambiodigital.net/demos/asesoria-migratoria">
+    <meta property="twitter:title" content="Asesoría Migratoria | Demo — Cambio Digital">
+    <meta property="twitter:description" content="Demo genérica de una web de asesoría migratoria y extranjería: orientador interactivo de situaciones (¿Cómo podemos orientarte?), agenda de primera consulta simulada, resumen del caso vía WhatsApp y panel de resultados para el despacho. Marca ficticia: Horizonte Migratorio. Datos 100% ficticios.">
+    <meta property="twitter:image" content="https://cambiodigital.net/assets/images/demos/asesoria-migratoria.png">
+
+    <!-- DEMO_SHARED_HEAD_START -->
+    <script>
+        (function () {
+            try {
+                document.documentElement.setAttribute('data-theme', localStorage.getItem('cd-theme') || 'light');
+            } catch (error) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/tailwind.generated.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Lucide Icons -->
+    <script src="/assets/js/lucide.min.js" defer></script>
+
+    <!-- Theme Toggle (in head to prevent flash) -->
+    <script src="/assets/js/theme-toggle.js" defer></script>
+    <!-- DEMO_SHARED_HEAD_END -->
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden bg-cd-base text-cd-cream selection:bg-cd-magenta selection:text-white">
+    <div class="fixed inset-0 z-0 bg-grid"></div>
+
+    <!-- DEMO_SHARED_CHROME_TOP_START -->
+    <header class="fixed top-0 left-0 w-full z-50 px-4 md:px-6">
+        <nav class="flex justify-between items-center gap-3 max-w-7xl mx-auto px-4 md:px-6 py-3 mt-3 rounded-xl glass z-50 relative" aria-label="Barra de demo de Cambio Digital">
+            <div class="flex items-center gap-3 min-w-0">
+                <a href="/demos" class="inline-flex items-center gap-2 font-mono text-sm font-bold text-cd-cream hover:text-cd-highlight transition-colors min-h-[44px] px-1">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> <span class="hidden sm:inline">Demos</span>
+                </a>
+                <span class="w-px h-6 shrink-0" style="background: var(--cd-border);"></span>
+                <span data-demo-title class="font-bold text-sm md:text-base truncate text-cd-cream"></span>
+                <span class="badge badge-accent text-xs shrink-0">DEMO</span>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button class="theme-toggle" aria-label="Cambiar tema" title="Cambiar modo claro/oscuro">
+                    <i data-lucide="sun" class="w-4 h-4 icon-sun"></i>
+                    <i data-lucide="moon" class="w-4 h-4 icon-moon"></i>
+                </button>
+                <a href="/#contacto" class="btn-primary text-xs py-2 px-4">
+                    Quiero algo así <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!-- DEMO_SHARED_CHROME_TOP_END -->
+
+    <main class="relative z-10 pt-28 pb-8 px-4 md:px-8">
+        <!-- DEMO_CONTENT_START -->
+        <style>
+            /* Estilos específicos de la demo Asesoría Migratoria (marca ficticia: Horizonte Migratorio) */
+            #hm-content {
+                --hm-accent: #0d9488;
+                --hm-accent-strong: #0f766e;
+                --hm-accent-soft: rgba(13, 148, 136, 0.14);
+                --hm-on-accent: #04211f;
+            }
+            [data-theme='dark'] #hm-content {
+                --hm-accent: #2dd4bf;
+                --hm-accent-strong: #5eead4;
+                --hm-accent-soft: rgba(45, 212, 191, 0.14);
+                --hm-on-accent: #04211f;
+            }
+
+            .hm-section { scroll-margin-top: 110px; }
+            .hm-kicker {
+                font-family: 'Space Mono', monospace;
+                font-size: 11px;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                color: var(--hm-accent);
+                font-weight: 700;
+            }
+            .hm-logo {
+                width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+                box-shadow: 0 8px 22px rgba(2, 6, 23, 0.16);
+            }
+            .hm-chip {
+                display: inline-flex; align-items: center; gap: 6px;
+                font-size: 12px; font-weight: 600;
+                padding: 6px 12px; border-radius: 999px;
+                background: var(--cd-surface); border: 1px solid var(--cd-border);
+                color: var(--cd-text-muted);
+            }
+            .hm-chip i, .hm-chip svg { width: 14px; height: 14px; }
+
+            /* Mockup del hero */
+            .hm-mock-float { animation: hm-float 7s ease-in-out infinite; }
+            @keyframes hm-float {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+            .hm-typing span {
+                display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+                background: var(--hm-accent); margin-right: 3px; opacity: 0.3;
+                animation: hm-blink 1.2s infinite;
+            }
+            .hm-typing span:nth-child(2) { animation-delay: 0.2s; }
+            .hm-typing span:nth-child(3) { animation-delay: 0.4s; }
+            @keyframes hm-blink { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+            .hm-pulse-dot {
+                width: 8px; height: 8px; border-radius: 50%; background: var(--cd-accent-green, #22c55e);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+                animation: hm-pulse 2s infinite;
+            }
+            @keyframes hm-pulse {
+                0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45); }
+                70% { box-shadow: 0 0 0 9px rgba(34, 197, 94, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+            }
+
+            /* Wizard del orientador */
+            .hm-step-dot {
+                width: 30px; height: 30px; border-radius: 50%;
+                display: flex; align-items: center; justify-content: center;
+                font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700;
+                background: var(--cd-surface); border: 1px solid var(--cd-border); color: var(--cd-text-muted);
+                flex-shrink: 0; transition: all 0.25s ease;
+            }
+            .hm-step-dot.hm-active { background: var(--hm-accent); border-color: transparent; color: var(--hm-on-accent); }
+            .hm-step-dot.hm-done { background: var(--hm-accent-soft); border-color: var(--hm-accent); color: var(--hm-accent); }
+            .hm-step-line { height: 2px; flex: 1; max-width: 64px; background: var(--cd-border); transition: background 0.25s ease; }
+            .hm-step-line.hm-done { background: var(--hm-accent); }
+
+            .hm-option {
+                width: 100%; text-align: left; cursor: pointer;
+                display: flex; align-items: center; gap: 12px;
+                padding: 14px 16px; border-radius: 14px;
+                background: var(--cd-surface); border: 1px solid var(--cd-border);
+                color: var(--cd-cream);
+                transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+            }
+            .hm-option:hover { border-color: var(--hm-accent); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(2, 6, 23, 0.10); }
+            .hm-option:focus-visible { outline: 2px solid var(--hm-accent); outline-offset: 2px; }
+            .hm-option .hm-option-icon {
+                width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0;
+                display: flex; align-items: center; justify-content: center;
+                background: var(--hm-accent-soft);
+            }
+            .hm-option .hm-option-icon i, .hm-option .hm-option-icon svg { width: 18px; height: 18px; color: var(--hm-accent); }
+            .hm-option[aria-pressed='true'] { border-color: var(--hm-accent); background: var(--hm-accent-soft); }
+            .hm-option[aria-pressed='true'] .hm-option-icon { background: var(--hm-accent); }
+            .hm-option[aria-pressed='true'] .hm-option-icon i, .hm-option[aria-pressed='true'] .hm-option-icon svg { color: var(--hm-on-accent); }
+
+            .hm-back-link {
+                background: none; border: none; cursor: pointer; padding: 8px 4px;
+                color: var(--cd-text-muted); font-size: 13px; font-weight: 600;
+                display: inline-flex; align-items: center; gap: 4px;
+            }
+            .hm-back-link:hover { color: var(--hm-accent); }
+
+            /* Agenda */
+            .hm-day-chip, .hm-slot {
+                cursor: pointer; border-radius: 12px;
+                border: 1px solid var(--cd-border); background: var(--cd-surface);
+                color: var(--cd-cream);
+                transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
+            }
+            .hm-day-chip { padding: 10px 8px; text-align: center; min-width: 86px; }
+            .hm-day-chip:hover:not(:disabled) { border-color: var(--hm-accent); transform: translateY(-2px); }
+            .hm-day-chip[aria-pressed='true'] { border-color: var(--hm-accent); background: var(--hm-accent-soft); }
+            .hm-day-chip:disabled { opacity: 0.4; cursor: not-allowed; }
+            .hm-slot { padding: 9px 6px; text-align: center; font-family: 'Space Mono', monospace; font-size: 13px; }
+            .hm-slot:hover:not(:disabled) { border-color: var(--hm-accent); }
+            .hm-slot[aria-pressed='true'] { background: var(--hm-accent); border-color: transparent; color: var(--hm-on-accent); font-weight: 700; }
+            .hm-slot:disabled { opacity: 0.32; text-decoration: line-through; cursor: not-allowed; }
+
+            .hm-modality {
+                cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+                padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;
+                border: 1px solid var(--cd-border); background: var(--cd-surface); color: var(--cd-text-muted);
+                transition: all 0.16s ease;
+            }
+            .hm-modality:hover { border-color: var(--hm-accent); }
+            .hm-modality[aria-pressed='true'] { border-color: var(--hm-accent); background: var(--hm-accent); color: var(--hm-on-accent); }
+            .hm-modality i, .hm-modality svg { width: 15px; height: 15px; }
+
+            /* Barras del panel del despacho */
+            .hm-bar-track { height: 10px; border-radius: 999px; background: var(--cd-surface); border: 1px solid var(--cd-border); overflow: hidden; }
+            .hm-bar-fill { height: 100%; border-radius: 999px; background: var(--hm-accent); width: 0; transition: width 1s ease; }
+
+            /* FAQ */
+            .hm-faq { border: 1px solid var(--cd-border); border-radius: 14px; background: var(--cd-surface); overflow: hidden; }
+            .hm-faq + .hm-faq { margin-top: 10px; }
+            .hm-faq summary {
+                cursor: pointer; list-style: none; padding: 16px 18px;
+                display: flex; align-items: center; justify-content: space-between; gap: 12px;
+                font-weight: 700; font-size: 14px;
+            }
+            .hm-faq summary::-webkit-details-marker { display: none; }
+            .hm-faq summary i, .hm-faq summary svg { width: 16px; height: 16px; color: var(--hm-accent); flex-shrink: 0; transition: transform 0.2s ease; }
+            .hm-faq[open] summary i, .hm-faq[open] summary svg { transform: rotate(180deg); }
+            .hm-faq .hm-faq-body { padding: 0 18px 16px; color: var(--cd-text-muted); font-size: 14px; line-height: 1.6; }
+
+            /* Barra CTA móvil */
+            .hm-mobile-bar {
+                position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+                display: none; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+                background: var(--cd-card-bg); border-top: 1px solid var(--cd-border);
+            }
+            @media (max-width: 767px) { .hm-mobile-bar { display: flex; } }
+
+            /* Burbuja de chat simulado */
+            .hm-chat-bubble {
+                background: var(--cd-surface); border: 1px solid var(--cd-border);
+                border-radius: 16px 16px 16px 4px; padding: 14px 16px;
+                font-size: 13.5px; line-height: 1.55; white-space: pre-line;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .hm-mock-float, .hm-typing span, .hm-pulse-dot { animation: none; }
+                .hm-bar-fill { transition: none; }
+            }
+        </style>
+
+        <div id="hm-content" class="max-w-6xl mx-auto">
+            <!-- ============ HERO ============ -->
+            <section class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-20 md:mb-28">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <svg class="hm-logo" viewBox="0 0 48 48" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="hm-logo-grad" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#0d9488"/>
+                                    <stop offset="100%" stop-color="#0ea5e9"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="48" height="48" rx="13" fill="url(#hm-logo-grad)"/>
+                            <circle cx="24" cy="27" r="8" fill="#ffffff" opacity="0.95"/>
+                            <rect x="8" y="30" width="32" height="2.5" rx="1.25" fill="#04211f" opacity="0.85"/>
+                            <rect x="12" y="35" width="24" height="2" rx="1" fill="#04211f" opacity="0.45"/>
+                        </svg>
+                        <div>
+                            <p class="font-black text-lg leading-tight">Horizonte Migratorio</p>
+                            <p class="font-mono text-xs" style="color: var(--cd-text-muted);">asesoría migratoria &amp; extranjería</p>
+                        </div>
+                    </div>
+                    <span class="badge badge-accent mb-5 inline-flex">Demo · marca y datos ficticios</span>
+                    <h1 class="font-black text-3xl md:text-5xl leading-tight uppercase mb-5">
+                        Tu próximo paso <span style="color: var(--hm-accent);">migratorio</span>, claro desde el primer día
+                    </h1>
+                    <p class="text-cd-text-muted text-base md:text-lg mb-8 max-w-xl">
+                        Así podría verse la web de un despacho de extranjería construido por Cambio Digital: orientación inicial automática según tu situación, agenda de consultas integrada y contacto directo por WhatsApp. Todo funciona en esta página, sin servidor.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <a href="#orientador" class="btn-primary">
+                            Orientarme ahora <i data-lucide="compass" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#agenda" class="btn-secondary">
+                            Reservar consulta <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="hm-chip"><i data-lucide="shield-check"></i> Información clara, sin letra pequeña</span>
+                        <span class="hm-chip"><i data-lucide="clock"></i> Orientación 24/7</span>
+                        <span class="hm-chip"><i data-lucide="message-circle"></i> WhatsApp integrado</span>
+                    </div>
+                </div>
+
+                <!-- Mockup del orientador -->
+                <div class="relative hm-mock-float hidden sm:block" aria-hidden="true">
+                    <div class="card-modern relative overflow-hidden" style="border-radius: 18px;">
+                        <div class="flex items-center gap-2 px-4 py-3" style="border-bottom: 1px solid var(--cd-border); background: var(--cd-surface);">
+                            <span class="w-2.5 h-2.5 rounded-full" style="background:#f87171;"></span>
+                            <span class="w-2.5 h-2.5 rounded-full" style="background:#fbbf24;"></span>
+                            <span class="w-2.5 h-2.5 rounded-full" style="background:#34d399;"></span>
+                            <span class="font-mono text-xs ml-3 px-3 py-1 rounded-full" style="background: var(--cd-base); color: var(--cd-text-muted);">horizonte-migratorio · demo</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-5">
+                                <span class="hm-pulse-dot"></span>
+                                <p class="font-mono text-xs" style="color: var(--cd-text-muted);">orientador en línea</p>
+                            </div>
+                            <p class="font-bold text-lg mb-4">¿Cómo podemos orientarte?</p>
+                            <div class="space-y-2.5 mb-5">
+                                <div class="hm-option"><span class="hm-option-icon"><i data-lucide="plane"></i></span><span class="text-sm font-semibold">Quiero venir a España</span></div>
+                                <div class="hm-option" style="border-color: var(--hm-accent); background: var(--hm-accent-soft);"><span class="hm-option-icon" style="background: var(--hm-accent);"><i data-lucide="map-pin" style="color: var(--hm-on-accent);"></i></span><span class="text-sm font-semibold">Ya estoy en España</span></div>
+                                <div class="hm-option"><span class="hm-option-icon"><i data-lucide="refresh-cw"></i></span><span class="text-sm font-semibold">Necesito renovar mi residencia</span></div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs" style="color: var(--cd-text-muted);">
+                                <span class="hm-typing"><span></span><span></span><span></span> preparando tu orientación…</span>
+                                <span class="font-mono">paso 1 de 3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-modern absolute -bottom-6 -left-4 md:-left-10 px-4 py-3 flex items-center gap-3" style="border-radius: 14px;">
+                        <span class="w-9 h-9 rounded-xl flex items-center justify-center" style="background: var(--hm-accent-soft);"><i data-lucide="calendar-check" class="w-4 h-4" style="color: var(--hm-accent);"></i></span>
+                        <div>
+                            <p class="text-xs font-bold">Cita confirmada</p>
+                            <p class="font-mono text-xs" style="color: var(--cd-text-muted);">jue 10:30 · video</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ CÓMO FUNCIONA ============ -->
+            <section class="mb-20 md:mb-28 hm-section">
+                <div class="text-center mb-10">
+                    <p class="hm-kicker mb-2">La experiencia</p>
+                    <h2 class="font-black text-2xl md:text-4xl uppercase">Tres pasos hacia una consulta</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-5">
+                    <div class="card-modern p-7">
+                        <span class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background: var(--hm-accent-soft);"><i data-lucide="message-circle" class="w-5 h-5" style="color: var(--hm-accent);"></i></span>
+                        <p class="font-mono text-xs mb-2" style="color: var(--cd-text-muted);">PASO 1</p>
+                        <h3 class="font-bold text-lg mb-2">Cuéntanos tu caso</h3>
+                        <p class="text-sm text-cd-text-muted">El orientador de la web capta tu situación migratoria en menos de un minuto, a cualquier hora y desde el móvil.</p>
+                    </div>
+                    <div class="card-modern p-7">
+                        <span class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background: var(--hm-accent-soft);"><i data-lucide="compass" class="w-5 h-5" style="color: var(--hm-accent);"></i></span>
+                        <p class="font-mono text-xs mb-2" style="color: var(--cd-text-muted);">PASO 2</p>
+                        <h3 class="font-bold text-lg mb-2">Recibe una orientación inicial</h3>
+                        <p class="text-sm text-cd-text-muted">Ves por dónde empezaría tu proceso, qué documentos suelen pedirte y cuáles son los pasos habituales.</p>
+                    </div>
+                    <div class="card-modern p-7">
+                        <span class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background: var(--hm-accent-soft);"><i data-lucide="calendar-check" class="w-5 h-5" style="color: var(--hm-accent);"></i></span>
+                        <p class="font-mono text-xs mb-2" style="color: var(--cd-text-muted);">PASO 3</p>
+                        <h3 class="font-bold text-lg mb-2">Agenda tu consulta</h3>
+                        <p class="text-sm text-cd-text-muted">Reservas día y hora en la agenda del despacho y el equipo recibe tu caso ya resumido. Aquí, todo es simulado.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ ORIENTADOR ============ -->
+            <section id="orientador" class="mb-20 md:mb-28 hm-section">
+                <div class="text-center mb-8">
+                    <p class="hm-kicker mb-2">Orientador · 60 segundos</p>
+                    <h2 class="font-black text-2xl md:text-4xl uppercase">¿Cómo podemos orientarte?</h2>
+                    <p class="text-cd-text-muted mt-3 max-w-2xl mx-auto text-sm md:text-base">Selecciona tu situación y descubre, en tres pasos, cuál podría ser tu próximo movimiento.</p>
+                </div>
+                <div class="card-modern p-5 md:p-10 max-w-3xl mx-auto">
+                    <div id="hm-steps" class="flex items-center justify-center gap-2 mb-8"></div>
+                    <div id="hm-body" aria-live="polite"></div>
+                </div>
+            </section>
+
+            <!-- ============ SERVICIOS ============ -->
+            <section class="mb-20 md:mb-28 hm-section">
+                <div class="text-center mb-10">
+                    <p class="hm-kicker mb-2">Servicios</p>
+                    <h2 class="font-black text-2xl md:text-4xl uppercase">Acompañamiento de principio a fin</h2>
+                    <p class="text-cd-text-muted mt-3 max-w-2xl mx-auto text-sm md:text-base">Un catálogo claro ayuda al visitante a reconocerse y llegar a la consulta correcta.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="hm-services"></div>
+            </section>
+
+            <!-- ============ AGENDA ============ -->
+            <section id="agenda" class="mb-20 md:mb-28 hm-section">
+                <div class="text-center mb-8">
+                    <p class="hm-kicker mb-2">Agenda integrada</p>
+                    <h2 class="font-black text-2xl md:text-4xl uppercase">Reserva tu primera consulta</h2>
+                    <p class="text-cd-text-muted mt-3 max-w-2xl mx-auto text-sm md:text-base">Elige día, hora y modalidad. En una web real, el despacho recibe la solicitud y confirma al instante. Aquí todo es una simulación local.</p>
+                </div>
+                <div class="card-modern p-5 md:p-10 max-w-3xl mx-auto">
+                    <div id="hm-caso-chip" class="hidden mb-6">
+                        <span class="hm-chip"><i data-lucide="sparkles"></i> <span id="hm-caso-chip-text"></span></span>
+                    </div>
+                    <div id="hm-booking"></div>
+                </div>
+            </section>
+
+            <!-- ============ PANEL DEL DESPACHO ============ -->
+            <section class="mb-20 md:mb-28 hm-section">
+                <div class="text-center mb-10">
+                    <p class="hm-kicker mb-2">Y para el despacho</p>
+                    <h2 class="font-black text-2xl md:text-4xl uppercase">Cada consulta llega clasificada</h2>
+                    <p class="text-cd-text-muted mt-3 max-w-2xl mx-auto text-sm md:text-base">Así se vería un mes típico con el orientador y la agenda captando mientras el equipo trabaja. <span class="font-mono text-xs px-2 py-0.5 rounded-full" style="background: var(--cd-surface); border: 1px dashed var(--cd-border);">DEMO · datos simulados</span></p>
+                </div>
+                <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6" id="hm-kpis"></div>
+                <div class="card-modern p-6 md:p-8 max-w-3xl mx-auto">
+                    <h3 class="font-bold text-lg mb-5">Origen de las consultas</h3>
+                    <div class="space-y-4" id="hm-channels"></div>
+                    <p class="text-xs mt-5 flex items-start gap-2" style="color: var(--cd-text-muted);">
+                        <i data-lucide="info" class="w-4 h-4 mt-0.5 shrink-0" style="color: var(--hm-accent);"></i>
+                        El orientador trabaja 24/7: el visitante llega clasificado y con su caso resumido antes de hablar con nadie.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ============ FAQ ============ -->
+            <section class="mb-16 md:mb-24 hm-section">
+                <div class="text-center mb-10">
+                    <p class="hm-kicker mb-2">Dudas frecuentes</p>
+                    <h2 class="font-black text-2xl md:text-4xl uppercase">Preguntas sobre esta demo</h2>
+                </div>
+                <div class="max-w-3xl mx-auto" id="hm-faq"></div>
+            </section>
+
+            <!-- Barra CTA móvil -->
+            <div class="hm-mobile-bar" aria-hidden="false">
+                <a href="#orientador" class="btn-secondary flex-1 justify-center text-xs py-3">Orientarme</a>
+                <a href="#agenda" class="btn-primary flex-1 justify-center text-xs py-3">Agendar cita</a>
+            </div>
+
+            <!-- Modal: resumen por WhatsApp (simulado) -->
+            <div id="hm-wamodal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4" style="background: rgba(2, 6, 23, 0.6);" role="dialog" aria-modal="true" aria-labelledby="hm-wamodal-title">
+                <div class="card-modern w-full max-w-md p-6" style="background: var(--cd-card-bg);">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 id="hm-wamodal-title" class="font-bold text-lg">Tu consulta por WhatsApp</h3>
+                        <button type="button" id="hm-wamodal-close" class="p-2 rounded-lg hover:text-cd-highlight transition-colors" aria-label="Cerrar">
+                            <i data-lucide="x" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div class="mb-4">
+                        <div class="hm-chat-bubble" id="hm-wamodal-message"></div>
+                    </div>
+                    <button type="button" id="hm-copy-summary" class="btn-secondary w-full justify-center text-xs py-2.5 mb-3">
+                        <i data-lucide="copy" class="w-4 h-4"></i> Copiar resumen
+                    </button>
+                    <p class="text-xs text-cd-text-dim flex items-start gap-2">
+                        <i data-lucide="info" class="w-4 h-4 mt-0.5 shrink-0" style="color: var(--hm-accent);"></i>
+                        Simulación: en la web real, este botón abriría WhatsApp del despacho con este mensaje pre-rellenado. Ningún número real aparece en esta demo.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Toast -->
+            <div id="hm-toast" class="hidden fixed bottom-24 md:bottom-6 right-4 md:right-6 z-[110] card-modern px-4 py-3 text-sm font-semibold items-center gap-2" style="background: var(--cd-card-bg);"></div>
+        </div>
+        <!-- DEMO_CONTENT_END -->
+    </main>
+
+    <!-- DEMO_SHARED_CHROME_BOTTOM_START -->
+    <section class="relative z-10 pb-10 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto card-modern p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-cd-text-muted text-center md:text-left">
+                <i data-lucide="info" class="w-4 h-4 inline-block mr-1 -mt-0.5" style="color: var(--cd-highlight-color);"></i>
+                Esta es una demo interactiva con <strong>datos ficticios</strong>: así podría verse tu operación con una solución de Cambio Digital.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 justify-center shrink-0">
+                <a href="/servicios/erp-open-source" class="btn-secondary text-xs py-2 px-4">Soluciones relacionadas</a>
+                <a href="/#contacto" class="btn-primary text-xs py-2 px-4">Hablar con un asesor</a>
+            </div>
+        </div>
+    </section>
+    <!-- DEMO_SHARED_CHROME_BOTTOM_END -->
+
+    <!-- DEMO_SHARED_FOOTER_SCRIPTS_START -->
+    <script src="/assets/js/demo-chrome.js"></script>
+    <!-- DEMO_SHARED_FOOTER_SCRIPTS_END -->
+
+    <!-- Lógica específica de esta demo (fuera de los bloques compartidos: demo:sync-template no la toca) -->
+    <script>
+    (function () {
+        'use strict';
+
+        /* ------------------------------------------------------------------ */
+        /* Datos ficticios de la demo. Marca ficticia: Horizonte Migratorio.  */
+        /* Ningún dato, texto o contacto proviene de un cliente real.         */
+        /* ------------------------------------------------------------------ */
+        var HM_DATA = {
+            situaciones: [
+                {
+                    id: 'venir', icon: 'plane', title: 'Quiero venir a España', hint: 'Todavía no estoy en España',
+                    question: '¿Cuál es el motivo principal de tu llegada?',
+                    opciones: [
+                        { id: 'trabajo', icon: 'briefcase', label: 'Trabajar' },
+                        { id: 'familia', icon: 'heart-handshake', label: 'Reunirme con mi familia' },
+                        { id: 'emprender', icon: 'trending-up', label: 'Emprender o invertir' },
+                        { id: 'explorar', icon: 'globe', label: 'Aún no lo tengo claro' }
+                    ],
+                    detalles: {
+                        trabajo: {
+                            headline: 'Trabajar en España: tu ruta de llegada',
+                            intro: 'Trabajar en España suele implicar un visado o autorización vinculada a un empleo o a tu propia actividad. El primer paso es identificar la vía que encaja con tu perfil y prepararla antes de viajar.',
+                            pasos: [
+                                'Identificar la vía laboral que encaja con tu perfil y tu empleo previsto',
+                                'Preparar la documentación personal y laboral con antelación',
+                                'Presentar la solicitud desde tu país de origen, si aplica a tu caso',
+                                'Planificar la llegada: alta legal, empadronamiento y seguridad social'
+                            ],
+                            docs: ['Pasaporte vigente', 'Certificado de antecedentes', 'Oferta o actividad prevista', 'Seguro médico', 'Medios económicos']
+                        },
+                        familia: {
+                            headline: 'Reunirte con tu familia en España',
+                            intro: 'Si un familiar cercano vive legalmente en España, puede existir una vía para que te acompañes a él. La base suele estar en acreditar bien el vínculo y la capacidad de sostenimiento del grupo.',
+                            pasos: [
+                                'Confirmar que la situación de tu familiar en España lo permite',
+                                'Acreditar el vínculo y los medios económicos del grupo familiar',
+                                'Solicitar el visado correspondiente desde tu país',
+                                'Organizar la llegada y los trámites de instalacion inicial'
+                            ],
+                            docs: ['Pasaportes de ambos', 'Acreditación del vínculo', 'Medios económicos', 'Cobertura sanitaria']
+                        },
+                        emprender: {
+                            headline: 'Emprender o invertir: actividad por cuenta propia',
+                            intro: 'Montar un negocio o trasladar una inversión tiene vías específicas según el tipo de actividad, el importe y tu perfil. Un buen plan inicial marca la diferencia en la preparación del expediente.',
+                            pasos: [
+                                'Definir el modelo de actividad o inversión previsto',
+                                'Identificar la vía de visado que encaja con ese plan',
+                                'Preparar el plan de negocio y la documentación financiera',
+                                'Planificar la llegada y la puesta en marcha legal'
+                            ],
+                            docs: ['Pasaporte vigente', 'Plan de actividad', 'Medios económicos acreditados', 'Certificado de antecedentes', 'Seguro médico']
+                        },
+                        explorar: {
+                            headline: 'Sin decidir todavía: empieza por el panorama',
+                            intro: 'No hace falta tenerlo todo resuelto para empezar. Lo primero es entender qué opciones existen según tu nacionalidad y tu situación actual, y a partir de ahí construir un plan realista.',
+                            pasos: [
+                                'Conocer las vías generales que aplican a tu perfil',
+                                'Comparar plazos, requisitos y costes de cada opción',
+                                'Elegir una ruta con criterio y ponerle calendario',
+                                'Preparar la documentación con antelación'
+                            ],
+                            docs: ['Pasaporte vigente', 'Documentos personales', 'Resumen de tu situación y objetivo']
+                        }
+                    }
+                },
+                {
+                    id: 'estar', icon: 'map-pin', title: 'Ya estoy en España', hint: 'Quiero ordenar mi situación',
+                    question: '¿Cuál describe mejor tu situación actual?',
+                    opciones: [
+                        { id: 'por-vencer', icon: 'hourglass', label: 'Mi permiso está a punto de vencer' },
+                        { id: 'vencido', icon: 'alarm-clock', label: 'Mi permiso ya ha vencido' },
+                        { id: 'irregular', icon: 'file-question', label: 'Estoy en situación irregular' },
+                        { id: 'estancia', icon: 'calendar-clock', label: 'Estoy con visado de corta estancia' },
+                        { id: 'ns', icon: 'help-circle', label: 'No estoy seguro' }
+                    ],
+                    detalles: {
+                        _default: {
+                            headline: 'Ya en España: ordena tu situación con un plan',
+                            intro: 'Estar dentro del país abre opciones que no existen desde el exterior, pero varias dependen de actuar con margen. La clave es evaluar tu caso concreto y moverte con las fechas claras.',
+                            pasos: [
+                                'Revisar el tipo y la fecha de tu situación actual',
+                                'Identificar las opciones de regularización o renovación aplicables',
+                                'Preparar la documentación antes de la cita o presentación',
+                                'Presentar la solicitud y hacer seguimiento hasta la resolución'
+                            ],
+                            docs: ['Documentación actual', 'Pasaporte', 'Empadronamiento', 'Justificantes de actividad', 'Medios económicos']
+                        }
+                    }
+                },
+                {
+                    id: 'renovar', icon: 'refresh-cw', title: 'Necesito renovar mi residencia', hint: 'Mi autorización tiene fecha',
+                    question: '¿Qué autorización quieres renovar?',
+                    opciones: [
+                        { id: 'temporal', icon: 'id-card', label: 'Residencia temporal' },
+                        { id: 'estudios', icon: 'graduation-cap', label: 'Residencia de estudios' },
+                        { id: 'familiar', icon: 'users', label: 'Familiar de residente o ciudadano de la UE' },
+                        { id: 'ns', icon: 'help-circle', label: 'No estoy seguro' }
+                    ],
+                    detalles: {
+                        _default: {
+                            headline: 'Renovar sin sustos: anticipación y papeleo ordenado',
+                            intro: 'Las renovaciones premian a quien empieza antes: reunir la documentación con margen evita disgustos por fechas y mantiene tu situación regular sin interrupciones.',
+                            pasos: [
+                                'Confirmar la ventana de presentación de tu renovación',
+                                'Reunir los requisitos de mantenimiento según tu caso (actividad, medios, cotización)',
+                                'Presentar la solicitud y conservar el justificante',
+                                'Hacer seguimiento y prepara la cita para la nueva tarjeta'
+                            ],
+                            docs: ['Autorización actual', 'Justificantes de actividad o cotización', 'Medios económicos', 'Empadronamiento vigente']
+                        }
+                    }
+                },
+                {
+                    id: 'nacionalidad', icon: 'award', title: 'Quiero solicitar la nacionalidad', hint: 'Mi camino a la ciudadanía',
+                    question: '¿Cuánto tiempo llevas residiendo en España?',
+                    opciones: [
+                        { id: 'menos2', icon: 'hourglass', label: 'Menos de 2 años' },
+                        { id: 'entre25', icon: 'calendar-clock', label: 'Entre 2 y 5 años' },
+                        { id: 'mas5', icon: 'calendar-check', label: 'Más de 5 años' },
+                        { id: 'ns', icon: 'help-circle', label: 'No estoy seguro' }
+                    ],
+                    detalles: {
+                        _default: {
+                            headline: 'Nacionalidad española: evalúa tu camino',
+                            intro: 'El acceso a la nacionalidad depende sobre todo del tiempo de residencia legal y del país de origen, entre otros factores. Una revisión rápida te dice si estás cerca o si conviene consolidar antes tu residencia.',
+                            pasos: [
+                                'Calcular el tiempo de residencia exigible en tu caso',
+                                'Revisar los requisitos generales y las pruebas oficiales si corresponden',
+                                'Preparar los certificados y justificantes necesarios',
+                                'Presentar la solicitud y hacer seguimiento del expediente'
+                            ],
+                            docs: ['Certificado de empadronamiento', 'Tarjeta de residencia', 'Pasaporte vigente', 'Certificados de conducta']
+                        }
+                    }
+                },
+                {
+                    id: 'reagrupacion', icon: 'heart-handshake', title: 'Reagrupación familiar', hint: 'Quiero traer a mi familia',
+                    question: '¿A quién quieres reagrupar?',
+                    opciones: [
+                        { id: 'pareja', icon: 'heart', label: 'Mi pareja' },
+                        { id: 'hijos', icon: 'baby', label: 'Mis hijos' },
+                        { id: 'padres', icon: 'users', label: 'Mis padres' },
+                        { id: 'otro', icon: 'user-plus', label: 'Otro familiar' }
+                    ],
+                    detalles: {
+                        _default: {
+                            headline: 'Reagrupación familiar: traer a los tuyos',
+                            intro: 'La reagrupación permite que determinados familiares se unan a un residente en España. El requisito central suele ser acreditar el vínculo y la capacidad de sostener al grupo familiar.',
+                            pasos: [
+                                'Confirmar que tu situación de residente permite reagrupar',
+                                'Acreditar vínculo, medios económicos y vivienda adecuada',
+                                'Iniciar la solicitud del familiar desde su país',
+                                'Organizar la llegada y la documentación de quien llega'
+                            ],
+                            docs: ['Autorización del reagrupante', 'Documentos que acrediten el vínculo', 'Medios económicos', 'Vivienda adecuada']
+                        }
+                    }
+                },
+                {
+                    id: 'estudios', icon: 'graduation-cap', title: 'Venir a estudiar', hint: 'Formación en España',
+                    question: '¿Qué vas a estudiar?',
+                    opciones: [
+                        { id: 'universidad', icon: 'school', label: 'Grado o posgrado universitario' },
+                        { id: 'fp', icon: 'wrench', label: 'Formación profesional' },
+                        { id: 'idiomas', icon: 'languages', label: 'Cursos e idiomas' },
+                        { id: 'otro', icon: 'book-open', label: 'Otra formación' }
+                    ],
+                    detalles: {
+                        _default: {
+                            headline: 'Venir a estudiar: visado de estudios sin sobresaltos',
+                            intro: 'El visado de estudios te permite formarte en España manteniendo una situación regular. La admisión previa del centro y la acreditación de medios son la base de una solicitud sólida.',
+                            pasos: [
+                                'Asegurar la admisión del centro formativo',
+                                'Acreditar medios económicos y alojamiento',
+                                'Solicitar el visado de estudios en tu país',
+                                'Organizar la llegada: tarjeta, empadronamiento y seguro'
+                            ],
+                            docs: ['Carta de admisión', 'Pasaporte vigente', 'Medios económicos', 'Seguro médico', 'Alojamiento']
+                        }
+                    }
+                },
+                {
+                    id: 'otra', icon: 'message-circle-question', title: 'Otra consulta', hint: 'Mi caso es distinto',
+                    freeText: true,
+                    detalles: {
+                        _default: {
+                            headline: 'Tu caso, revisado con calma',
+                            intro: 'Si tu situación no encaja en las categorías habituales, es todavía más importante analizarla con calma: hay soluciones específicas que solo aparecen al revisar el caso completo.',
+                            pasos: [
+                                'Describir tu situación en una primera consulta',
+                                'Identificar la vía o el trámite aplicable',
+                                'Planificar plazos y documentación',
+                                'Ejecutar el plan con acompañamiento cercano'
+                            ],
+                            docs: ['Documentación que tengas a mano', 'Pasaporte', 'Resumen de tu situación']
+                        }
+                    }
+                }
+            ],
+            servicios: [
+                { icon: 'stamp', title: 'Visados y autorizaciones', text: 'Visados de trabajo, estudios, inversión y estancia, con el expediente preparado desde el primer envío.' },
+                { icon: 'refresh-cw', title: 'Residencias y renovaciones', text: 'Primeras concesiones y renovaciones con calendario de anticipación, sin correr al final.' },
+                { icon: 'award', title: 'Nacionalidad', text: 'Evaluación de tu camino a la nacionalidad y preparación completa de la solicitud.' },
+                { icon: 'heart-handshake', title: 'Reagrupación familiar', text: 'Vínculos, recursos y vivienda acreditados con orden para traer a los tuyos.' },
+                { icon: 'briefcase', title: 'Empresas y relocation', text: 'Movilidad internacional de equipos: traslados, contratos y familias instaladas rápido.' },
+                { icon: 'book-open', title: 'Recursos y guías', text: 'Contenido claro sobre los trámites más habituales para llegar a consulta con las ideas ordenadas.' }
+            ],
+            kpis: [
+                { icon: 'users', value: '128', label: 'Consultas orientadas', delta: '+21%' },
+                { icon: 'calendar-check', value: '41', label: 'Citas agendadas', delta: '+12%' },
+                { icon: 'zap', value: '< 1 min', label: 'Primera respuesta', delta: 'automática' },
+                { icon: 'trending-up', value: '+35%', label: 'Conversión a consulta', delta: 'vs. formulario' }
+            ],
+            canales: [
+                { nombre: 'Orientador web', pct: 46 },
+                { nombre: 'WhatsApp', pct: 32 },
+                { nombre: 'Formulario', pct: 14 },
+                { nombre: 'Teléfono', pct: 8 }
+            ],
+            faq: [
+                { q: '¿Esta orientación es asesoría jurídica?', a: 'No. Esta demo muestra cómo una web puede orientar de forma general a quien llega con dudas. La asesoría real sobre un caso concreto siempre la da el profesional del despacho en consulta.' },
+                { q: '¿Se guardan los datos que escribo?', a: 'No. Toda la demo funciona dentro de tu navegador: nada se envía a ningún servidor ni se almacena.' },
+                { q: '¿Qué pasa cuando alguien reserva cita en una web real?', a: 'El despacho recibe la solicitud con el resumen del caso y se confirma al cliente por email o WhatsApp. En esta demo todo es simulado a propósito.' },
+                { q: '¿Para qué tipo de despacho sirve esta plantilla?', a: 'Para abogados de extranjería, asesores migratorios, gestorías y empresas de relocation. La marca, los textos y los servicios se personalizan con cada cliente.' },
+                { q: '¿Con qué herramientas se puede conectar?', a: 'Con el calendario del despacho, WhatsApp Business, formularios y CRM: cada despacho elige cómo quiere recibir y gestionar sus consultas.' }
+            ],
+            slots: ['09:00', '10:30', '12:00', '13:00', '16:00', '17:30', '19:00'],
+            modalidades: [
+                { id: 'video', icon: 'video', label: 'Video llamada' },
+                { id: 'presencial', icon: 'building-2', label: 'Presencial' },
+                { id: 'telefono', icon: 'phone', label: 'Teléfono' }
+            ]
+        };
+
+        var state = {
+            step: 1,
+            situation: null,       // objeto de HM_DATA.situaciones
+            detailLabel: null,     // etiqueta elegida en el paso 2
+            booking: { day: null, slot: null, modality: 'video' }
+        };
+
+        /* ------------------------------ utils ------------------------------ */
+        function esc(value) {
+            return String(value == null ? '' : value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+        function refreshIcons() {
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                window.lucide.createIcons();
+            }
+        }
+        function showToast(message) {
+            var toast = document.getElementById('hm-toast');
+            toast.innerHTML = '<i data-lucide="check-circle-2" class="w-4 h-4 shrink-0" style="color: var(--cd-accent-green, #22c55e);"></i> ' + esc(message);
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            refreshIcons();
+            clearTimeout(showToast._timer);
+            showToast._timer = setTimeout(function () {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3200);
+        }
+        function hashStr(text) {
+            var h = 0;
+            for (var i = 0; i < text.length; i++) { h = (h * 31 + text.charCodeAt(i)) >>> 0; }
+            return h;
+        }
+
+        /* ------------------------- orientador: pasos ------------------------ */
+        function renderStepsHeader() {
+            var labels = ['Situación', 'Detalle', 'Orientación'];
+            var html = '';
+            for (var i = 1; i <= 3; i++) {
+                var cls = 'hm-step-dot' + (i === state.step ? ' hm-active' : (i < state.step ? ' hm-done' : ''));
+                html += '<span class="' + cls + '" title="' + labels[i - 1] + '">' + (i < state.step ? '<i data-lucide="check" class="w-3.5 h-3.5"></i>' : i) + '</span>';
+                if (i < 3) html += '<span class="hm-step-line' + (i < state.step ? ' hm-done' : '') + '"></span>';
+            }
+            document.getElementById('hm-steps').innerHTML = html;
+        }
+
+        function optionButton(attrs, icon, title, hint) {
+            return '' +
+                '<button type="button" class="hm-option" ' + attrs + '>' +
+                    '<span class="hm-option-icon"><i data-lucide="' + icon + '"></i></span>' +
+                    '<span class="min-w-0">' +
+                        '<span class="block text-sm font-bold leading-snug">' + esc(title) + '</span>' +
+                        (hint ? '<span class="block text-xs mt-0.5" style="color: var(--cd-text-muted);">' + esc(hint) + '</span>' : '') +
+                    '</span>' +
+                '</button>';
+        }
+
+        function renderStep1() {
+            state.step = 1;
+            renderStepsHeader();
+            document.getElementById('hm-body').innerHTML =
+                '<p class="hm-kicker mb-2">Paso 1 de 3</p>' +
+                '<h3 class="font-bold text-xl md:text-2xl mb-6">¿Cuál es tu situación?</h3>' +
+                '<div class="grid sm:grid-cols-2 gap-3">' +
+                    HM_DATA.situaciones.map(function (situation) {
+                        return optionButton('data-hm-sit="' + situation.id + '"', situation.icon, situation.title, situation.hint);
+                    }).join('') +
+                '</div>';
+            refreshIcons();
+        }
+
+        function renderStep2() {
+            state.step = 2;
+            renderStepsHeader();
+            var body = document.getElementById('hm-body');
+
+            if (state.situation.freeText) {
+                body.innerHTML =
+                    '<button type="button" class="hm-back-link mb-4" data-hm-back="1"><i data-lucide="chevron-left" class="w-4 h-4"></i> Cambiar situación</button>' +
+                    '<p class="hm-kicker mb-2">Paso 2 de 3</p>' +
+                    '<h3 class="font-bold text-xl md:text-2xl mb-2">Cuéntanos brevemente</h3>' +
+                    '<p class="text-sm mb-5" style="color: var(--cd-text-muted);">Opcional: un par de frases bastan para orientarte mejor.</p>' +
+                    '<textarea id="hm-freetext" rows="3" class="demo-input w-full mb-5" placeholder="Ej.: viví en España hace años y quiero volver…"></textarea>' +
+                    '<button type="button" id="hm-freetext-go" class="btn-primary w-full justify-center">Ver mi orientación inicial <i data-lucide="arrow-right" class="w-4 h-4"></i></button>';
+                refreshIcons();
+                document.getElementById('hm-freetext-go').addEventListener('click', function () {
+                    var text = document.getElementById('hm-freetext').value.trim();
+                    state.detailLabel = text ? 'Consulta: ' + text : 'Consulta general';
+                    renderStep3();
+                });
+                return;
+            }
+
+            body.innerHTML =
+                '<button type="button" class="hm-back-link mb-4" data-hm-back="1"><i data-lucide="chevron-left" class="w-4 h-4"></i> Cambiar situación</button>' +
+                '<p class="hm-kicker mb-2">Paso 2 de 3</p>' +
+                '<h3 class="font-bold text-xl md:text-2xl mb-6">' + esc(state.situation.question) + '</h3>' +
+                '<div class="grid sm:grid-cols-2 gap-3">' +
+                    state.situation.opciones.map(function (opcion) {
+                        return optionButton('data-hm-detail="' + opcion.id + '"', opcion.icon, opcion.label);
+                    }).join('') +
+                '</div>';
+            refreshIcons();
+        }
+
+        function detailFor(situation, detailId) {
+            var detalles = situation.detalles;
+            return detalles[detailId] || detalles._default;
+        }
+
+        function renderStep3() {
+            state.step = 3;
+            renderStepsHeader();
+            var detail = detailFor(state.situation, state._detailId);
+            var caso = state.situation.title + (state.detailLabel ? ' · ' + state.detailLabel : '');
+
+            document.getElementById('hm-body').innerHTML =
+                '<button type="button" class="hm-back-link mb-4" data-hm-back="2"><i data-lucide="chevron-left" class="w-4 h-4"></i> Atrás</button>' +
+                '<div class="flex flex-wrap gap-2 mb-5">' +
+                    '<span class="hm-chip"><i data-lucide="check-circle-2"></i> ' + esc(state.situation.title) + '</span>' +
+                    (state.detailLabel ? '<span class="hm-chip"><i data-lucide="check-circle-2"></i> ' + esc(state.detailLabel) + '</span>' : '') +
+                '</div>' +
+                '<h3 class="font-bold text-xl md:text-2xl mb-3">' + esc(detail.headline) + '</h3>' +
+                '<p class="text-sm mb-6" style="color: var(--cd-text-muted);">' + esc(detail.intro) + '</p>' +
+                '<div class="rounded-xl p-5 mb-6" style="background: var(--cd-surface); border: 1px solid var(--cd-border);">' +
+                    '<p class="font-bold text-sm mb-4 flex items-center gap-2"><i data-lucide="route" class="w-4 h-4" style="color: var(--hm-accent);"></i> Próximos pasos habituales</p>' +
+                    '<ol class="space-y-3">' +
+                        detail.pasos.map(function (paso, index) {
+                            return '<li class="flex items-start gap-3 text-sm">' +
+                                '<span class="hm-step-dot hm-done shrink-0" style="width: 24px; height: 24px; font-size: 11px;">' + (index + 1) + '</span>' +
+                                '<span style="color: var(--cd-text-muted);">' + esc(paso) + '</span></li>';
+                        }).join('') +
+                    '</ol>' +
+                '</div>' +
+                '<p class="font-bold text-sm mb-3 flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4" style="color: var(--hm-accent);"></i> Documentos que suelen pedirte</p>' +
+                '<div class="flex flex-wrap gap-2 mb-6">' +
+                    detail.docs.map(function (doc) { return '<span class="hm-chip">' + esc(doc) + '</span>'; }).join('') +
+                '</div>' +
+                '<p class="text-xs rounded-lg p-3.5 mb-6 flex items-start gap-2" style="background: var(--cd-surface); border: 1px dashed var(--cd-border); color: var(--cd-text-muted);">' +
+                    '<i data-lucide="shield-check" class="w-4 h-4 mt-0.5 shrink-0" style="color: var(--hm-accent);"></i>' +
+                    'Orientación general y demostrativa: no constituye asesoría jurídica. Cada caso se evalúa de forma individual en consulta.' +
+                '</p>' +
+                '<div class="flex flex-col sm:flex-row gap-3">' +
+                    '<a href="#agenda" class="btn-primary flex-1 justify-center hm-go-agenda" data-hm-caso="' + esc(caso) + '">Reservar consulta <i data-lucide="calendar-check" class="w-4 h-4"></i></a>' +
+                    '<button type="button" id="hm-wa-open" class="btn-secondary flex-1 justify-center">Continuar por WhatsApp <i data-lucide="message-circle" class="w-4 h-4"></i></button>' +
+                '</div>' +
+                '<button type="button" class="hm-back-link mt-5" data-hm-reset="1"><i data-lucide="rotate-ccw" class="w-4 h-4"></i> Empezar de nuevo</button>';
+            refreshIcons();
+        }
+
+        function wizardClickHandler(event) {
+            var back = event.target.closest('[data-hm-back]');
+            if (back) {
+                if (back.getAttribute('data-hm-back') === '1') renderStep1();
+                return;
+            }
+            var reset = event.target.closest('[data-hm-reset]');
+            if (reset) { state.situation = null; state.detailLabel = null; renderStep1(); return; }
+
+            var sit = event.target.closest('[data-hm-sit]');
+            if (sit) {
+                state.situation = HM_DATA.situaciones.filter(function (s) { return s.id === sit.getAttribute('data-hm-sit'); })[0];
+                state.detailLabel = null;
+                renderStep2();
+                return;
+            }
+            var detail = event.target.closest('[data-hm-detail]');
+            if (detail) {
+                state._detailId = detail.getAttribute('data-hm-detail');
+                state.detailLabel = state.situation.opciones.filter(function (o) { return o.id === state._detailId; })[0].label;
+                renderStep3();
+            }
+        }
+
+        /* ----------------------------- agenda ------------------------------ */
+        function nextBusinessDays(count) {
+            var days = [];
+            var cursor = new Date();
+            while (days.length < count) {
+                cursor.setDate(cursor.getDate() + 1);
+                var weekday = cursor.getDay();
+                if (weekday === 0 || weekday === 6) continue;
+                days.push(new Date(cursor.getTime()));
+            }
+            return days;
+        }
+        function dayShortLabel(date) {
+            var weekday = date.toLocaleDateString('es-ES', { weekday: 'short' }).replace('.', '');
+            var day = String(date.getDate());
+            var month = date.toLocaleDateString('es-ES', { month: 'short' }).replace('.', '');
+            return weekday + ' ' + day + ' ' + month;
+        }
+        function dayFullLabel(date) {
+            return date.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+        }
+        function slotAvailable(day, slot) {
+            return hashStr(day.toISOString().slice(0, 10) + slot) % 10 >= 3;
+        }
+
+        function renderBooking() {
+            var container = document.getElementById('hm-booking');
+            var booking = state.booking;
+            var days = nextBusinessDays(5);
+
+            var daysHtml = days.map(function (day, index) {
+                return '<button type="button" class="hm-day-chip" data-hm-day="' + index + '" aria-pressed="' + (booking.dayIndex === index) + '">' +
+                    '<span class="block font-mono text-xs" style="color: var(--cd-text-muted);">' + dayShortLabel(day) + '</span></button>';
+            }).join('');
+
+            var slotsHtml;
+            if (booking.dayIndex == null) {
+                slotsHtml = '<p class="text-sm py-6 text-center" style="color: var(--cd-text-muted);">Elige un día para ver los horarios disponibles.</p>';
+            } else {
+                var day = days[booking.dayIndex];
+                var anyFree = false;
+                slotsHtml = '<div class="grid grid-cols-3 sm:grid-cols-4 gap-2">' + HM_DATA.slots.map(function (slot) {
+                    var free = slotAvailable(day, slot);
+                    if (free) anyFree = true;
+                    return '<button type="button" class="hm-slot" data-hm-slot="' + slot + '" aria-pressed="' + (booking.slot === slot) + '"' + (free ? '' : ' disabled') + '>' + slot + '</button>';
+                }).join('') + '</div>';
+                if (!anyFree) {
+                    slotsHtml += '<p class="text-xs mt-3 text-center" style="color: var(--cd-text-muted);">Sin horarios libres ese día: prueba con otro.</p>';
+                }
+            }
+
+            var modalityHtml = HM_DATA.modalidades.map(function (modality) {
+                return '<button type="button" class="hm-modality" data-hm-modality="' + modality.id + '" aria-pressed="' + (booking.modality === modality.id) + '">' +
+                    '<i data-lucide="' + modality.icon + '"></i> ' + modality.label + '</button>';
+            }).join('');
+
+            container.innerHTML =
+                '<p class="font-bold text-sm mb-3">1 · Elige el día</p>' +
+                '<div class="flex gap-2 overflow-x-auto pb-2 mb-6 -mx-1 px-1">' + daysHtml + '</div>' +
+                '<p class="font-bold text-sm mb-3">2 · Elige la hora</p>' +
+                '<div class="mb-6">' + slotsHtml + '</div>' +
+                '<p class="font-bold text-sm mb-3">3 · Modalidad</p>' +
+                '<div class="flex flex-wrap gap-2 mb-6">' + modalityHtml + '</div>' +
+                '<p class="font-bold text-sm mb-3">4 · Tus datos</p>' +
+                '<form id="hm-booking-form" class="grid sm:grid-cols-2 gap-3 mb-2" novalidate>' +
+                    '<div>' +
+                        '<label for="hm-name" class="block text-xs font-semibold mb-1.5">Nombre</label>' +
+                        '<input type="text" id="hm-name" class="demo-input w-full" placeholder="Tu nombre" required>' +
+                    '</div>' +
+                    '<div>' +
+                        '<label for="hm-contact" class="block text-xs font-semibold mb-1.5">Email o teléfono</label>' +
+                        '<input type="text" id="hm-contact" class="demo-input w-full" placeholder="Para enviarte la confirmación" required>' +
+                    '</div>' +
+                    '<button type="submit" class="btn-primary sm:col-span-2 justify-center">Confirmar reserva <i data-lucide="check" class="w-4 h-4"></i></button>' +
+                '</form>' +
+                '<p class="text-xs flex items-center gap-2" style="color: var(--cd-text-muted);"><i data-lucide="info" class="w-3.5 h-3.5 shrink-0" style="color: var(--hm-accent);"></i> Simulación local: no se envían ni guardan datos.</p>';
+            refreshIcons();
+
+            container.querySelectorAll('[data-hm-day]').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    booking.dayIndex = Number(button.getAttribute('data-hm-day'));
+                    booking.slot = null;
+                    renderBooking();
+                });
+            });
+            container.querySelectorAll('[data-hm-slot]').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    if (button.disabled) return;
+                    booking.slot = button.getAttribute('data-hm-slot');
+                    renderBooking();
+                });
+            });
+            container.querySelectorAll('[data-hm-modality]').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    booking.modality = button.getAttribute('data-hm-modality');
+                    renderBooking();
+                });
+            });
+            container.querySelector('#hm-booking-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (booking.dayIndex == null || !booking.slot) {
+                    showToast('Elige día y hora antes de confirmar');
+                    return;
+                }
+                var name = document.getElementById('hm-name').value.trim();
+                var contact = document.getElementById('hm-contact').value.trim();
+                if (!name || !contact) {
+                    showToast('Completa nombre y contacto');
+                    return;
+                }
+                renderConfirmation(name, contact, days);
+            });
+        }
+
+        function renderConfirmation(name, contact, days) {
+            var booking = state.booking;
+            var modality = HM_DATA.modalidades.filter(function (m) { return m.id === booking.modality; })[0];
+            var code = 'HM-' + Math.floor(1000 + Math.random() * 9000);
+            var caso = state.situation ? (state.situation.title + (state.detailLabel ? ' · ' + state.detailLabel : '')) : null;
+
+            document.getElementById('hm-booking').innerHTML =
+                '<div class="text-center py-4">' +
+                    '<span class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background: var(--hm-accent-soft);"><i data-lucide="check-circle-2" class="w-7 h-7" style="color: var(--hm-accent);"></i></span>' +
+                    '<h3 class="font-bold text-xl md:text-2xl mb-2">¡Cita reservada, ' + esc(name) + '!</h3>' +
+                    '<p class="text-sm mb-6" style="color: var(--cd-text-muted);">Referencia <span class="font-mono font-bold" style="color: var(--hm-accent);">' + code + '</span></p>' +
+                    '<div class="rounded-xl p-5 text-left space-y-3 mb-6" style="background: var(--cd-surface); border: 1px solid var(--cd-border);">' +
+                        '<p class="text-sm flex items-center gap-2.5"><i data-lucide="calendar-check" class="w-4 h-4 shrink-0" style="color: var(--hm-accent);"></i> ' + esc(dayFullLabel(days[booking.dayIndex])) + ' · ' + esc(booking.slot) + ' h</p>' +
+                        '<p class="text-sm flex items-center gap-2.5"><i data-lucide="' + modality.icon + '" class="w-4 h-4 shrink-0" style="color: var(--hm-accent);"></i> ' + esc(modality.label) + '</p>' +
+                        '<p class="text-sm flex items-center gap-2.5"><i data-lucide="user" class="w-4 h-4 shrink-0" style="color: var(--hm-accent);"></i> ' + esc(name) + ' · ' + esc(contact) + '</p>' +
+                        (caso ? '<p class="text-sm flex items-center gap-2.5"><i data-lucide="sparkles" class="w-4 h-4 shrink-0" style="color: var(--hm-accent);"></i> ' + esc(caso) + '</p>' : '') +
+                    '</div>' +
+                    '<p class="text-xs mb-6" style="color: var(--cd-text-muted);">En una web real, el despacho recibiría esta solicitud y confirmaría al instante por email o WhatsApp.</p>' +
+                    '<div class="flex flex-col sm:flex-row gap-3 justify-center">' +
+                        '<button type="button" class="btn-secondary justify-center" id="hm-booking-reset">Hacer otra reserva</button>' +
+                        '<button type="button" class="btn-primary justify-center" id="hm-wa-open">Enviar resumen por WhatsApp <i data-lucide="message-circle" class="w-4 h-4"></i></button>' +
+                    '</div>' +
+                '</div>';
+            refreshIcons();
+
+            document.getElementById('hm-booking-reset').addEventListener('click', function () {
+                state.booking = { day: null, slot: null, modality: 'video' };
+                renderBooking();
+            });
+            document.getElementById('hm-wa-open').addEventListener('click', openWaModal);
+            showToast('Reserva ' + code + ' creada (simulación sin persistencia)');
+        }
+
+        function showCasoChip(text) {
+            var chip = document.getElementById('hm-caso-chip');
+            document.getElementById('hm-caso-chip-text').textContent = 'Tu caso: ' + text;
+            chip.classList.remove('hidden');
+        }
+
+        /* ------------------------- WhatsApp simulado ------------------------ */
+        function buildWaMessage() {
+            var lines = ['Hola, escribo desde la web de Horizonte Migratorio.'];
+            if (state.situation) {
+                lines.push('• Situación: ' + state.situation.title);
+                if (state.detailLabel) lines.push('• Detalle: ' + state.detailLabel);
+            }
+            if (state.booking.slot && state.booking.dayIndex != null) {
+                lines.push('• Cita prevista: ' + dayFullLabel(nextBusinessDays(5)[state.booking.dayIndex]) + ' · ' + state.booking.slot + ' h');
+            }
+            lines.push('Quisiera agendar una consulta. ¡Gracias!');
+            return lines.join('\n');
+        }
+        function openWaModal() {
+            document.getElementById('hm-wamodal-message').textContent = buildWaMessage();
+            var modal = document.getElementById('hm-wamodal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        function closeWaModal() {
+            var modal = document.getElementById('hm-wamodal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+        function copySummary() {
+            var text = document.getElementById('hm-wamodal-message').textContent;
+            function done() { showToast('Resumen copiado al portapapeles'); }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done, function () { legacyCopy(text); done(); });
+            } else {
+                legacyCopy(text); done();
+            }
+        }
+        function legacyCopy(text) {
+            var area = document.createElement('textarea');
+            area.value = text;
+            area.style.position = 'fixed';
+            area.style.opacity = '0';
+            document.body.appendChild(area);
+            area.select();
+            try { document.execCommand('copy'); } catch (error) { /* simulación: sin efecto */ }
+            document.body.removeChild(area);
+        }
+
+        /* --------------------- servicios, panel y FAQ ----------------------- */
+        function renderServices() {
+            document.getElementById('hm-services').innerHTML = HM_DATA.servicios.map(function (service) {
+                return '' +
+                    '<div class="card-modern p-6">' +
+                        '<span class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background: var(--hm-accent-soft);"><i data-lucide="' + service.icon + '" class="w-5 h-5" style="color: var(--hm-accent);"></i></span>' +
+                        '<h3 class="font-bold mb-2">' + esc(service.title) + '</h3>' +
+                        '<p class="text-sm" style="color: var(--cd-text-muted);">' + esc(service.text) + '</p>' +
+                    '</div>';
+            }).join('');
+        }
+
+        function renderKpis() {
+            document.getElementById('hm-kpis').innerHTML = HM_DATA.kpis.map(function (kpi) {
+                return '' +
+                    '<div class="card-modern p-5">' +
+                        '<div class="flex items-center justify-between mb-3">' +
+                            '<span class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: var(--hm-accent-soft);"><i data-lucide="' + kpi.icon + '" class="w-4 h-4" style="color: var(--hm-accent);"></i></span>' +
+                            '<span class="font-mono text-xs font-bold" style="color: var(--cd-accent-green, #22c55e);">' + esc(kpi.delta) + '</span>' +
+                        '</div>' +
+                        '<p class="font-black text-xl md:text-2xl mb-1">' + esc(kpi.value) + '</p>' +
+                        '<p class="text-xs" style="color: var(--cd-text-muted);">' + esc(kpi.label) + '</p>' +
+                    '</div>';
+            }).join('');
+        }
+
+        function renderChannels() {
+            document.getElementById('hm-channels').innerHTML = HM_DATA.canales.map(function (channel, index) {
+                return '' +
+                    '<div>' +
+                        '<div class="flex items-center justify-between mb-1.5">' +
+                            '<span class="text-sm font-semibold">' + esc(channel.nombre) + '</span>' +
+                            '<span class="font-mono text-xs" style="color: var(--cd-text-muted);">' + channel.pct + '%</span>' +
+                        '</div>' +
+                        '<div class="hm-bar-track"><div class="hm-bar-fill" data-hm-width="' + channel.pct + '" style="opacity: ' + (1 - index * 0.15) + ';"></div></div>' +
+                    '</div>';
+            }).join('');
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.style.width = entry.target.getAttribute('data-hm-width') + '%';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+                document.querySelectorAll('.hm-bar-fill').forEach(function (bar) { observer.observe(bar); });
+            } else {
+                document.querySelectorAll('.hm-bar-fill').forEach(function (bar) {
+                    bar.style.width = bar.getAttribute('data-hm-width') + '%';
+                });
+            }
+        }
+
+        function renderFaq() {
+            document.getElementById('hm-faq').innerHTML = HM_DATA.faq.map(function (item) {
+                return '' +
+                    '<details class="hm-faq">' +
+                        '<summary>' + esc(item.q) + ' <i data-lucide="chevron-down"></i></summary>' +
+                        '<div class="hm-faq-body">' + esc(item.a) + '</div>' +
+                    '</details>';
+            }).join('');
+        }
+
+        /* ------------------------------ init -------------------------------- */
+        function init() {
+            renderStep1();
+            renderServices();
+            renderBooking();
+            renderKpis();
+            renderChannels();
+            renderFaq();
+            refreshIcons();
+
+            document.getElementById('hm-body').addEventListener('click', wizardClickHandler);
+            document.getElementById('hm-body').addEventListener('click', function (event) {
+                var agendaLink = event.target.closest('.hm-go-agenda');
+                if (agendaLink) showCasoChip(agendaLink.getAttribute('data-hm-caso'));
+            });
+            document.addEventListener('click', function (event) {
+                if (event.target.closest('#hm-wa-open')) openWaModal();
+            });
+
+            document.getElementById('hm-wamodal-close').addEventListener('click', closeWaModal);
+            document.getElementById('hm-wamodal').addEventListener('click', function (event) {
+                if (event.target === this) closeWaModal();
+            });
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') closeWaModal();
+            });
+            document.getElementById('hm-copy-summary').addEventListener('click', copySummary);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
+</body>
+</html>

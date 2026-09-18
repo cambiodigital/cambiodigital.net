@@ -157,6 +157,12 @@
       <priority>0.6</priority>
    </url>
    <url>
+      <loc>https://cambiodigital.net/demos/asesoria-migratoria</loc>
+      <lastmod>2026-09-18</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
       <loc>https://cambiodigital.net/como-trabajamos.html</loc>
       <lastmod>2026-02-21</lastmod>
       <changefreq>monthly</changefreq>
