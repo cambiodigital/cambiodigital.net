@@ -99,6 +99,22 @@
             client: null,
             variants: []
         },
+        {
+            id: 'consultoria-migratoria',
+            title: 'Consultoría Migratoria',
+            tagline: 'Landing premium de consultoría migratoria en España: orientador interactivo, agenda simulada, dashboard de rendimiento y captación multicanal. Marca ficticia: Vía Migratoria.',
+            description: 'Demo genérica y reutilizable de una web premium de consultoría migratoria en España: topbar de contacto, hero con formulario rápido, servicios, situaciones reales con fotografía, orientador interactivo de varias preguntas, agenda online simulada, testimonios, reseñas, dashboard de analítica para el despacho, guías tipo landing, newsletter, agente IA, FAQ y contacto. Marca ficticia: Vía Migratoria. Datos 100% ficticios.',
+            category: 'Web / Automatización',
+            tags: ['Web', 'Conversión', 'Orientador', 'Agenda', 'Dashboard', 'WhatsApp', 'Newsletter'],
+            date: '2026-09-19',
+            status: 'active',
+            visibility: 'public',
+            type: 'internal',
+            url: '/demos/consultoria-migratoria',
+            image: '/assets/images/demos/consultoria-migratoria.png',
+            client: null,
+            variants: []
+        },
         // CD_DEMOS_INSERT_ANCHOR — demo:new inserta las nuevas demos justo encima de esta línea
     ];
 })();
