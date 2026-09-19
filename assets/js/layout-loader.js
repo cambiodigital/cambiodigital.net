@@ -177,6 +177,9 @@
         }
 
         animateCursor();
+        // Activa el CSS del cursor personalizado (theme.css oculta el cursor nativo
+        // solo mientras esta clase está presente; si el JS falla, nunca se oculta).
+        document.body.classList.add('cd-cursor-active');
         window.__cdCursorInitialized = true;
     }
 

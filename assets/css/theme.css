@@ -156,10 +156,20 @@ body {
 }
 
 @media (any-pointer: fine) {
-    body, a, button, input, textarea, select {
+    /* El cursor nativo solo se oculta cuando el cursor personalizado está activo:
+       layout-loader.js añade 'cd-cursor-active' a <body> al inicializarlo.
+       Si el JS falla o la página no usa cursor personalizado (p. ej. las demos),
+       el cursor nativo y los cursores de formulario se mantienen normales. */
+    body.cd-cursor-active,
+    body.cd-cursor-active a,
+    body.cd-cursor-active button,
+    body.cd-cursor-active input,
+    body.cd-cursor-active textarea,
+    body.cd-cursor-active select {
         cursor: none;
     }
-    #cursor-dot, #cursor-outline {
+    body.cd-cursor-active #cursor-dot,
+    body.cd-cursor-active #cursor-outline {
         display: block;
     }
 }

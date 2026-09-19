@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         animateCursor();
+        // Misma activación que layout-loader: el cursor nativo solo se oculta
+        // mientras el cursor personalizado realmente funciona.
+        document.body.classList.add('cd-cursor-active');
     }
 
     normalizeBlogPostShell();
